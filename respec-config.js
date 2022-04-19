@@ -16,7 +16,6 @@ var respecConfig = {
     // if the specification's copyright date is a range of years, specify
     // the start date here:
     // copyrightStart: "2011",
-    license: "document",
 
     // if there is a previously published draft, uncomment this and set its YYYY-MM-DD date
     // and its maturity status
@@ -34,7 +33,7 @@ var respecConfig = {
     // only "name" is required
     editors:  [
         { name: "Michael Cooper",
-          company: "W3C", companyURL: "https://www.w3.org/" },
+          company: "W3C", companyURL: "https://www.w3.org/" }
     ],
 
     // authors, add as many as you like.
@@ -42,25 +41,11 @@ var respecConfig = {
     // only "name" is required. Same format as editors.
 
     // name of the WG
-    wg:           "Accessible Platform Architectures Working Group",
-
-    // URI of the public WG page
-    wgURI:        "https://www.w3.org/WAI/APA/",
-
-    // name (with the @w3c.org) of the public mailing to which comments are due
-    wgPublicList: "public-apa",
-
-    // URI of the patent status for this WG, for Rec-track documents
-    // !!!! IMPORTANT !!!!
-    // This is important for Rec-track documents, do not copy a patent URI from a random
-    // document unless you know what you're doing. If in doubt ask your friendly neighbourhood
-    // Team Contact.
-    wgPatentURI:  "https://www.w3.org/2004/01/pp-impl/83907/status",
+    group:           "apa",
 
     // Depth for the TOC
     //maxTocLevel: 2,
 
     // include introduction sections in the ToC
-    tocIntroductory: true,
-    doRDFa: 1.1
+    tocIntroductory: true
 };
