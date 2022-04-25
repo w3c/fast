@@ -36,52 +36,69 @@
 				</section>
 			<section>
 				<h3>Approach</h3>
-                <p>The goal of FAST is to help ensure that web technologies meet the needs of users with disabilities. To do this, the work involves three stages:</p>
-                <ul>
-                    <li>Inventory user needs;</li>
-                    <li>Identify ways to meet needs;</li>
-                    <li>Develop technology guidelines.</li>
-                </ul>
-                <section>
-                    <h4>Inventory user needs</h4>
-                    <p>The first step in the development of these guidelines is to inventory known user needs. Many user needs affecting web content accessibility are well known and documented in multiple places. These needs are collected and related to each other in order to arrive at a single set of known needs. Sources examined in the development of these guidelines include:</p>
-                    <ul>
-                        <li><a href="http://www.jtc1access.org/documents/swga_339_DTR_29138-1_User_Needs_Summary.zip">JTC 1 User Needs</a>;
-                        </li>
-                    	<li><a href="https://www.iso.org/standard/70913.html">ISO/IEC 30071-1 Information technology — Development of user interface accessibility — Part 1: A code of practice for creating accessible ICT products and services</a></li>
-                        <li><a href="https://www.w3.org/TR/WCAG20/">WCAG 2.0</a>;</li>
-                        <li><a href="https://www.w3.org/TR/UAAG20/">UAAG 2.0</a>;</li>
-                        <li><a href="https://www.w3.org/TR/ATAG20/">ATAG 2.0</a>;</li>
-                        <li><a href="https://www.w3.org/WAI/GL/mobile-a11y-tf/wiki/Main_Page">Mobile gap analysis</a>;</li>
-                        <li><a href="https://www.w3.org/WAI/PF/cognitive-a11y-tf/wiki/Main_Page">Cognitive gap analyses</a>;</li>
-                        <li><a href="https://www.w3.org/TR/media-accessibility-reqs/">Media Accessibility User Requirements</a>;</li>
-                        <li> Sources from other advocacy organizations.</li>
-                    </ul>
-                    <p class="note">Note the goal of this exercise is not to supplant other good work in this field. The aim is to assemble disparate sources if knowledge about user needs in one place, to facilitate analysis. This work is likely to spin off from the core work of developing FAST. If another organization creates a sufficiently rich collection of documented user needs it will be possible to use that resource rather than reinvent the work in W3C.</p>
-                </section>
-                <section>
-                    <h4>Identify ways to meet needs</h4>
-                    <p>The second stage in development of the guidelines is to identify ways these needs can be met. There are three high-level ways user needs can be met:</p>
-                    <ul>
-                        <li>technology features;</li>
-                        <li>author implementation;</li>
-                        <li>user agent support.</li>
-                    </ul>
-				<p>These are not mutually exclusive categories. A given user need could be met by more than one of these categories, but the ability of a given category to meet a user need implies the need for guidelines targeting that category. In policy setting and evaluation there may be a preference hierarchy for how best to meet needs, e.g., user agent support of standard features is preferred, but author technical override is needed if user agent support is lacking. </p>
-                    <p>Some needs can be met with present technology only via one of these routes. Other needs can be met by more than one route, and for content to be accessible it is only required that one of the available routes be implemented. Many needs, however, require more than one route to be implemented together for the need to be met. The most common example is that a technology provides a feature, the author uses that feature in the content, and the user agent makes the result available to the user.</p>
-                    <p>All of these ways of meeting user needs are identfied, along with their relationships to each other. Once these approaches are identified, the result is separate lists of requirements for content technologies, authors, and user agents. The relationship among the routes may play a role in prioritization of guidelines, since needs that can only be met by one route may be more important to meet by that route, than needs that could be met by other means as well.</p>
-                </section>
-                <section>
-                    <h4>Develop technology guidelines</h4>
-				    <p>From the above analyses, it should also be easy to see where content technology features are required to make it possible to meet user needs. For example: </p><ul>
+				<p>The goal of FAST is to help ensure that web technologies meet the needs of users with disabilities. To do this, the work involves three stages:</p>
+				<ul>
+					<li>Inventory functional and user needs;</li>
+					<li>Identify ways to meet needs;</li>
+					<li>Develop technology guidelines.</li>
+				</ul>
+				<section>
+					<h4>Inventory functional and user needs</h4>
+					<p>The first step in the development of these guidelines is to inventory known functional and user needs. Many user needs affecting web content accessibility are well known and documented in multiple places. These needs are collected and related to each other in order to arrive at a single set of known needs. Sources examined in the development of these guidelines include:</p>
+					<ul>
+						<li><a href="http://www.jtc1access.org/documents/swga_339_DTR_29138-1_User_Needs_Summary.zip">JTC 1 User Needs</a>; </li>
+						<li><a href="https://www.iso.org/standard/70913.html">ISO/IEC 30071-1 Information technology — Development of user interface accessibility — Part 1: A code of practice for creating accessible ICT products and services</a></li>
+						<li><a href="https://www.w3.org/TR/WCAG20/">WCAG 2.0</a>;</li>
+						<li><a href="https://www.w3.org/TR/UAAG20/">UAAG 2.0</a>;</li>
+						<li><a href="https://www.w3.org/TR/ATAG20/">ATAG 2.0</a>;</li>
+						<li><a href="https://www.w3.org/WAI/GL/mobile-a11y-tf/wiki/Main_Page">Mobile gap analysis</a>;</li>
+						<li><a href="https://www.w3.org/WAI/PF/cognitive-a11y-tf/wiki/Main_Page">Cognitive gap analyses</a>;</li>
+						<li><a href="https://www.w3.org/TR/media-accessibility-reqs/">Media Accessibility User Requirements</a>;</li>
+						<li> Sources from other advocacy organizations.</li>
+					</ul>
+					<p class="note">Note the goal of this exercise is not to supplant other good work in this field. The aim is to assemble disparate sources if knowledge about user needs in one place, to facilitate analysis. This work is likely to spin off from the core work of developing FAST. If another organization creates a sufficiently rich collection of documented user needs it will be possible to use that resource rather than reinvent the work in W3C.</p>
+					<p>In the course of exploring how to apply user needs to accessibility guidance, we have identified two intersecting categories of needs: [[[#functional-needs]]] and [[[#user-needs]]].</p>
+				</section>
+				<section>
+					<h5>Functional needs</h5>
+					<p>A <dfn>functional need</dfn> is a statement that describes a specific gap in one’s [=ability=], or a specific mismatch between ability and the designed environment or context. An <dfn data-lt="intersectional need">intersectional functional need</dfn> results from an individual having more than one functional need simultaneously in a given context.</p>
+					<p>A <dfn data-lt="ability">functional ability</dfn> is a notional measure of a person’s abilities that may need technological support or augmentation to be able to complete a particular task.</p>
+					<p class="note">The intent is to express the need in a contextual model, as opposed to a lack of ability in a medical model. This is similar to the ICF (International Classification of Functioning – a biopsychosocial model), “outcomes of interactions between health conditions (diseases, disorders and injuries) and contextual factors”, focusing on the interactions. </p>
+				</section>
+				<section>
+					<h5>User needs</h5>
+					<p>A <dfn>user need</dfn> is a high level accessibility characteristic of content and/or a user interface that is necessary for users to complete an objective.</p>
+					<p>In this model, user needs are not accessibility specific. User needs are generic requirements of content for its features to be usable by humans. </p>
+				</section>
+			</section>
+			<section>
+				<h5>Matrix of functional and user needs</h5>
+				<p>In order for people to access content, for every [=user need=] inherent in the content, there must be a way to meet an individual’s [=functional needs=]. User needs and functional needs intersect into a matrix of potential affordances required for content. These requirements comprise the set of <dfn>expected outcomes</dfn> that should be addressed in this and other web accessibility guidance.</p>
+				<p class="ednote">Todo: put in snapshot of matrix or something.</p>
+				<section>
+					<h4>Identify ways to meet needs</h4>
+					<p>The second stage in development of the guidelines is to identify ways these needs can be met. There are three high-level ways user needs can be met:</p>
+					<ul>
+						<li>technology features;</li>
+						<li>author implementation;</li>
+						<li>user agent support.</li>
+					</ul>
+					<p>These are not mutually exclusive categories. A given user need could be met by more than one of these categories, but the ability of a given category to meet a user need implies the need for guidelines targeting that category. In policy setting and evaluation there may be a preference hierarchy for how best to meet needs, e.g., user agent support of standard features is preferred, but author technical override is needed if user agent support is lacking. </p>
+					<p>Some needs can be met with present technology only via one of these routes. Other needs can be met by more than one route, and for content to be accessible it is only required that one of the available routes be implemented. Many needs, however, require more than one route to be implemented together for the need to be met. The most common example is that a technology provides a feature, the author uses that feature in the content, and the user agent makes the result available to the user.</p>
+					<p>All of these ways of meeting user needs are identfied, along with their relationships to each other. Once these approaches are identified, the result is separate lists of requirements for content technologies, authors, and user agents. The relationship among the routes may play a role in prioritization of guidelines, since needs that can only be met by one route may be more important to meet by that route, than needs that could be met by other means as well.</p>
+				</section>
+				<section>
+					<h4>Develop technology guidelines</h4>
+					<p>From the above analyses, it should also be easy to see where content technology features are required to make it possible to meet user needs. For example: </p>
+					<ul>
 						<li> If the author must implement something, the technology must provide a feature for the author to implement. </li>
 						<li> If the user need is met by design, the technology must provide suitably rich design capabilities. </li>
 						<li> If the user need is met by user agents, the technology must provide a sufficiently rich definition of the object for user agents to implement. </li>
 					</ul>
-                    <p>Not all technologies will address all ways of meeting user needs. For instance, CSS is primarily design-oriented, and HTML is somewhat semantics-oriented. The technology requirements may need conformance profiles or some other way of guiding technology developers seeking to follow them. It may not be easy to state in a general prescriptive way whether a given technology should, for instance, provide a richer design capability to meet a user need or should instead rely on better semantics for assistive technology-oriented content alternatives. A good structure of the technology requirements should help make it clear that <i>some</i> method of meeting a given user need is important. Horizontal review may continue to be important in guiding technology developers through the possibilities. </p>
-                    <p>The set of approaches to meeting user needs that affects technology features becomes the base information for the Framework for Accessible Specification of Technologies. (The other two routes, while important to the analysis, are not directly relevant to FAST but may inform other work.) These approaches are prioritized, organized, and translated into guidelines-type language to become the Framework for Accessible Specification of Technologies.</p>
-                    <p>With the above analyses done, it should be easy to see how current guidelines address which user needs. In turn it should be easy to see where current guidelines to not meet user needs, that in theory should be able to be met by activities within the remit of that set of guidelines. This should be important input into WAI 3.0 / WAI 2020 planning.</p>
-                </section>
+					<p>Not all technologies will address all ways of meeting user needs. For instance, CSS is primarily design-oriented, and HTML is somewhat semantics-oriented. The technology requirements may need conformance profiles or some other way of guiding technology developers seeking to follow them. It may not be easy to state in a general prescriptive way whether a given technology should, for instance, provide a richer design capability to meet a user need or should instead rely on better semantics for assistive technology-oriented content alternatives. A good structure of the technology requirements should help make it clear that <i>some</i> method of meeting a given user need is important. Horizontal review may continue to be important in guiding technology developers through the possibilities. </p>
+					<p>The set of approaches to meeting user needs that affects technology features becomes the base information for the Framework for Accessible Specification of Technologies. (The other two routes, while important to the analysis, are not directly relevant to FAST but may inform other work.) These approaches are prioritized, organized, and translated into guidelines-type language to become the Framework for Accessible Specification of Technologies.</p>
+					<p>With the above analyses done, it should be easy to see how current guidelines address which user needs. In turn it should be easy to see where current guidelines to not meet user needs, that in theory should be able to be met by activities within the remit of that set of guidelines. This should be important input into WAI 3.0 / WAI 2020 planning.</p>
+				</section>
 			</section>
 			<section>
 				<h3>Explanation of User Needs</h3>
@@ -116,234 +133,569 @@
 			</section>
 		</section>
 		<section>
-			<h2>Collected User Needs</h2>
-			<p>This is a <b>draft</b> user needs collection. It may or may not be prove desirable to prioritize needs in order to yield manageable sets. These needs will be cross-referenced to authoritative sources that also express the same requirement. </p>
-			<p>In the list below, there may be overlap between user needs, and known ways to meet user needs. These will need to be teased out over the course of the project.</p>
-			<ul>
-				<li> Content perceivable in form other than produced by author <ul>
-						<li> Alternate content can be provided <ul>
-								<li> Text alternatives </li>
-								<li> Visual alternative</li>
-								<li> Auditory alternative</li>
-								<li> Tactile alternative</li>
-							</ul>
-						</li>
-						<li> Content encoded in manner that permits machine transformation </li>
-						<li> Different alternate content for different signals</li>
-						<li> Alternate content findable <ul>
-								<li> In same time and location as control </li>
-							</ul>
-						</li>
-					</ul>
-				</li>
-				<li> Enable direct perception of output for people with wide range of perception disabilities <ul>
-						<li> Visual presentation perceivable across a range of vision impairments<ul>
-								<li> Luminosity contrast sufficient </li>
-								<li> Hue contrast sufficient for certain color perception disorders  </li>
-								<li> Pointers and cursors can be perceived  <ul>
-										<li> Resize </li>
-										<li> Recolor </li>
-										<li> Reshape </li>
-									</ul>
-								</li>
-							</ul>
-						</li>
-					</ul>
-				</li>
-				<li> On-request location indicator <ul>
-						<li> Auditory content perceivable  for audio cues., 5.8 Sufficient quality (e.g. volume, direction, clarity, frequency) for audio feedback.) <ul>
-								<li> Volume </li>
-								<li> Direction </li>
-								<li> Clarity </li>
-								<li> Frequency  </li>
-							</ul>
-						</li>
-						<li> Tactile indications perceivable (not web? But probably will be) <ul>
-								<li> Distinct enough to accommodate reduced sensitivity </li>
-							</ul>
-						</li>
-					</ul>
-				</li>
-				<li> Adjustability of output <ul>
-						<li> Visual presentation can be adjusted to meet needs of user  <ul>
-								<li> Text can be resized <ul>
-										<li> Content format allows resize </li>
-										<li> Author provides resize feature </li>
-									</ul>
-								</li>
-								<li> Resize of text does not break presentation <ul>
-										<li> Layout resizes with text (zoom) </li>
-										<li> Layout self-adjusts to text resizes (reflow) (not fixed units) </li>
-									</ul>
-								</li>
-								<li> Color scheme can be changed  <ul>
-										<li> Content format defines color style scheme that user or user agent can override </li>
-										<li> Author provides color switch options </li>
-									</ul>
-								</li>
-								<li> Luminosity contrast can be changed <ul>
-										<li> User agent exaggerates luminosity differences </li>
-										<li> Author provides color switch options </li>
-									</ul>
-								</li>
-								<li> Typeface, font weight, font style can be changed </li>
-								<li> Line / word / letter spacing can be changed </li>
-								<li> Margins can be changed </li>
-								<li> Line length can be changed </li>
-								<li> Justification can be changed </li>
-							</ul>
-						</li>
-						<li> Auditory content can be adjusted to meet needs of user <ul>
-								<li> User can adjust volume level  </li>
-								<li> Contrast between foreground and background audio is sufficient </li>
-								<li> Unnecessary background audio can be muted separately from the foreground audio </li>
-							</ul>
-						</li>
-						<li> User can control time-based media <ul>
-								<li> User can pause, stop, replay media  </li>
-							</ul>
-						</li>
-						<li> Send output to alternate device, for better accessibility or to manage security / privacy in public space to manage overhearing / looking over shoulder of large print  </li>
-					</ul>
-				</li>
-				<li> User can navigate content effectively <ul>
-						<li> Useful navigation order  [also relates to efficient usage] </li>
-						<li> Structured audio  </li>
-						<li> Navigation supports different thinking styles  </li>
-					</ul>
-				</li>
-				<li> Meaning conveyed by style perceivable to users  that is presented through color to be also presented in another way that does not rely on color.) <ul>
-						<li> Author provides multiple redundant style cues </li>
-						<li> Meaning supported by programmatically determined semantics </li>
-					</ul>
-				</li>
-				<li> Input is device independent <ul>
-						<li> Input does not require pointing device  </li>
-						<li> Support keyboard input  with only visual feedback.) </li>
-						<li> Allow speech input  </li>
-						<li> Input does not require speech input  </li>
-					</ul>
-				</li>
-				<li> Enable input for users with wide range of abilities <ul>
-						<li> Do not require simultaneous actions  </li>
-						<li> Do not require precision in movement  </li>
-						<li> Allow input with different parameters for speed, acceleration, etc.  </li>
-					</ul>
-				</li>
-				<li> User can manage distractions <ul>
-						<li> Autoplay of any moving content can be prevented </li>
-						<li> Blinking or movement can be easily stopped </li>
-						<li> Layout helps user find important content </li>
-						<li> Cursor blinking can be turned off </li>
-					</ul>
-				</li>
-				<li> User can avoid personal risk <ul>
-						<li> Photosensitive seizures <ul>
-								<li> Flash can be prevented  </li>
-								<li> Content with flash can be reliably warned in advance and avoided </li>
-								<li> Unexpected flash can be immediately stopped </li>
-							</ul>
-						</li>
-						<li> Audiosensitive seizures <ul>
-								<li> @@ triggering condition can be prevented  </li>
-								<li> Content with @@ triggering condition can be reliably warned in advance and avoided </li>
-								<li> Unexpected @@ triggering condition can be immediately stopped </li>
-							</ul>
-						</li>
-					</ul>
-				</li>
-				<li> Important alerts can reach the user quickly <ul>
-						<li> Multi-frequency audio  </li>
-						<li> Vibration ) </li>
-					</ul>
-				</li>
-				<li> Users can discover content on the page  <ul>
-						<li> Headings identify regions of content </li>
-						<li> Regions of content are programmatically determined </li>
-						<li> User can skip to main content </li>
-						<li> Controls and their functions are programmatically determined </li>
-						<li> Controls have contrast with their surroundings  </li>
-						<li> Location of controls is predictable  </li>
-					</ul>
-				</li>
-				<li> Support users with instructions (@@overlaps with understand, avoid confusion) <ul>
-						<li> Instructions for accessible interaction  </li>
-					</ul>
-				</li>
-				<li> Users can understand content, navigation, and available interactions <ul>
-						<li> Description of layout available  (WCAG @@ Table Summary) <ul>
-								<li> Description does not depend on specific sensory characteristics  </li>
-							</ul>
-						</li>
-						<li> Simple wording in instructions  </li>
-						<li> Use standard icon / design / description conventions .) </li>
-						<li> Don’t require hierarchical thinking  </li>
-						<li> Clear instructions for interaction  </li>
-					</ul>
-				</li>
-				<li> Users are not confused <ul>
-						<li> Style does not imply perceived affordance of non-actionable features </li>
-						<li> Not confused with non-indicating tactile objects </li>
-						<li> Predictability / consistency of design <ul>
-								<li> Objects don’t change their function  </li>
-							</ul>
-						</li>
-						<li> Minimize reliance on user short-term memory  </li>
-						<li> Provide guidance for multi-step processes  </li>
-						<li> Simplified interface available </li>
-					</ul>
-				</li>
-				<li> Do not require specific physical characteristics (non-web? Handedness, having hands, etc.) <ul>
-						<li> Alternative biometric identification  </li>
-					</ul>
-				</li>
-				<li> Avoid errors <ul>
-						<li> Avoid accidental activation of controls <ul>
-								<li> Due to tremors etc.  </li>
-								<li>Due to overly small and proximate controls</li>
-								<li>Due to design confusion</li>
-							</ul>
-						</li>
-					</ul>
-				</li>
-				<li> Recover from errors <ul>
-						<li> Notification when error detected  </li>
-						<li> Instructions on error recovery  </li>
-						<li> Ability to correct error </li>
-						<li> Ability to redo task </li>
-					</ul>
-				</li>
-				<li> Complete time-sensitive tasks <ul>
-						<li> Ability to complete task in allotted time <ul>
-								<li> Support ability to plan task execution strategy  </li>
-								<li> Avoid distractions (see separate topic)  </li>
-							</ul>
-						</li>
-						<li> Ability to extend time <ul>
-								<li> More time to read  </li>
-								<li> More time to complete task  </li>
-							</ul>
-						</li>
-					</ul>
-				</li>
-				<li> Support efficient usage <ul>
-						<li> Change characteristics (speed, voice, pitch, accent) of audio alternatives </li>
-						<li> Provide accessibility preferences that take effect immediately  </li>
-						<li> Persistent preferences across sessions  </li>
-						<li> Clear accessibility feature settings  </li>
-					</ul>
-				</li>
-				<li> Don’t override accessibility features  <ul>
-						<li> Preferences, e.g., typeface, color, size, layout, volume, contrast…)  </li>
-						<li> Preferences return to default state when switching users  [not web?] </li>
-					</ul>
-				</li>
-			</ul>
+			<h2>Functional Needs</h2>
+			<section>
+				<h3>Safety</h3>
+				<section>
+					<h4>Use without physical harm or risk (to self or others within a physical environment)</h4>
+				</section>
+			</section>
+			<section>
+				<h3>Sensory</h3>
+				<section>
+					<h4>Vision and Visual</h4>
+					<section>
+						<h5>Use without vision </h5>
+						<section>
+							<h6>Use as blind (born without vision)</h6>
+						</section>
+						<section>
+							<h6>Use with blindness (acquired blindness during lifetime)</h6>
+						</section>
+					</section>
+					<section>
+						<h5>Use with limited vision </h5>
+						<section>
+							<h6>Use with limited central vision</h6>
+						</section>
+						<section>
+							<h6>Use with limited peripheral vision</h6>
+						</section>
+						<section>
+							<h6>Use with limited interocular acuity or monocular input</h6>
+						</section>
+					</section>
+					<section>
+						<h5>Use without color perception</h5>
+					</section>
+					<section>
+						<h5>Use with limited color perception</h5>
+					</section>
+					<section>
+						<h5>Use with limited depth perception</h5>
+					</section>
+					<section>
+						<h5>Use with limited orientation or spatial tracking</h5>
+					</section>
+					<section>
+						<h5>Use with photosensitivity (too much or too little)</h5>
+					</section>
+				</section>
+				<section>
+					<h4>Hearing and Auditory</h4>
+					<section>
+						<h5>Use without hearing </h5>
+						<section>
+							<h6>Use as Deaf (born with congenital deafness and/or to a deaf family)</h6>
+						</section>
+						<section>
+							<h6>Use as deaf (acquired deafness during lifetime after a language was learned)</h6>
+						</section>
+					</section>
+					<section>
+						<h5>Use with limited hearing</h5>
+					</section>
+					<section>
+						<h5>Use with limited auditory processing (speech)</h5>
+					</section>
+					<section>
+						<h5>Use with sensorineural hearing loss (limited frequency range) related to age or Presbycusis (gradual loss over time)</h5>
+					</section>
+				</section>
+				<section>
+					<h4>Sensory Intersections</h4>
+					<section>
+						<h5>Use without vision and hearing </h5>
+						<section><h6>Use without vision from birth then without hearing as acquired</h6> </section>
+						<section><h6>Use without hearing from birth then without vision as acquired</h6> </section>
+					</section>
+					<section>
+						<h5>Use with vestibular issues</h5>
+					</section>
+					<section>
+						<h5>Use without spatial auditory awareness or perception (needs diegetic sound)</h5>
+					</section>
+				</section>
+			</section>
+			<section>
+				<h3>Physical</h3>
+				<section>
+					<h4>Mobility</h4>
+					<section>
+						<h5>Use without mobility</h5>
+					</section>
+					<section>
+						<h5>Use with limited mobility </h5>
+						<section>
+							<h6>Use with limited ambulation</h6>
+						</section>
+						<section>
+							<h6>Use with temporary or partial paralysis</h6>
+						</section>
+					</section>
+					<section>
+						<h5>Use with limited reach or range</h5>
+					</section>
+				</section>
+				<section>
+					<h4>Motor</h4>
+					<section>
+						<h5>Use without hands</h5>
+					</section>
+					<section>
+						<h5>Use without multiple touchpoint gesture</h5>
+					</section>
+					<section>
+						<h5>Use with limited strength</h5>
+					</section>
+					<section>
+						<h5>Use without fine point control</h5>
+					</section>
+					<section>
+						<h5>Use without physical tracking speed</h5>
+					</section>
+					<section>
+						<h5>Use with tremors</h5>
+					</section>
+				</section>
+				<section>
+					<h4>Physical and Sensory Intersections</h4>
+					<section>
+						<h5>Use with limited kinaesthetic perception (orientation, position, weight distribution, movement)</h5>
+					</section>
+					<section>
+						<h5>Use with limited tactile perception, sensory processing, or touch pressure sensitivity</h5>
+					</section>
+					<section>
+						<h5>Use with chronic pain impacting input or interaction modality, speed and/or frequency</h5>
+					</section>
+					<section>
+						<h5>Use without vision and a motor disability</h5>
+					</section>
+					<section>
+						<h5>Use without hearing and a motor disability</h5>
+					</section>
+				</section>
+				<section>
+					<h4>Speech</h4>
+					<section>
+						<h5>Use without vocalization</h5>
+					</section>
+					<section>
+						<h5>Use with limited vocalization or volume</h5>
+					</section>
+				</section>
+			</section>
+			<section>
+				<h3>Cognitive</h3>
+				<section>
+					<h4>Attention</h4>
+					<section><h5>Use with limited ability to focus attention</h5> </section>
+					<section>
+						<h5>Use with limited ability to direct attention</h5>
+					</section>
+					<section><h5>Use with limited ability to shift attention</h5> </section>
+				</section>
+				<section>
+					<h4>Language and Communication</h4>
+					<section>
+						<h5>Use with limited ability to comprehend spoken language </h5>
+					</section>
+					<section>
+						<h5>Use without ability to read </h5>
+					</section>
+					<section>
+						<h5>Use with limited ability to recognize written language</h5>
+					</section>
+					<section>
+						<h5>Use with limited ability to comprehend written language </h5>
+					</section>
+					<section>
+						<h5>Use without ability to write </h5>
+					</section>
+					<section>
+						<h5>Use with limited ability to correctly write (or type) words and use punctuation</h5>
+					</section>
+					<section>
+						<h5>Use without understanding symbols</h5>
+					</section>
+					<section>
+						<h5>Use without understanding metaphors, idioms, euphemisms, or specific dialect of culture or location</h5>
+					</section>
+				</section>
+				<section>
+					<h4>Learning</h4>
+					<section>
+						<h5>Use with limited understanding of math and numeric concepts</h5>
+					</section>
+					<section>
+						<h5>Use with limited compositional skill (simultaneous thinking and input)</h5>
+					</section>
+					<section>
+						<h5>Use with limited coordination skill (motoric skills, visual-spatial organizational memory, and social)</h5>
+					</section>
+				</section>
+				<section>
+					<h4>Memory</h4>
+					<section>
+						<h5>Use with limited short-term or working memory </h5>
+					</section>
+					<section>
+						<h5>Use with limited medium or long-term memory</h5>
+					</section>
+					<section>
+						<h5>Use with limited sensory memory </h5>
+						<section>
+							<h6>Visual</h6>
+						</section>
+						<section>
+							<h6>Visual-spatial</h6>
+						</section>
+						<section>
+							<h6>Auditory</h6>
+						</section>
+					</section>
+				</section>
+				<section>
+					<h4>Executive</h4>
+					<section>
+						<h5>Use with limited planning, organization, sequencing, and execution ability</h5>
+					</section>
+					<section>
+						<h5>Use with limited emotional control and self monitoring</h5>
+					</section>
+					<section>
+						<h5>Use with limited judgment</h5>
+					</section>
+				</section>
+				<section>
+					<h4>Mental Health</h4>
+					<section>
+						<h5>Use with debilitating sensitivity to negative emotional stimuli</h5>
+					</section>
+				</section>
+				<section>
+					<h4>Cognitive and Sensory Intersections</h4>
+					<section>
+						<h5>Use with interocular transfer of visual memory (retrieval based on limited acuity in a single eye)</h5>
+					</section>
+					<section>
+						<h5>Use with limited phonological or phonemic awareness</h5>
+					</section>
+				</section>
+			</section>
+			<section>
+				<h3>Independence</h3>
+				<section>
+					<h4>Independence</h4>
+					<section>
+						<h5>Use without autonomy or agency</h5>
+					</section>
+					<section>
+						<h5>Use without privacy</h5>
+					</section>
+					<p class="note">The purpose of identifying independence as a functional need is for individuals where independence cannot be achieved. Example: a person who has suffered a stroke, is conscious and aware but otherwise incapable of interacting with technology may need to log into a system or record a decision or authorize an agent to record a decision in their presence. In this case, they lack autonomy and privacy, but a method could be provided to verify the individual consent and the agent authority.</p>
+				</section>
+			</section>
+		</section>
+		<section>
+			<h2>User Needs</h2>
+			<section>
+				<h3>Perceivable</h3>
+				<section>
+					<h4>Provide consistent content </h4>
+					<p>(static / fixed)</p>
+					<section>
+						<h5>Users can perceive </h5>
+						<section>
+							<h6>Content </h6>
+						</section>
+						<section>
+							<h6>Controls</h6>
+							<p>(roles, states and properties)</p>
+						</section>
+						<section>
+							<h6>Structure</h6>
+						</section>
+						<section>
+							<h6>Purpose</h6>
+						</section>
+						<section>
+							<h6>Input Values</h6>
+						</section>
+					</section>
+				</section>
+				<section>
+					<h4>Reveal changed content</h4>
+					<section>
+						<h5>Users can perceive changes to </h5>
+						<section>
+							<h6>Content</h6>
+						</section>
+						<section>
+							<h6>Controls</h6>
+							<p>(roles, states and properties)</p>
+						</section>
+						<section>
+							<h6>Purpose</h6>
+						</section>
+						<section>
+							<h6>Input Values</h6>
+						</section>
+					</section>
+				</section>
+			</section>
+			<section>
+				<h3>Operable</h3>
+				<section>
+					<h4>Provide consistent interactions</h4>
+					<section>
+						<h5>Users can operate </h5>
+						<section>
+							<h6>Content</h6>
+						</section>
+						<section>
+							<h6>Controls</h6>
+							<p>(roles, states and properties)</p>
+						</section>
+						<section>
+							<h6>Navigation</h6>
+						</section>
+					</section>
+					<section>
+						<h5>Users can navigate </h5>
+						<section>
+							<h6>Structure</h6>
+							<p>(document and application)</p>
+						</section>
+					</section>
+				</section>
+				<section>
+					<h4>Allow adjustable content</h4>
+					<section>
+						<h5>Users can adjust </h5>
+						<section>
+							<h6>Duration requirements</h6>
+						</section>
+						<section>
+							<h6>Content orientation</h6>
+						</section>
+						<section>
+							<h6>Orientation in space</h6>
+						</section>
+					</section>
+				</section>
+			</section>
+			<section>
+				<h3>Understandable</h3>
+				<section>
+					<h4>Make appearance understandable</h4>
+					<section>
+						<h5>Users can understand </h5>
+						<section>
+							<h6>Content</h6>
+						</section>
+						<section>
+							<h6>Controls</h6>
+						</section>
+						<section>
+							<h6>Structure</h6>
+						</section>
+						<section>
+							<h6>Navigation</h6>
+						</section>
+						<section>
+							<h6>Changed content</h6>
+						</section>
+						<section>
+							<h6>Purpose</h6>
+						</section>
+						<section>
+							<h6>Relationships</h6>
+						</section>
+					</section>
+				</section>
+				<section>
+					<h4>Provide help and instructions</h4>
+					<section>
+						<h5>Users get instructions for </h5>
+						<section>
+							<h6>Content</h6>
+						</section>
+						<section>
+							<h6>Interaction</h6>
+						</section>
+						<section>
+							<h6>Support for modalities</h6>
+						</section>
+						<section>
+							<h6>Personalization options</h6>
+						</section>
+						<section>
+							<h6>Processes</h6>
+						</section>
+					</section>
+					<section>
+						<h5>Users get help through </h5>
+						<section>
+							<h6>Moderated (form) input</h6>
+						</section>
+						<section>
+							<h6>Alert awareness</h6>
+						</section>
+					</section>
+				</section>
+				<section>
+					<h4>Make position and orientation clear</h4>
+					<section>
+						<h5>Users can identify their position in </h5>
+						<section>
+							<h6>Content</h6>
+						</section>
+						<section>
+							<h6>Context</h6>
+						</section>
+						<section>
+							<h6>A process</h6>
+						</section>
+						<section>
+							<h6>A space</h6>
+						</section>
+					</section>
+					<section>
+						<h5>Users can orientate themselves in </h5>
+						<section>
+							<h6>Immersive environments</h6>
+						</section>
+						<section>
+							<h6>Augmented environments</h6>
+						</section>
+					</section>
+				</section>
+				<section>
+					<h4>Make discoverable</h4>
+					<section>
+						<h5>Users can discover </h5>
+						<section>
+							<h6>Content</h6>
+						</section>
+						<section>
+							<h6>Context</h6>
+						</section>
+						<section>
+							<h6>Customization options</h6>
+						</section>
+					</section>
+				</section>
+			</section>
+			<section>
+				<h3>Personalization</h3>
+				<section>
+					<h4>Customization</h4>
+					<section>
+						<h5>Users can customize or request</h5>
+						<section>
+							<h6>Content</h6>
+						</section>
+						<section>
+							<h6>Context</h6>
+						</section>
+						<section>
+							<h6>Functionality / settings</h6>
+						</section>
+					</section>
+					<section>
+						<h5>Users get customized (via platform) </h5>
+						<section>
+							<h6>Content</h6>
+						</section>
+						<section>
+							<h6>Context</h6>
+						</section>
+						<section>
+							<h6>Functionality</h6>
+						</section>
+					</section>
+					<section>
+						<h5>Users can control </h5>
+						<section>
+							<h6>Time-sensitive content</h6>
+						</section>
+						<section>
+							<h6>Time-sensitive tasks</h6>
+						</section>
+						<section>
+							<h6>Time-based media</h6>
+							<p>(including dynamic values, EQ, volume)</p>
+						</section>
+					</section>
+				</section>
+				<section>
+					<h4>Preferences</h4>
+					<section>
+						<h5>Users personalization preferences </h5>
+						<section>
+							<h6>Are allowed</h6>
+						</section>
+						<section>
+							<h6>Are honored by content authors</h6>
+						</section>
+						<section>
+							<h6>Are not compromised by security</h6>
+						</section>
+						<section>
+							<h6>Do not compromise privacy</h6>
+						</section>
+					</section>
+					<section>
+						<h5>Users can, device independently </h5>
+						<section>
+							<h6>Interact</h6>
+						</section>
+						<section>
+							<h6>Input data</h6>
+						</section>
+						<section>
+							<h6>Route and control output</h6>
+						</section>
+					</section>
+				</section>
+			</section>
+			<section>
+				<h3>Deceptive Patterns</h3>
+				<section>
+					<h4>Distractions and Interruptions</h4>
+					<section>
+						<h5>Users attention can be </h5>
+						<section>
+							<h6>Focussed</h6>
+						</section>
+						<section>
+							<h6>Directed</h6>
+						</section>
+						<section>
+							<h6>Shifted</h6>
+						</section>
+					</section>
+				</section>
+				<section>
+					<h4>No Harm</h4>
+					<section>
+						<h5>Users are not harmed </h5>
+						<section>
+							<h6>Neurologically</h6>
+						</section>
+						<section>
+							<h6>Emotionally</h6>
+						</section>
+					</section>
+				</section>
+			</section>
 		</section>
 		<section>
 			<h2>Meeting User Needs</h2>
             <p class="note">This is a preliminary draft to document how user needs are met in various ways. </p>
-            <p>For each user need, ways to meet it are proposed for: </p>
+            <p>For each [=expected outcome=], ways to meet it are proposed for: </p>
 			<ul>
 				<li> Technologies </li>
 				<li> Content Authors </li>
@@ -438,167 +790,8 @@
 		</section>
 		<section>
 			<h2>Framework for Accessible Specification of Technologies</h2>
-			<p class="note">The content below is merely initial draft content intended to show how guidelines aimed at web technology developers might look. It has not yet been related to the user needs and ways of meeting them outlined above. It serves as initial brainstorming to help demonstrate viability of this set of guidelines.</p>
-			<section>
-				<h2>Alternative Content</h2>
-				<ul>
-					<li> Provide a way to explicitly mark content as not needing alternative content because it does not perform an important role. </li>
-					<li> Provide a way to explicitly indicate when author declined to provide alternative content. </li>
-					<li> Provide a way to explicitly indicate that authoring tool is unable to generate or obtain alternative content. </li>
-					<li> Provide a way to explicitly associate alternative content with the primary content. </li>
-					<li> Allow multiple types and instances of alternative content to be associated with primary content. </li>
-				</ul>
-				<section>
-					<h3>Text Alternatives</h3>
-					<ul>
-						<li> Provide a way to define short text alternatives / labels for non-text content. </li>
-						<li> Provide a way to define long text alternatives for non-text content. </li>
-						<li> Allow text alternatives to be semantically "rich" e.g., with page structure, text style, hyperlinks, etc. </li>
-					</ul>
-				</section>
-				<section>
-					<h3>Rich Alternatives</h3>
-					<ul>
-						<li> Provide a way to define non-text alternatives for text content. </li>
-						<li> Provide a way to define non-text alternatives for non-text content . </li>
-					</ul>
-				</section>
-			</section>
-			<section>
-				<h2>Color</h2>
-				<ul>
-					<li> Allow users to override colors of text and user interface components. </li>
-					<li> Provide a feature for authors to define semantically available "color classes" that users can easily map to custom colors, and give preference to this vs. coloring objects individually. </li>
-					<li> Provide a feature for users to choose color schemata that work for them. </li>
-					<li> Ensure that the foreground and background color of an object can be reported to the user via AT. </li>
-					<li> Provide ways to set foreground and background colors separately for all objects. </li>
-					<li> Define compositing rules for foreground and background colors well. </li>
-					<li> @@similar for patterns, gradients, etc. </li>
-				</ul>
-			</section>
-			<section>
-				<h2>Device Independence</h2>
-				<ul>
-					<li> Define a conformance model sufficiently robust that implementations of all types can process content without variations due to different handling of conformance violations. </li>
-				</ul>
-				<section>
-					<h3>Universal meaning support</h3>
-					<ul>
-						<li> Provide declarative mechanisms (that have accessibility semantics pre-defined in the spec) to implement technology features whenever possible. </li>
-						<li> Define unambiguous ways to express relationships between units of content, such as object nesting, ID referencing, etc. </li>
-						<li> Prefer structural semantics to presentational semantics. </li>
-						<li> When providing presentational semantics, define ways they can be easily mapped to structural semantics, e.g., to support restyling or meaningful exposure to AAPIs. </li>
-						<li> Minimize the need for alternative content by supporting a comprehensive set of authoring use cases. (e.g., don't make authors resort to text in images to get the style they want) </li>
-					</ul>
-				</section>
-				<section>
-					<h3>Compatibility with AAPIs</h3>
-					<ul>
-						<li> For every user interface object type, define the "type" of object as a role to AAPIs. </li>
-						<li> For every user interface object type, define how authors provide or user agent determines the "accessible name" for AAPIs. </li>
-						<li> For user interface objects that can have states, properties, or values, define how authors can set these and how these are exposed to AAPIs. </li>
-						<li> When providing imperative mechanisms to implement technology features (e.g., scripts), provide a way for authors to expose accessibility information to AAPIs. </li>
-						<li> Provide a way to title Web pages and sections of content. </li>
-						<li> Provide a way to clearly indicate the target of a hyperlink and function of a control. </li>
-						<li> Provide a way to indicate content language, for the page as a whole and for blocks of content. </li>
-						<li> Provide a way for authors to support understanding of abbreviations / acronyms / initialisms, idioms, jargon, etc. </li>
-						<li> Provide a mechanism to support correct machine pronunciation of ambiguously spelled terms (e.g., in the phrase "I am content with this content" there are different correct pronunciations of the lexeme "content"). </li>
-					</ul>
-				</section>
-				<section>
-					<h3>Hardware Interfaces</h3>
-					<ul>
-						<li> Abstract hardware interfaces so various device types can simulate each others' functions. </li>
-						<li> Always provide a keyboard interface to interact with content. </li>
-					</ul>
-				</section>
-			</section>
-			<section>
-				<h2>User Customization</h2>
-				<ul>
-					<li> Provide ways for display of content to be resized without loss of effective layout. </li>
-					<li> Define adaptive layout mechanisms that optimize for different display conditions (screen size, font size, lighting, noise, etc.) well. </li>
-					<li> Separate layout semantics from content so users or tools can easily create alternate layouts. </li>
-					<li> Provide ways for users to easily select font preferences (size, weight, family, specific typeface, etc.). </li>
-					<li> Provide mechanisms for users to easily apply custom display requirements that preserve presentation of meaning without knowledge the idiosyncratic implementation of content. </li>
-				</ul>
-			</section>
-			<section>
-				<h2>User Control</h2>
-				<section>
-					<h3>Blinking / Flashing</h3>
-					<ul>
-						<li> Define a mechanism to warn users of flashing content. </li>
-						<li> Define a mechanism to identify potentially flashing content to user agents so they can suppress it on user preference. </li>
-						<li> Define declarative mechanisms for features that could cause blinking or flashing so their parameters can be more easily controlled by user agents than imperative mechanisms. </li>
-					</ul>
-				</section>
-				<section>
-					<h3>Automatic actions</h3>
-					<ul>
-						<li> Provide a way for users to prevent time-based content from playing automatically, e.g., as a user agent preference that implementations must provide. </li>
-						<li> Provide a way for users to request no interruptions. Note, bona fide emergency interruptions should still be allowed. </li>
-						<li> Define that there will be not automatic action leading to a change of context when focus lands on a given element. </li>
-					</ul>
-				</section>
-				<section>
-					<h3>Time-based content</h3>
-					<ul>
-						<li> Provide a way for users to pause and stop time-based content. </li>
-						<li> Provide a way for users to start or restart time-based content. </li>
-					</ul>
-				</section>
-			</section>
-			<section>
-				<h2>Focus</h2>
-				<ul>
-					<li> Any object that can respond to user interaction must be capable of receiving keyboard focus and actuating from keyboard input. </li>
-					<li> Common objects defined by the technology should be specified to be focusable by default. </li>
-					<li> Provide a means for authors to make objects focusable explicitly. </li>
-					<li> Define a complete focus movement model including cycling past the end, recovering from unexpectedly lost focus, etc. so they keyboard focus is always somewhere meaningful and findable. </li>
-					<li> Provide sensory and programmatic indication of focus location at all times. </li>
-					<li> If allowing authors to restyle focus indicators, provide a mechanism for users to override, particularly to "unhide" focus indicators. </li>
-				</ul>
-			</section>
-			<section>
-				<h2>Audiovisual Content</h2>
-				<ul>
-					<li> Provide a mechanism to associate synchronized text tracks with audio or visual tracks (to support captions, subtitles). </li>
-					<li> Provide support for at least two audio tracks so volume of foreground and background audio can be set separately. </li>
-				</ul>
-			</section>
-			<section>
-				<h2>Extensibility</h2>
-				<ul>
-					<li> When providing extension mechanisms, ensure the tools exist to allow developers to provide the same level of accessibility in extensions that are possible in the root technology. This may involve exposing API methods or other properties that would otherwise not be needed. </li>
-					<li> Allow extensions to intersect so accessibility features in one extension can automatically work in others. </li>
-				</ul>
-			</section>
-			<section>
-				<h2>Alternate view modalities</h2>
-				<ul>
-					<li> Provide ways for linear (1-dimensional) presentations of content to presented in a different subjective order than graphical (2-dimensional) presentations. </li>
-					<li> Provide ways for focus order to adapt to presentation order in order to remain meaningful. </li>
-					<li> @@support for haptic and other modalities? </li>
-				</ul>
-			</section>
-			<section>
-				<h2>Timing</h2>
-				<ul>
-					<li> Do not create time limitations on user interaction (e.g., actuate a default behavior if the user does not respond within a set window) unless such limitations are intrinsic to the functionality. </li>
-					<li> When creating time limitations on user interaction, provide mechanisms for users to be informed in advance of those limitations. </li>
-					<li> When creating time limitations on user interaction, provide a way for users to request additional time. </li>
-					<li> Provide an interface between content and servers so users can be informed of and request changes to time limitations of the server. </li>
-				</ul>
-			</section>
-			<section>
-				<h2>User input</h2>
-				<ul>
-					<li> Provide ways to indicate if user input controls must have input ("required") or not accepting input ("disabled"). </li>
-					<li> Provide a way to associate information about input validation errors with the specific control(s) with input problems. </li>
-					<li> Provide a way for authors to provide context-sensitive help to users, and for users to access this via standard user agent features. </li>
-				</ul>
-			</section>
+			<p class="note">The content below is initial draft content intended to show how guidelines aimed at web technology developers might look. It has not yet been related to the user needs and ways of meeting them outlined above. It serves as initial brainstorming to help demonstrate viability of this set of guidelines.</p>
+			<p class="ednote">This section needs to be updated to reflect the functional and user needs matrix.</p>
 		</section>
             <section class='appendix'>
 			<h2>Acknowledgments</h2>
