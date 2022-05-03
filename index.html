@@ -1,11 +1,115 @@
-<!DOCTYPE html><html lang="en-US" xmlns="http://www.w3.org/1999/xhtml"><head><meta charset="utf-8"><meta name="generator" content="ReSpec 25.6.0"><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"><style>.issue-label{text-transform:initial}.warning>p:first-child{margin-top:0}.warning{padding:.5em;border-left-width:.5em;border-left-style:solid}span.warning{padding:.1em .5em .15em}.issue.closed span.issue-number{text-decoration:line-through}.warning{border-color:#f11;border-width:.2em;border-style:solid;background:#fbe9e9}.warning-title:before{content:"⚠";font-size:1.3em;float:left;padding-right:.3em;margin-top:-.3em}li.task-list-item{list-style:none}input.task-list-item-checkbox{margin:0 .35em .25em -1.6em;vertical-align:middle}.issue a.respec-gh-label{padding:5px;margin:0 2px 0 2px;font-size:10px;text-transform:none;text-decoration:none;font-weight:700;border-radius:4px;position:relative;bottom:2px;border:none;display:inline-block}</style>
-		<title>Framework for Accessible Specification of Technologies (FAST)</title>
-        
+<!DOCTYPE html><html lang="en-US" xmlns="http://www.w3.org/1999/xhtml"><head>
+<meta charset="utf-8">
+<meta name="generator" content="ReSpec 32.1.6">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<style>
+.issue-label{text-transform:initial}
+.warning>p:first-child{margin-top:0}
+.warning{padding:.5em;border-left-width:.5em;border-left-style:solid}
+span.warning{padding:.1em .5em .15em}
+.issue.closed span.issue-number{text-decoration:line-through}
+.warning{border-color:#f11;border-width:.2em;border-style:solid;background:#fbe9e9}
+.warning-title:before{content:"⚠";font-size:1.3em;float:left;padding-right:.3em;margin-top:-.3em}
+li.task-list-item{list-style:none}
+input.task-list-item-checkbox{margin:0 .35em .25em -1.6em;vertical-align:middle}
+.issue a.respec-gh-label{padding:5px;margin:0 2px 0 2px;font-size:10px;text-transform:none;text-decoration:none;font-weight:700;border-radius:4px;position:relative;bottom:2px;border:none;display:inline-block}
+</style>
+<style>
+dfn{cursor:pointer}
+.dfn-panel{position:absolute;z-index:35;min-width:300px;max-width:500px;padding:.5em .75em;margin-top:.6em;font-family:"Helvetica Neue",sans-serif;font-size:small;background:#fff;color:#000;box-shadow:0 1em 3em -.4em rgba(0,0,0,.3),0 0 1px 1px rgba(0,0,0,.05);border-radius:2px}
+.dfn-panel:not(.docked)>.caret{position:absolute;top:-9px}
+.dfn-panel:not(.docked)>.caret::after,.dfn-panel:not(.docked)>.caret::before{content:"";position:absolute;border:10px solid transparent;border-top:0;border-bottom:10px solid #fff;top:0}
+.dfn-panel:not(.docked)>.caret::before{border-bottom:9px solid #a2a9b1}
+.dfn-panel *{margin:0}
+.dfn-panel b{display:block;color:#000;margin-top:.25em}
+.dfn-panel ul a[href]{color:#333}
+.dfn-panel>div{display:flex}
+.dfn-panel a.self-link{font-weight:700;margin-right:auto}
+.dfn-panel .marker{padding:.1em;margin-left:.5em;border-radius:.2em;text-align:center;white-space:nowrap;font-size:90%;color:#040b1c}
+.dfn-panel .marker.dfn-exported{background:#d1edfd;box-shadow:0 0 0 .125em #1ca5f940}
+.dfn-panel .marker.idl-block{background:#8ccbf2;box-shadow:0 0 0 .125em #0670b161}
+.dfn-panel a:not(:hover){text-decoration:none!important;border-bottom:none!important}
+.dfn-panel a[href]:hover{border-bottom-width:1px}
+.dfn-panel ul{padding:0}
+.dfn-panel li{margin-left:1em}
+.dfn-panel.docked{position:fixed;left:.5em;top:unset;bottom:2em;margin:0 auto;max-width:calc(100vw - .75em * 2 - .5em - .2em * 2);max-height:30vh;overflow:auto}
+</style>
 		
-	<style id="respec-mainstyle">@keyframes pop{0%{transform:scale(1,1)}25%{transform:scale(1.25,1.25);opacity:.75}100%{transform:scale(1,1)}}.hljs{background:0 0!important}a abbr,h1 abbr,h2 abbr,h3 abbr,h4 abbr,h5 abbr,h6 abbr{border:none}dfn{font-weight:700}a.internalDFN{color:inherit;border-bottom:1px solid #99c;text-decoration:none}a.externalDFN{color:inherit;border-bottom:1px dotted #ccc;text-decoration:none}a.bibref{text-decoration:none}.respec-offending-element:target{animation:pop .25s ease-in-out 0s 1}.respec-offending-element,a[href].respec-offending-element{text-decoration:red wavy underline}@supports not (text-decoration:red wavy underline){.respec-offending-element:not(pre){display:inline-block}.respec-offending-element{background:url(data:image/gif;base64,R0lGODdhBAADAPEAANv///8AAP///wAAACwAAAAABAADAEACBZQjmIAFADs=) bottom repeat-x}}#references :target{background:#eaf3ff;animation:pop .4s ease-in-out 0s 1}cite .bibref{font-style:normal}code{color:#c63501}th code{color:inherit}a[href].orcid{padding-left:4px;padding-right:4px}a[href].orcid>svg{margin-bottom:-2px}.toc a,.tof a{text-decoration:none}a .figno,a .secno{color:#000}ol.tof,ul.tof{list-style:none outside none}.caption{margin-top:.5em;font-style:italic}table.simple{border-spacing:0;border-collapse:collapse;border-bottom:3px solid #005a9c}.simple th{background:#005a9c;color:#fff;padding:3px 5px;text-align:left}.simple th a{color:#fff;padding:3px 5px;text-align:left}.simple th[scope=row]{background:inherit;color:inherit;border-top:1px solid #ddd}.simple td{padding:3px 10px;border-top:1px solid #ddd}.simple tr:nth-child(even){background:#f0f6ff}.section dd>p:first-child{margin-top:0}.section dd>p:last-child{margin-bottom:0}.section dd{margin-bottom:1em}.section dl.attrs dd,.section dl.eldef dd{margin-bottom:0}#issue-summary>ul,.respec-dfn-list{column-count:2}#issue-summary li,.respec-dfn-list li{list-style:none}details.respec-tests-details{margin-left:1em;display:inline-block;vertical-align:top}details.respec-tests-details>*{padding-right:2em}details.respec-tests-details[open]{z-index:999999;position:absolute;border:thin solid #cad3e2;border-radius:.3em;background-color:#fff;padding-bottom:.5em}details.respec-tests-details[open]>summary{border-bottom:thin solid #cad3e2;padding-left:1em;margin-bottom:1em;line-height:2em}details.respec-tests-details>ul{width:100%;margin-top:-.3em}details.respec-tests-details>li{padding-left:1em}a[href].self-link:hover{opacity:1;text-decoration:none;background-color:transparent}h2,h3,h4,h5,h6{position:relative}aside.example .marker>a.self-link{color:inherit}h2>a.self-link,h3>a.self-link,h4>a.self-link,h5>a.self-link,h6>a.self-link{border:none;color:inherit;font-size:83%;height:2em;left:-1.6em;opacity:.5;position:absolute;text-align:center;text-decoration:none;top:0;transition:opacity .2s;width:2em}h2>a.self-link::before,h3>a.self-link::before,h4>a.self-link::before,h5>a.self-link::before,h6>a.self-link::before{content:"§";display:block}@media (max-width:767px){dd{margin-left:0}h2>a.self-link,h3>a.self-link,h4>a.self-link,h5>a.self-link,h6>a.self-link{left:auto;top:auto}}@media print{.removeOnSave{display:none}}</style><meta name="description" content="Framework for Accessible Specification of Technologies (FAST) advises creators of technical specifications how to ensure their technology meets the needs of user with disabilities. It addresses primarily web content technologies but also relates to any technology that affects web content sent to users, including client-side APIs, transmission protocols, and interchange formats. Specifications that implement these guidelines make it possible for content authors and user agents to render the content in an accessible manner to people with a wide range of abilities."><link rel="canonical" href="https://www.w3.org/TR/fast/"><style>var{position:relative;cursor:pointer}var[data-type]::after,var[data-type]::before{position:absolute;left:50%;top:-6px;opacity:0;transition:opacity .4s;pointer-events:none}var[data-type]::before{content:"";transform:translateX(-50%);border-width:4px 6px 0 6px;border-style:solid;border-color:transparent;border-top-color:#000}var[data-type]::after{content:attr(data-type);transform:translateX(-50%) translateY(-100%);background:#000;text-align:center;font-family:"Dank Mono","Fira Code",monospace;font-style:normal;padding:6px;border-radius:3px;color:#daca88;text-indent:0;font-weight:400}var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}</style><script id="initialUserConfig" type="application/json">{
+<title>Framework for Accessible Specification of Technologies (FAST)</title>
+		
+		
+<style id="respec-mainstyle">
+@keyframes pop{
+0%{transform:scale(1,1)}
+25%{transform:scale(1.25,1.25);opacity:.75}
+100%{transform:scale(1,1)}
+}
+:is(h1,h2,h3,h4,h5,h6,a) abbr{border:none}
+dfn{font-weight:700}
+a.internalDFN{color:inherit;border-bottom:1px solid #99c;text-decoration:none}
+a.externalDFN{color:inherit;border-bottom:1px dotted #ccc;text-decoration:none}
+a.bibref{text-decoration:none}
+.respec-offending-element:target{animation:pop .25s ease-in-out 0s 1}
+.respec-offending-element,a[href].respec-offending-element{text-decoration:red wavy underline}
+@supports not (text-decoration:red wavy underline){
+.respec-offending-element:not(pre){display:inline-block}
+.respec-offending-element{background:url(data:image/gif;base64,R0lGODdhBAADAPEAANv///8AAP///wAAACwAAAAABAADAEACBZQjmIAFADs=) bottom repeat-x}
+}
+#references :target{background:#eaf3ff;animation:pop .4s ease-in-out 0s 1}
+cite .bibref{font-style:normal}
+code{color:#c63501}
+th code{color:inherit}
+a[href].orcid{padding-left:4px;padding-right:4px}
+a[href].orcid>svg{margin-bottom:-2px}
+.toc a,.tof a{text-decoration:none}
+a .figno,a .secno{color:#000}
+ol.tof,ul.tof{list-style:none outside none}
+.caption{margin-top:.5em;font-style:italic}
+table.simple{border-spacing:0;border-collapse:collapse;border-bottom:3px solid #005a9c}
+.simple th{background:#005a9c;color:#fff;padding:3px 5px;text-align:left}
+.simple th a{color:#fff;padding:3px 5px;text-align:left}
+.simple th[scope=row]{background:inherit;color:inherit;border-top:1px solid #ddd}
+.simple td{padding:3px 10px;border-top:1px solid #ddd}
+.simple tr:nth-child(even){background:#f0f6ff}
+.section dd>p:first-child{margin-top:0}
+.section dd>p:last-child{margin-bottom:0}
+.section dd{margin-bottom:1em}
+.section dl.attrs dd,.section dl.eldef dd{margin-bottom:0}
+#issue-summary>ul{column-count:2}
+#issue-summary li{list-style:none;display:inline-block}
+details.respec-tests-details{margin-left:1em;display:inline-block;vertical-align:top}
+details.respec-tests-details>*{padding-right:2em}
+details.respec-tests-details[open]{z-index:999999;position:absolute;border:thin solid #cad3e2;border-radius:.3em;background-color:#fff;padding-bottom:.5em}
+details.respec-tests-details[open]>summary{border-bottom:thin solid #cad3e2;padding-left:1em;margin-bottom:1em;line-height:2em}
+details.respec-tests-details>ul{width:100%;margin-top:-.3em}
+details.respec-tests-details>li{padding-left:1em}
+.self-link:hover{opacity:1;text-decoration:none;background-color:transparent}
+aside.example .marker>a.self-link{color:inherit}
+.header-wrapper{display:flex;align-items:baseline}
+:is(h2,h3,h4,h5,h6):not(#toc>h2,#abstract>h2,#sotd>h2,.head>h2){position:relative;left:-.5em}
+:is(h2,h3,h4,h5,h6):not(#toch2)+a.self-link{color:inherit;order:-1;position:relative;left:-1.1em;font-size:1rem;opacity:.5}
+:is(h2,h3,h4,h5,h6)+a.self-link::before{content:"§";text-decoration:none;color:var(--heading-text)}
+:is(h2,h3)+a.self-link{top:-.2em}
+:is(h4,h5,h6)+a.self-link::before{color:#000}
+@media (max-width:767px){
+dd{margin-left:0}
+}
+@media print{
+.removeOnSave{display:none}
+}
+</style>
+	
+<meta name="description" content="Framework for Accessible Specification of Technologies (FAST) advises creators of technical specifications how to ensure their technology meets the needs of user with disabilities. It addresses primarily web content technologies but also relates to any technology that affects web content sent to users, including client-side APIs, transmission protocols, and interchange formats. Specifications that implement these guidelines make it possible for content authors and user agents to render the content in an accessible manner to people with a wide range of abilities.">
+<style>
+var{position:relative;cursor:pointer}
+var[data-type]::after,var[data-type]::before{position:absolute;left:50%;top:-6px;opacity:0;transition:opacity .4s;pointer-events:none}
+var[data-type]::before{content:"";transform:translateX(-50%);border-width:4px 6px 0 6px;border-style:solid;border-color:transparent;border-top-color:#000}
+var[data-type]::after{content:attr(data-type);transform:translateX(-50%) translateY(-100%);background:#000;text-align:center;font-family:"Dank Mono","Fira Code",monospace;font-style:normal;padding:6px;border-radius:3px;color:#daca88;text-indent:0;font-weight:400}
+var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
+</style>
+<script id="initialUserConfig" type="application/json">{
   "specStatus": "ED",
   "shortName": "fast",
-  "license": "document",
   "edDraftURI": "https://w3c.github.io/fast/",
   "editors": [
     {
@@ -14,43 +118,43 @@
       "companyURL": "https://www.w3.org/"
     }
   ],
-  "wg": "Accessible Platform Architectures Working Group",
-  "wgURI": "https://www.w3.org/WAI/APA/",
-  "wgPublicList": "public-apa",
-  "wgPatentURI": "https://www.w3.org/2004/01/pp-impl/83907/status",
+  "group": "apa",
   "tocIntroductory": true,
-  "doRDFa": 1.1,
-  "publishISODate": "2022-03-30T00:00:00.000Z",
-  "generatedSubtitle": "Editor's Draft 30 March 2022"
-}</script><link rel="stylesheet" href="https://www.w3.org/StyleSheets/TR/2016/W3C-ED"></head>
-	<body class="h-entry informative toc-inline"><div class="head">
-    <a class="logo" href="https://www.w3.org/"><img alt="W3C" width="72" height="48" src="https://www.w3.org/StyleSheets/TR/2016/logos/W3C"></a> <h1 id="title" class="title">Framework for Accessible Specification of Technologies (FAST)</h1>
-    
-    <h2>
-      W3C Editor's Draft
-      <time class="dt-published" datetime="2022-03-30">30 March 2022</time>
-    </h2>
-    <dl>
-      <dt>This version:</dt><dd>
-              <a class="u-url" href="https://w3c.github.io/fast/">https://w3c.github.io/fast/</a>
-            </dd><dt>Latest published version:</dt><dd>
-              <a href="https://www.w3.org/TR/fast/">https://www.w3.org/TR/fast/</a>
-            </dd>
-      <dt>Latest editor's draft:</dt><dd><a href="https://w3c.github.io/fast/">https://w3c.github.io/fast/</a></dd>
-      
-      
-      
-      
-      
-      <dt>Editor:</dt>
-      <dd class="p-author h-card vcard"><span class="p-name fn">Michael Cooper</span>
-            (<a class="p-org org h-org h-card" href="https://www.w3.org/">W3C</a>)
-          </dd>
-      
-      
-      
-    </dl>
-    
+  "publishISODate": "2022-05-03T00:00:00.000Z",
+  "generatedSubtitle": "W3C Editor's Draft 03 May 2022"
+}</script>
+<link rel="stylesheet" href="https://www.w3.org/StyleSheets/TR/2021/W3C-ED"></head>
+	<body class="h-entry informative"><div class="head">
+    <p class="logos"><a class="logo" href="https://www.w3.org/"><img crossorigin="" alt="W3C" height="48" src="https://www.w3.org/StyleSheets/TR/2021/logos/W3C" width="72">
+  </a></p>
+    <h1 id="title" class="title">Framework for Accessible Specification of Technologies (FAST)</h1> 
+    <p id="w3c-state"><a href="https://www.w3.org/standards/types#ED">W3C Editor's Draft</a> <time class="dt-published" datetime="2022-05-03">03 May 2022</time></p>
+    <details open="">
+      <summary>More details about this document</summary>
+      <dl>
+        <dt>This version:</dt><dd>
+                <a class="u-url" href="https://w3c.github.io/fast/">https://w3c.github.io/fast/</a>
+              </dd>
+        <dt>Latest published version:</dt><dd>
+                <a href="https://www.w3.org/TR/fast/">https://www.w3.org/TR/fast/</a>
+              </dd>
+        <dt>Latest editor's draft:</dt><dd><a href="https://w3c.github.io/fast/">https://w3c.github.io/fast/</a></dd>
+        
+        
+        
+        
+        
+        
+        <dt>Editor:</dt><dd class="editor p-author h-card vcard">
+    <span class="p-name fn">Michael Cooper</span> (<a class="p-org org h-org" href="https://www.w3.org/">W3C</a>)
+  </dd>
+        
+        
+        
+        
+        
+      </dl>
+    </details>
     
     
     <p class="copyright">
@@ -60,10 +164,10 @@
     
     <a href="https://www.w3.org/"><abbr title="World Wide Web Consortium">W3C</abbr></a><sup>®</sup> (<a href="https://www.csail.mit.edu/"><abbr title="Massachusetts Institute of Technology">MIT</abbr></a>,
     <a href="https://www.ercim.eu/"><abbr title="European Research Consortium for Informatics and Mathematics">ERCIM</abbr></a>, <a href="https://www.keio.ac.jp/">Keio</a>,
-    <a href="https://ev.buaa.edu.cn/">Beihang</a>). 
-    W3C <a href="https://www.w3.org/Consortium/Legal/ipr-notice#Legal_Disclaimer">liability</a>,
-    <a href="https://www.w3.org/Consortium/Legal/ipr-notice#W3C_Trademarks">trademark</a> and <a rel="license" href="https://www.w3.org/Consortium/Legal/copyright-documents">document use</a> rules
-    apply.
+    <a href="https://ev.buaa.edu.cn/">Beihang</a>). W3C
+    <a href="https://www.w3.org/Consortium/Legal/ipr-notice#Legal_Disclaimer">liability</a>,
+    <a href="https://www.w3.org/Consortium/Legal/ipr-notice#W3C_Trademarks">trademark</a> and
+    <a rel="license" href="https://www.w3.org/Consortium/Legal/2015/copyright-software-and-document" title="W3C Software and Document Notice and License">permissive document license</a> rules apply.
   </p>
     <hr title="Separator for header">
   </div>
@@ -71,40 +175,30 @@
 			<p>Framework for Accessible Specification of Technologies (FAST) advises creators of technical specifications how to ensure their technology meets the needs of user with disabilities. It addresses primarily web content technologies but also relates to any technology that affects web content sent to users, including client-side APIs, transmission protocols, and interchange formats. Specifications that implement these guidelines make it possible for content authors and user agents to render the content in an accessible manner to people with a wide range of abilities.</p>
 			<p>This document is accompanied by a <a href="checklist.html">checklist</a> which is more complete and usable for groups evaluating technologies at this time.</p>
 		</section>
-		<section class="respec-offending-element" title="Linter (no-headingless-sections): All sections must start with a `h2-6` element. Add a `h2-6` to the offending section or use a `<div>`. See developer console. Occured" id="respec-offender-linter-no-headingless-sections-all-sections-must-start-with-a-h2-6-element-add-a-h2-6-to-the-offending-section-or-use-a-div-see-developer-console-occured">
-			<p> </p>
-		</section>
 		<section id="sotd" class="introductory"><h2>Status of This Document</h2><p><em>This section describes the status of this
-      document at the time of its publication. Other documents may supersede
-      this document. A list of current <abbr title="World Wide Web Consortium">W3C</abbr> publications and the latest revision
-      of this technical report can be found in the
-      <a href="https://www.w3.org/TR/"><abbr title="World Wide Web Consortium">W3C</abbr> technical reports index</a> at
+      document at the time of its publication. A list of current <abbr title="World Wide Web Consortium">W3C</abbr>
+      publications and the latest revision of this technical report can be found
+      in the <a href="https://www.w3.org/TR/"><abbr title="World Wide Web Consortium">W3C</abbr> technical reports index</a> at
       https://www.w3.org/TR/.</em></p>
 		<p>
-    This document was published by the <a href="https://www.w3.org/WAI/APA/">Accessible Platform Architectures Working Group</a> as an
-    Editor's Draft.
+    This document was published by the <a href="https://www.w3.org/groups/wg/apa">Accessible Platform Architectures Working Group</a> as
+    an Editor's Draft. 
+  </p><p>Publication as an Editor's Draft does not
+  imply endorsement by <abbr title="World Wide Web Consortium">W3C</abbr> and its Members. </p><p>
+    This is a draft document and may be updated, replaced or obsoleted by other
+    documents at any time. It is inappropriate to cite this document as other
+    than work in progress.
     
-  </p><p>
-    
-    Comments regarding this document are welcome.
-          Please send them to
-          <a href="mailto:public-apa@w3.org">public-apa@w3.org</a>
-          (<a href="https://lists.w3.org/Archives/Public/public-apa/">archives</a>).
-        
-  </p><p>
-    Publication as an Editor's Draft does not imply endorsement by the <abbr title="World Wide Web Consortium">W3C</abbr>
-    Membership. This is a draft document and may be updated, replaced or
-    obsoleted by other documents at any time. It is inappropriate to cite this
-    document as other than work in progress.
   </p><p>
     
         This document was produced by a group
         operating under the
-        <a href="https://www.w3.org/Consortium/Patent-Policy/"><abbr title="World Wide Web Consortium">W3C</abbr> Patent Policy</a>.
-       
+        <a href="https://www.w3.org/Consortium/Patent-Policy/"><abbr title="World Wide Web Consortium">W3C</abbr> Patent
+          Policy</a>.
+      
     
                 <abbr title="World Wide Web Consortium">W3C</abbr> maintains a
-                <a rel="disclosure" href="https://www.w3.org/2004/01/pp-impl/83907/status">public list of any patent disclosures</a>
+                <a rel="disclosure" href="https://www.w3.org/groups/wg/apa/ipr">public list of any patent disclosures</a>
           made in connection with the deliverables of
           the group; that page also includes
           instructions for disclosing a patent. An individual who has actual
@@ -113,99 +207,115 @@
           must disclose the information in accordance with
           <a href="https://www.w3.org/Consortium/Patent-Policy/#sec-Disclosure">section 6 of the <abbr title="World Wide Web Consortium">W3C</abbr> Patent Policy</a>.
         
-    
   </p><p>
                   This document is governed by the
-                  <a id="w3c_process_revision" href="https://www.w3.org/2019/Process-20190301/">1 March 2019 <abbr title="World Wide Web Consortium">W3C</abbr> Process Document</a>.
-                </p></section><nav id="toc"><h2 class="introductory" id="table-of-contents">Table of Contents</h2><ol class="toc"><li class="tocline"><a class="tocxref" href="#abstract">Abstract</a></li><li class="tocline"><a class="tocxref" href="#sotd">Status of This Document</a></li><li class="tocline"><a class="tocxref" href="#introduction"><bdi class="secno">1. </bdi>Introduction</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#checklist"><bdi class="secno">1.1 </bdi>Checklist</a></li><li class="tocline"><a class="tocxref" href="#goals"><bdi class="secno">1.2 </bdi>Goals</a></li><li class="tocline"><a class="tocxref" href="#audience"><bdi class="secno">1.3 </bdi>Audience</a></li><li class="tocline"><a class="tocxref" href="#scope"><bdi class="secno">1.4 </bdi>Scope</a></li><li class="tocline"><a class="tocxref" href="#approach"><bdi class="secno">1.5 </bdi>Approach</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#inventory-user-needs"><bdi class="secno">1.5.1 </bdi>Inventory user needs</a></li><li class="tocline"><a class="tocxref" href="#identify-ways-to-meet-needs"><bdi class="secno">1.5.2 </bdi>Identify ways to meet needs</a></li><li class="tocline"><a class="tocxref" href="#develop-technology-guidelines"><bdi class="secno">1.5.3 </bdi>Develop technology guidelines</a></li></ol></li><li class="tocline"><a class="tocxref" href="#explanation-of-user-needs"><bdi class="secno">1.6 </bdi>Explanation of User Needs</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#evolution-of-user-needs"><bdi class="secno">1.6.1 </bdi>Evolution of user needs</a></li><li class="tocline"><a class="tocxref" href="#assumptions"><bdi class="secno">1.6.2 </bdi>Assumptions </a></li><li class="tocline"><a class="tocxref" href="#applicability-of-needs"><bdi class="secno">1.6.3 </bdi>Applicability of Needs </a></li></ol></li></ol></li><li class="tocline"><a class="tocxref" href="#collected-user-needs"><bdi class="secno">2. </bdi>Collected User Needs</a></li><li class="tocline"><a class="tocxref" href="#meeting-user-needs"><bdi class="secno">3. </bdi>Meeting User Needs</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#ways-to-meet-user-needs"><bdi class="secno">3.1 </bdi>Ways to Meet User Needs</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#author-implementation"><bdi class="secno">3.1.1 </bdi>Author Implementation</a></li><li class="tocline"><a class="tocxref" href="#user-agent-features"><bdi class="secno">3.1.2 </bdi>User Agent Features</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#accessibility-support-in-mainstream-user-agents"><bdi class="secno">3.1.2.1 </bdi>Accessibility Support in Mainstream User Agents</a></li><li class="tocline"><a class="tocxref" href="#assistive-technology"><bdi class="secno">3.1.2.2 </bdi>Assistive Technology</a></li><li class="tocline"><a class="tocxref" href="#accessibility-apis"><bdi class="secno">3.1.2.3 </bdi>Accessibility APIs</a></li></ol></li></ol></li><li class="tocline"><a class="tocxref" href="#meeting-user-needs-table"><bdi class="secno">3.2 </bdi>Meeting User Needs Table</a></li></ol></li><li class="tocline"><a class="tocxref" href="#framework-for-accessible-specification-of-technologies"><bdi class="secno">4. </bdi>Framework for Accessible Specification of Technologies</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#alternative-content"><bdi class="secno">4.1 </bdi>Alternative Content</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#text-alternatives"><bdi class="secno">4.1.1 </bdi>Text Alternatives</a></li><li class="tocline"><a class="tocxref" href="#rich-alternatives"><bdi class="secno">4.1.2 </bdi>Rich Alternatives</a></li></ol></li><li class="tocline"><a class="tocxref" href="#color"><bdi class="secno">4.2 </bdi>Color</a></li><li class="tocline"><a class="tocxref" href="#device-independence"><bdi class="secno">4.3 </bdi>Device Independence</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#universal-meaning-support"><bdi class="secno">4.3.1 </bdi>Universal meaning support</a></li><li class="tocline"><a class="tocxref" href="#compatibility-with-aapis"><bdi class="secno">4.3.2 </bdi>Compatibility with AAPIs</a></li><li class="tocline"><a class="tocxref" href="#hardware-interfaces"><bdi class="secno">4.3.3 </bdi>Hardware Interfaces</a></li></ol></li><li class="tocline"><a class="tocxref" href="#user-customization"><bdi class="secno">4.4 </bdi>User Customization</a></li><li class="tocline"><a class="tocxref" href="#user-control"><bdi class="secno">4.5 </bdi>User Control</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#blinking-flashing"><bdi class="secno">4.5.1 </bdi>Blinking / Flashing</a></li><li class="tocline"><a class="tocxref" href="#automatic-actions"><bdi class="secno">4.5.2 </bdi>Automatic actions</a></li><li class="tocline"><a class="tocxref" href="#time-based-content"><bdi class="secno">4.5.3 </bdi>Time-based content</a></li></ol></li><li class="tocline"><a class="tocxref" href="#focus"><bdi class="secno">4.6 </bdi>Focus</a></li><li class="tocline"><a class="tocxref" href="#audiovisual-content"><bdi class="secno">4.7 </bdi>Audiovisual Content</a></li><li class="tocline"><a class="tocxref" href="#extensibility"><bdi class="secno">4.8 </bdi>Extensibility</a></li><li class="tocline"><a class="tocxref" href="#alternate-view-modalities"><bdi class="secno">4.9 </bdi>Alternate view modalities</a></li><li class="tocline"><a class="tocxref" href="#timing"><bdi class="secno">4.10 </bdi>Timing</a></li><li class="tocline"><a class="tocxref" href="#user-input"><bdi class="secno">4.11 </bdi>User input</a></li></ol></li><li class="tocline"><a class="tocxref" href="#acknowledgments"><bdi class="secno">A. </bdi>Acknowledgments</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#ack_group"><bdi class="secno">A.1 </bdi>Participants in the PFWG at the time of publication</a></li><li class="tocline"><a class="tocxref" href="#ack_funders"><bdi class="secno">A.2 </bdi>Enabling funders</a></li></ol></li></ol></nav>
-		<section id="introduction">
-			<h2 id="x1-introduction"><bdi class="secno">1. </bdi>Introduction<a class="self-link" aria-label="§" href="#introduction"></a></h2>
-			<section id="checklist">
-				<h3 id="x1-1-checklist"><bdi class="secno">1.1 </bdi>Checklist<a class="self-link" aria-label="§" href="#checklist"></a></h3>
+                  <a id="w3c_process_revision" href="https://www.w3.org/2021/Process-20211102/">2 November 2021 <abbr title="World Wide Web Consortium">W3C</abbr> Process Document</a>.
+                </p></section><nav id="toc"><h2 class="introductory" id="table-of-contents">Table of Contents</h2><ol class="toc"><li class="tocline"><a class="tocxref" href="#abstract">Abstract</a></li><li class="tocline"><a class="tocxref" href="#sotd">Status of This Document</a></li><li class="tocline"><a class="tocxref" href="#introduction"><bdi class="secno">1. </bdi>Introduction</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#checklist"><bdi class="secno">1.1 </bdi>Checklist</a></li><li class="tocline"><a class="tocxref" href="#goals"><bdi class="secno">1.2 </bdi>Goals</a></li><li class="tocline"><a class="tocxref" href="#audience"><bdi class="secno">1.3 </bdi>Audience</a></li><li class="tocline"><a class="tocxref" href="#scope"><bdi class="secno">1.4 </bdi>Scope</a></li><li class="tocline"><a class="tocxref" href="#approach"><bdi class="secno">1.5 </bdi>Approach</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#inventory-functional-and-user-needs"><bdi class="secno">1.5.1 </bdi>Inventory functional and user needs</a></li><li class="tocline"><a class="tocxref" href="#functional-needs"><bdi class="secno">1.5.2 </bdi>Functional needs</a></li><li class="tocline"><a class="tocxref" href="#user-needs"><bdi class="secno">1.5.3 </bdi>User needs</a></li></ol></li><li class="tocline"><a class="tocxref" href="#matrix-of-functional-and-user-needs"><bdi class="secno">1.6 </bdi>Matrix of functional and user needs</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#identify-ways-to-meet-needs"><bdi class="secno">1.6.1 </bdi>Identify ways to meet needs</a></li><li class="tocline"><a class="tocxref" href="#develop-technology-guidelines"><bdi class="secno">1.6.2 </bdi>Develop technology guidelines</a></li></ol></li><li class="tocline"><a class="tocxref" href="#explanation-of-user-needs"><bdi class="secno">1.7 </bdi>Explanation of User Needs</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#evolution-of-user-needs"><bdi class="secno">1.7.1 </bdi>Evolution of user needs</a></li><li class="tocline"><a class="tocxref" href="#assumptions"><bdi class="secno">1.7.2 </bdi>Assumptions </a></li><li class="tocline"><a class="tocxref" href="#applicability-of-needs"><bdi class="secno">1.7.3 </bdi>Applicability of Needs </a></li></ol></li></ol></li><li class="tocline"><a class="tocxref" href="#functional-needs-0"><bdi class="secno">2. </bdi>Functional Needs</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#safety"><bdi class="secno">2.1 </bdi>Safety</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#use-without-physical-harm-or-risk-to-self-or-others-within-a-physical-environment"><bdi class="secno">2.1.1 </bdi>Use without physical harm or risk (to self or others within a physical environment)</a></li></ol></li><li class="tocline"><a class="tocxref" href="#sensory"><bdi class="secno">2.2 </bdi>Sensory</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#vision-and-visual"><bdi class="secno">2.2.1 </bdi>Vision and Visual</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#use-without-vision"><bdi class="secno">2.2.1.1 </bdi>Use without vision </a><ol class="toc"><li class="tocline"><a class="tocxref" href="#use-as-blind-born-without-vision"><bdi class="secno">2.2.1.1.1 </bdi>Use as blind (born without vision)</a></li><li class="tocline"><a class="tocxref" href="#use-with-blindness-acquired-blindness-during-lifetime"><bdi class="secno">2.2.1.1.2 </bdi>Use with blindness (acquired blindness during lifetime)</a></li></ol></li><li class="tocline"><a class="tocxref" href="#use-with-limited-vision"><bdi class="secno">2.2.1.2 </bdi>Use with limited vision </a><ol class="toc"><li class="tocline"><a class="tocxref" href="#use-with-limited-central-vision"><bdi class="secno">2.2.1.2.1 </bdi>Use with limited central vision</a></li><li class="tocline"><a class="tocxref" href="#use-with-limited-peripheral-vision"><bdi class="secno">2.2.1.2.2 </bdi>Use with limited peripheral vision</a></li><li class="tocline"><a class="tocxref" href="#use-with-limited-interocular-acuity-or-monocular-input"><bdi class="secno">2.2.1.2.3 </bdi>Use with limited interocular acuity or monocular input</a></li></ol></li><li class="tocline"><a class="tocxref" href="#use-without-color-perception"><bdi class="secno">2.2.1.3 </bdi>Use without color perception</a></li><li class="tocline"><a class="tocxref" href="#use-with-limited-color-perception"><bdi class="secno">2.2.1.4 </bdi>Use with limited color perception</a></li><li class="tocline"><a class="tocxref" href="#use-with-limited-depth-perception"><bdi class="secno">2.2.1.5 </bdi>Use with limited depth perception</a></li><li class="tocline"><a class="tocxref" href="#use-with-limited-orientation-or-spatial-tracking"><bdi class="secno">2.2.1.6 </bdi>Use with limited orientation or spatial tracking</a></li><li class="tocline"><a class="tocxref" href="#use-with-photosensitivity-too-much-or-too-little"><bdi class="secno">2.2.1.7 </bdi>Use with photosensitivity (too much or too little)</a></li></ol></li><li class="tocline"><a class="tocxref" href="#hearing-and-auditory"><bdi class="secno">2.2.2 </bdi>Hearing and Auditory</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#use-without-hearing"><bdi class="secno">2.2.2.1 </bdi>Use without hearing </a><ol class="toc"><li class="tocline"><a class="tocxref" href="#use-as-deaf-born-with-congenital-deafness-and-or-to-a-deaf-family"><bdi class="secno">2.2.2.1.1 </bdi>Use as Deaf (born with congenital deafness and/or to a deaf family)</a></li><li class="tocline"><a class="tocxref" href="#use-as-deaf-acquired-deafness-during-lifetime-after-a-language-was-learned"><bdi class="secno">2.2.2.1.2 </bdi>Use as deaf (acquired deafness during lifetime after a language was learned)</a></li></ol></li><li class="tocline"><a class="tocxref" href="#use-with-limited-hearing"><bdi class="secno">2.2.2.2 </bdi>Use with limited hearing</a></li><li class="tocline"><a class="tocxref" href="#use-with-limited-auditory-processing-speech"><bdi class="secno">2.2.2.3 </bdi>Use with limited auditory processing (speech)</a></li><li class="tocline"><a class="tocxref" href="#use-with-sensorineural-hearing-loss-limited-frequency-range-related-to-age-or-presbycusis-gradual-loss-over-time"><bdi class="secno">2.2.2.4 </bdi>Use with sensorineural hearing loss (limited frequency range) related to age or Presbycusis (gradual loss over time)</a></li></ol></li><li class="tocline"><a class="tocxref" href="#sensory-intersections"><bdi class="secno">2.2.3 </bdi>Sensory Intersections</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#use-without-vision-and-hearing"><bdi class="secno">2.2.3.1 </bdi>Use without vision and hearing </a><ol class="toc"><li class="tocline"><a class="tocxref" href="#use-without-vision-from-birth-then-without-hearing-as-acquired"><bdi class="secno">2.2.3.1.1 </bdi>Use without vision from birth then without hearing as acquired</a></li><li class="tocline"><a class="tocxref" href="#use-without-hearing-from-birth-then-without-vision-as-acquired"><bdi class="secno">2.2.3.1.2 </bdi>Use without hearing from birth then without vision as acquired</a></li></ol></li><li class="tocline"><a class="tocxref" href="#use-with-vestibular-issues"><bdi class="secno">2.2.3.2 </bdi>Use with vestibular issues</a></li><li class="tocline"><a class="tocxref" href="#use-without-spatial-auditory-awareness-or-perception-needs-diegetic-sound"><bdi class="secno">2.2.3.3 </bdi>Use without spatial auditory awareness or perception (needs diegetic sound)</a></li></ol></li></ol></li><li class="tocline"><a class="tocxref" href="#physical"><bdi class="secno">2.3 </bdi>Physical</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#mobility"><bdi class="secno">2.3.1 </bdi>Mobility</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#use-without-mobility"><bdi class="secno">2.3.1.1 </bdi>Use without mobility</a></li><li class="tocline"><a class="tocxref" href="#use-with-limited-mobility"><bdi class="secno">2.3.1.2 </bdi>Use with limited mobility </a><ol class="toc"><li class="tocline"><a class="tocxref" href="#use-with-limited-ambulation"><bdi class="secno">2.3.1.2.1 </bdi>Use with limited ambulation</a></li><li class="tocline"><a class="tocxref" href="#use-with-temporary-or-partial-paralysis"><bdi class="secno">2.3.1.2.2 </bdi>Use with temporary or partial paralysis</a></li></ol></li><li class="tocline"><a class="tocxref" href="#use-with-limited-reach-or-range"><bdi class="secno">2.3.1.3 </bdi>Use with limited reach or range</a></li></ol></li><li class="tocline"><a class="tocxref" href="#motor"><bdi class="secno">2.3.2 </bdi>Motor</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#use-without-hands"><bdi class="secno">2.3.2.1 </bdi>Use without hands</a></li><li class="tocline"><a class="tocxref" href="#use-without-multiple-touchpoint-gesture"><bdi class="secno">2.3.2.2 </bdi>Use without multiple touchpoint gesture</a></li><li class="tocline"><a class="tocxref" href="#use-with-limited-strength"><bdi class="secno">2.3.2.3 </bdi>Use with limited strength</a></li><li class="tocline"><a class="tocxref" href="#use-without-fine-point-control"><bdi class="secno">2.3.2.4 </bdi>Use without fine point control</a></li><li class="tocline"><a class="tocxref" href="#use-without-physical-tracking-speed"><bdi class="secno">2.3.2.5 </bdi>Use without physical tracking speed</a></li><li class="tocline"><a class="tocxref" href="#use-with-tremors"><bdi class="secno">2.3.2.6 </bdi>Use with tremors</a></li></ol></li><li class="tocline"><a class="tocxref" href="#physical-and-sensory-intersections"><bdi class="secno">2.3.3 </bdi>Physical and Sensory Intersections</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#use-with-limited-kinaesthetic-perception-orientation-position-weight-distribution-movement"><bdi class="secno">2.3.3.1 </bdi>Use with limited kinaesthetic perception (orientation, position, weight distribution, movement)</a></li><li class="tocline"><a class="tocxref" href="#use-with-limited-tactile-perception-sensory-processing-or-touch-pressure-sensitivity"><bdi class="secno">2.3.3.2 </bdi>Use with limited tactile perception, sensory processing, or touch pressure sensitivity</a></li><li class="tocline"><a class="tocxref" href="#use-with-chronic-pain-impacting-input-or-interaction-modality-speed-and-or-frequency"><bdi class="secno">2.3.3.3 </bdi>Use with chronic pain impacting input or interaction modality, speed and/or frequency</a></li><li class="tocline"><a class="tocxref" href="#use-without-vision-and-a-motor-disability"><bdi class="secno">2.3.3.4 </bdi>Use without vision and a motor disability</a></li><li class="tocline"><a class="tocxref" href="#use-without-hearing-and-a-motor-disability"><bdi class="secno">2.3.3.5 </bdi>Use without hearing and a motor disability</a></li></ol></li><li class="tocline"><a class="tocxref" href="#speech"><bdi class="secno">2.3.4 </bdi>Speech</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#use-without-vocalization"><bdi class="secno">2.3.4.1 </bdi>Use without vocalization</a></li><li class="tocline"><a class="tocxref" href="#use-with-limited-vocalization-or-volume"><bdi class="secno">2.3.4.2 </bdi>Use with limited vocalization or volume</a></li></ol></li></ol></li><li class="tocline"><a class="tocxref" href="#cognitive"><bdi class="secno">2.4 </bdi>Cognitive</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#attention"><bdi class="secno">2.4.1 </bdi>Attention</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#use-with-limited-ability-to-focus-attention"><bdi class="secno">2.4.1.1 </bdi>Use with limited ability to focus attention</a></li><li class="tocline"><a class="tocxref" href="#use-with-limited-ability-to-direct-attention"><bdi class="secno">2.4.1.2 </bdi>Use with limited ability to direct attention</a></li><li class="tocline"><a class="tocxref" href="#use-with-limited-ability-to-shift-attention"><bdi class="secno">2.4.1.3 </bdi>Use with limited ability to shift attention</a></li></ol></li><li class="tocline"><a class="tocxref" href="#language-and-communication"><bdi class="secno">2.4.2 </bdi>Language and Communication</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#use-with-limited-ability-to-comprehend-spoken-language"><bdi class="secno">2.4.2.1 </bdi>Use with limited ability to comprehend spoken language&nbsp;</a></li><li class="tocline"><a class="tocxref" href="#use-without-ability-to-read"><bdi class="secno">2.4.2.2 </bdi>Use without ability to read&nbsp;</a></li><li class="tocline"><a class="tocxref" href="#use-with-limited-ability-to-recognize-written-language"><bdi class="secno">2.4.2.3 </bdi>Use with limited ability to recognize written language</a></li><li class="tocline"><a class="tocxref" href="#use-with-limited-ability-to-comprehend-written-language"><bdi class="secno">2.4.2.4 </bdi>Use with limited ability to comprehend written language&nbsp;</a></li><li class="tocline"><a class="tocxref" href="#use-without-ability-to-write"><bdi class="secno">2.4.2.5 </bdi>Use without ability to write&nbsp;</a></li><li class="tocline"><a class="tocxref" href="#use-with-limited-ability-to-correctly-write-or-type-words-and-use-punctuation"><bdi class="secno">2.4.2.6 </bdi>Use with limited ability to correctly write (or type) words and use punctuation</a></li><li class="tocline"><a class="tocxref" href="#use-without-understanding-symbols"><bdi class="secno">2.4.2.7 </bdi>Use without understanding symbols</a></li><li class="tocline"><a class="tocxref" href="#use-without-understanding-metaphors-idioms-euphemisms-or-specific-dialect-of-culture-or-location"><bdi class="secno">2.4.2.8 </bdi>Use without understanding metaphors, idioms, euphemisms, or specific dialect of culture or location</a></li></ol></li><li class="tocline"><a class="tocxref" href="#learning"><bdi class="secno">2.4.3 </bdi>Learning</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#use-with-limited-understanding-of-math-and-numeric-concepts"><bdi class="secno">2.4.3.1 </bdi>Use with limited understanding of math and numeric concepts</a></li><li class="tocline"><a class="tocxref" href="#use-with-limited-compositional-skill-simultaneous-thinking-and-input"><bdi class="secno">2.4.3.2 </bdi>Use with limited compositional skill (simultaneous thinking and input)</a></li><li class="tocline"><a class="tocxref" href="#use-with-limited-coordination-skill-motoric-skills-visual-spatial-organizational-memory-and-social"><bdi class="secno">2.4.3.3 </bdi>Use with limited coordination skill (motoric skills, visual-spatial organizational memory, and social)</a></li></ol></li><li class="tocline"><a class="tocxref" href="#memory"><bdi class="secno">2.4.4 </bdi>Memory</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#use-with-limited-short-term-or-working-memory"><bdi class="secno">2.4.4.1 </bdi>Use with limited short-term or working memory&nbsp;</a></li><li class="tocline"><a class="tocxref" href="#use-with-limited-medium-or-long-term-memory"><bdi class="secno">2.4.4.2 </bdi>Use with limited medium or long-term memory</a></li><li class="tocline"><a class="tocxref" href="#use-with-limited-sensory-memory"><bdi class="secno">2.4.4.3 </bdi>Use with limited sensory memory </a><ol class="toc"><li class="tocline"><a class="tocxref" href="#visual"><bdi class="secno">2.4.4.3.1 </bdi>Visual</a></li><li class="tocline"><a class="tocxref" href="#visual-spatial"><bdi class="secno">2.4.4.3.2 </bdi>Visual-spatial</a></li><li class="tocline"><a class="tocxref" href="#auditory"><bdi class="secno">2.4.4.3.3 </bdi>Auditory</a></li></ol></li></ol></li><li class="tocline"><a class="tocxref" href="#executive"><bdi class="secno">2.4.5 </bdi>Executive</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#use-with-limited-planning-organization-sequencing-and-execution-ability"><bdi class="secno">2.4.5.1 </bdi>Use with limited planning, organization, sequencing, and execution ability</a></li><li class="tocline"><a class="tocxref" href="#use-with-limited-emotional-control-and-self-monitoring"><bdi class="secno">2.4.5.2 </bdi>Use with limited emotional control and self monitoring</a></li><li class="tocline"><a class="tocxref" href="#use-with-limited-judgment"><bdi class="secno">2.4.5.3 </bdi>Use with limited judgment</a></li></ol></li><li class="tocline"><a class="tocxref" href="#mental-health"><bdi class="secno">2.4.6 </bdi>Mental Health</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#use-with-debilitating-sensitivity-to-negative-emotional-stimuli"><bdi class="secno">2.4.6.1 </bdi>Use with debilitating sensitivity to negative emotional stimuli</a></li></ol></li><li class="tocline"><a class="tocxref" href="#cognitive-and-sensory-intersections"><bdi class="secno">2.4.7 </bdi>Cognitive and Sensory Intersections</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#use-with-interocular-transfer-of-visual-memory-retrieval-based-on-limited-acuity-in-a-single-eye"><bdi class="secno">2.4.7.1 </bdi>Use with interocular transfer of visual memory (retrieval based on limited acuity in a single eye)</a></li><li class="tocline"><a class="tocxref" href="#use-with-limited-phonological-or-phonemic-awareness"><bdi class="secno">2.4.7.2 </bdi>Use with limited phonological or phonemic awareness</a></li></ol></li></ol></li><li class="tocline"><a class="tocxref" href="#independence"><bdi class="secno">2.5 </bdi>Independence</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#independence-0"><bdi class="secno">2.5.1 </bdi>Independence</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#use-without-autonomy-or-agency"><bdi class="secno">2.5.1.1 </bdi>Use without autonomy or agency</a></li><li class="tocline"><a class="tocxref" href="#use-without-privacy"><bdi class="secno">2.5.1.2 </bdi>Use without privacy</a></li></ol></li></ol></li></ol></li><li class="tocline"><a class="tocxref" href="#user-needs-0"><bdi class="secno">3. </bdi>User Needs</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#perceivable"><bdi class="secno">3.1 </bdi>Perceivable</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#provide-consistent-content"><bdi class="secno">3.1.1 </bdi>Provide consistent content&nbsp;</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#users-can-perceive"><bdi class="secno">3.1.1.1 </bdi>Users can perceive </a><ol class="toc"><li class="tocline"><a class="tocxref" href="#content"><bdi class="secno">3.1.1.1.1 </bdi>Content&nbsp;</a></li><li class="tocline"><a class="tocxref" href="#controls"><bdi class="secno">3.1.1.1.2 </bdi>Controls</a></li><li class="tocline"><a class="tocxref" href="#structure"><bdi class="secno">3.1.1.1.3 </bdi>Structure</a></li><li class="tocline"><a class="tocxref" href="#purpose"><bdi class="secno">3.1.1.1.4 </bdi>Purpose</a></li><li class="tocline"><a class="tocxref" href="#input-values"><bdi class="secno">3.1.1.1.5 </bdi>Input Values</a></li></ol></li></ol></li><li class="tocline"><a class="tocxref" href="#reveal-changed-content"><bdi class="secno">3.1.2 </bdi>Reveal changed content</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#users-can-perceive-changes-to"><bdi class="secno">3.1.2.1 </bdi>Users can perceive changes to </a><ol class="toc"><li class="tocline"><a class="tocxref" href="#content-0"><bdi class="secno">3.1.2.1.1 </bdi>Content</a></li><li class="tocline"><a class="tocxref" href="#controls-0"><bdi class="secno">3.1.2.1.2 </bdi>Controls</a></li><li class="tocline"><a class="tocxref" href="#purpose-0"><bdi class="secno">3.1.2.1.3 </bdi>Purpose</a></li><li class="tocline"><a class="tocxref" href="#input-values-0"><bdi class="secno">3.1.2.1.4 </bdi>Input Values</a></li></ol></li></ol></li></ol></li><li class="tocline"><a class="tocxref" href="#operable"><bdi class="secno">3.2 </bdi>Operable</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#provide-consistent-interactions"><bdi class="secno">3.2.1 </bdi>Provide consistent interactions</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#users-can-operate"><bdi class="secno">3.2.1.1 </bdi>Users can operate </a><ol class="toc"><li class="tocline"><a class="tocxref" href="#content-1"><bdi class="secno">3.2.1.1.1 </bdi>Content</a></li><li class="tocline"><a class="tocxref" href="#controls-1"><bdi class="secno">3.2.1.1.2 </bdi>Controls</a></li><li class="tocline"><a class="tocxref" href="#navigation"><bdi class="secno">3.2.1.1.3 </bdi>Navigation</a></li></ol></li><li class="tocline"><a class="tocxref" href="#users-can-navigate"><bdi class="secno">3.2.1.2 </bdi>Users can navigate </a><ol class="toc"><li class="tocline"><a class="tocxref" href="#structure-0"><bdi class="secno">3.2.1.2.1 </bdi>Structure</a></li></ol></li></ol></li><li class="tocline"><a class="tocxref" href="#allow-adjustable-content"><bdi class="secno">3.2.2 </bdi>Allow adjustable content</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#users-can-adjust"><bdi class="secno">3.2.2.1 </bdi>Users can adjust </a><ol class="toc"><li class="tocline"><a class="tocxref" href="#duration-requirements"><bdi class="secno">3.2.2.1.1 </bdi>Duration requirements</a></li><li class="tocline"><a class="tocxref" href="#content-orientation"><bdi class="secno">3.2.2.1.2 </bdi>Content orientation</a></li><li class="tocline"><a class="tocxref" href="#orientation-in-space"><bdi class="secno">3.2.2.1.3 </bdi>Orientation in space</a></li></ol></li></ol></li></ol></li><li class="tocline"><a class="tocxref" href="#understandable"><bdi class="secno">3.3 </bdi>Understandable</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#make-appearance-understandable"><bdi class="secno">3.3.1 </bdi>Make appearance understandable</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#users-can-understand"><bdi class="secno">3.3.1.1 </bdi>Users can understand </a><ol class="toc"><li class="tocline"><a class="tocxref" href="#content-2"><bdi class="secno">3.3.1.1.1 </bdi>Content</a></li><li class="tocline"><a class="tocxref" href="#controls-2"><bdi class="secno">3.3.1.1.2 </bdi>Controls</a></li><li class="tocline"><a class="tocxref" href="#structure-1"><bdi class="secno">3.3.1.1.3 </bdi>Structure</a></li><li class="tocline"><a class="tocxref" href="#navigation-0"><bdi class="secno">3.3.1.1.4 </bdi>Navigation</a></li><li class="tocline"><a class="tocxref" href="#changed-content"><bdi class="secno">3.3.1.1.5 </bdi>Changed content</a></li><li class="tocline"><a class="tocxref" href="#purpose-1"><bdi class="secno">3.3.1.1.6 </bdi>Purpose</a></li><li class="tocline"><a class="tocxref" href="#relationships"><bdi class="secno">3.3.1.1.7 </bdi>Relationships</a></li></ol></li></ol></li><li class="tocline"><a class="tocxref" href="#provide-help-and-instructions"><bdi class="secno">3.3.2 </bdi>Provide help and instructions</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#users-get-instructions-for"><bdi class="secno">3.3.2.1 </bdi>Users get instructions for </a><ol class="toc"><li class="tocline"><a class="tocxref" href="#content-3"><bdi class="secno">3.3.2.1.1 </bdi>Content</a></li><li class="tocline"><a class="tocxref" href="#interaction"><bdi class="secno">3.3.2.1.2 </bdi>Interaction</a></li><li class="tocline"><a class="tocxref" href="#support-for-modalities"><bdi class="secno">3.3.2.1.3 </bdi>Support for modalities</a></li><li class="tocline"><a class="tocxref" href="#personalization-options"><bdi class="secno">3.3.2.1.4 </bdi>Personalization options</a></li><li class="tocline"><a class="tocxref" href="#processes"><bdi class="secno">3.3.2.1.5 </bdi>Processes</a></li></ol></li><li class="tocline"><a class="tocxref" href="#users-get-help-through"><bdi class="secno">3.3.2.2 </bdi>Users get help through </a><ol class="toc"><li class="tocline"><a class="tocxref" href="#moderated-form-input"><bdi class="secno">3.3.2.2.1 </bdi>Moderated (form) input</a></li><li class="tocline"><a class="tocxref" href="#alert-awareness"><bdi class="secno">3.3.2.2.2 </bdi>Alert awareness</a></li></ol></li></ol></li><li class="tocline"><a class="tocxref" href="#make-position-and-orientation-clear"><bdi class="secno">3.3.3 </bdi>Make position and orientation clear</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#users-can-identify-their-position-in"><bdi class="secno">3.3.3.1 </bdi>Users can identify their position in </a><ol class="toc"><li class="tocline"><a class="tocxref" href="#content-4"><bdi class="secno">3.3.3.1.1 </bdi>Content</a></li><li class="tocline"><a class="tocxref" href="#context"><bdi class="secno">3.3.3.1.2 </bdi>Context</a></li><li class="tocline"><a class="tocxref" href="#a-process"><bdi class="secno">3.3.3.1.3 </bdi>A process</a></li><li class="tocline"><a class="tocxref" href="#a-space"><bdi class="secno">3.3.3.1.4 </bdi>A space</a></li></ol></li><li class="tocline"><a class="tocxref" href="#users-can-orientate-themselves-in"><bdi class="secno">3.3.3.2 </bdi>Users can orientate themselves in </a><ol class="toc"><li class="tocline"><a class="tocxref" href="#immersive-environments"><bdi class="secno">3.3.3.2.1 </bdi>Immersive environments</a></li><li class="tocline"><a class="tocxref" href="#augmented-environments"><bdi class="secno">3.3.3.2.2 </bdi>Augmented environments</a></li></ol></li></ol></li><li class="tocline"><a class="tocxref" href="#make-discoverable"><bdi class="secno">3.3.4 </bdi>Make discoverable</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#users-can-discover"><bdi class="secno">3.3.4.1 </bdi>Users can discover </a><ol class="toc"><li class="tocline"><a class="tocxref" href="#content-5"><bdi class="secno">3.3.4.1.1 </bdi>Content</a></li><li class="tocline"><a class="tocxref" href="#context-0"><bdi class="secno">3.3.4.1.2 </bdi>Context</a></li><li class="tocline"><a class="tocxref" href="#customization-options"><bdi class="secno">3.3.4.1.3 </bdi>Customization options</a></li></ol></li></ol></li></ol></li><li class="tocline"><a class="tocxref" href="#personalization"><bdi class="secno">3.4 </bdi>Personalization</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#customization"><bdi class="secno">3.4.1 </bdi>Customization</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#users-can-customize-or-request"><bdi class="secno">3.4.1.1 </bdi>Users can customize or request</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#content-6"><bdi class="secno">3.4.1.1.1 </bdi>Content</a></li><li class="tocline"><a class="tocxref" href="#context-1"><bdi class="secno">3.4.1.1.2 </bdi>Context</a></li><li class="tocline"><a class="tocxref" href="#functionality-settings"><bdi class="secno">3.4.1.1.3 </bdi>Functionality / settings</a></li></ol></li><li class="tocline"><a class="tocxref" href="#users-get-customized-via-platform"><bdi class="secno">3.4.1.2 </bdi>Users get customized (via platform) </a><ol class="toc"><li class="tocline"><a class="tocxref" href="#content-7"><bdi class="secno">3.4.1.2.1 </bdi>Content</a></li><li class="tocline"><a class="tocxref" href="#context-2"><bdi class="secno">3.4.1.2.2 </bdi>Context</a></li><li class="tocline"><a class="tocxref" href="#functionality"><bdi class="secno">3.4.1.2.3 </bdi>Functionality</a></li></ol></li><li class="tocline"><a class="tocxref" href="#users-can-control"><bdi class="secno">3.4.1.3 </bdi>Users can control </a><ol class="toc"><li class="tocline"><a class="tocxref" href="#time-sensitive-content"><bdi class="secno">3.4.1.3.1 </bdi>Time-sensitive content</a></li><li class="tocline"><a class="tocxref" href="#time-sensitive-tasks"><bdi class="secno">3.4.1.3.2 </bdi>Time-sensitive tasks</a></li><li class="tocline"><a class="tocxref" href="#time-based-media"><bdi class="secno">3.4.1.3.3 </bdi>Time-based media</a></li></ol></li></ol></li><li class="tocline"><a class="tocxref" href="#preferences"><bdi class="secno">3.4.2 </bdi>Preferences</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#users-personalization-preferences"><bdi class="secno">3.4.2.1 </bdi>Users personalization preferences </a><ol class="toc"><li class="tocline"><a class="tocxref" href="#are-allowed"><bdi class="secno">3.4.2.1.1 </bdi>Are allowed</a></li><li class="tocline"><a class="tocxref" href="#are-honored-by-content-authors"><bdi class="secno">3.4.2.1.2 </bdi>Are honored by content authors</a></li><li class="tocline"><a class="tocxref" href="#are-not-compromised-by-security"><bdi class="secno">3.4.2.1.3 </bdi>Are not compromised by security</a></li><li class="tocline"><a class="tocxref" href="#do-not-compromise-privacy"><bdi class="secno">3.4.2.1.4 </bdi>Do not compromise privacy</a></li></ol></li><li class="tocline"><a class="tocxref" href="#users-can-device-independently"><bdi class="secno">3.4.2.2 </bdi>Users can, device independently </a><ol class="toc"><li class="tocline"><a class="tocxref" href="#interact"><bdi class="secno">3.4.2.2.1 </bdi>Interact</a></li><li class="tocline"><a class="tocxref" href="#input-data"><bdi class="secno">3.4.2.2.2 </bdi>Input data</a></li><li class="tocline"><a class="tocxref" href="#route-and-control-output"><bdi class="secno">3.4.2.2.3 </bdi>Route and control output</a></li></ol></li></ol></li></ol></li><li class="tocline"><a class="tocxref" href="#deceptive-patterns"><bdi class="secno">3.5 </bdi>Deceptive Patterns</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#distractions-and-interruptions"><bdi class="secno">3.5.1 </bdi>Distractions and Interruptions</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#users-attention-can-be"><bdi class="secno">3.5.1.1 </bdi>Users attention can be </a><ol class="toc"><li class="tocline"><a class="tocxref" href="#focussed"><bdi class="secno">3.5.1.1.1 </bdi>Focussed</a></li><li class="tocline"><a class="tocxref" href="#directed"><bdi class="secno">3.5.1.1.2 </bdi>Directed</a></li><li class="tocline"><a class="tocxref" href="#shifted"><bdi class="secno">3.5.1.1.3 </bdi>Shifted</a></li></ol></li></ol></li><li class="tocline"><a class="tocxref" href="#no-harm"><bdi class="secno">3.5.2 </bdi>No Harm</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#users-are-not-harmed"><bdi class="secno">3.5.2.1 </bdi>Users are not harmed </a><ol class="toc"><li class="tocline"><a class="tocxref" href="#neurologically"><bdi class="secno">3.5.2.1.1 </bdi>Neurologically</a></li><li class="tocline"><a class="tocxref" href="#emotionally"><bdi class="secno">3.5.2.1.2 </bdi>Emotionally</a></li></ol></li></ol></li></ol></li></ol></li><li class="tocline"><a class="tocxref" href="#meeting-user-needs"><bdi class="secno">4. </bdi>Meeting User Needs</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#ways-to-meet-user-needs"><bdi class="secno">4.1 </bdi>Ways to Meet User Needs</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#author-implementation"><bdi class="secno">4.1.1 </bdi>Author Implementation</a></li><li class="tocline"><a class="tocxref" href="#user-agent-features"><bdi class="secno">4.1.2 </bdi>User Agent Features</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#accessibility-support-in-mainstream-user-agents"><bdi class="secno">4.1.2.1 </bdi>Accessibility Support in Mainstream User Agents</a></li><li class="tocline"><a class="tocxref" href="#assistive-technology"><bdi class="secno">4.1.2.2 </bdi>Assistive Technology</a></li><li class="tocline"><a class="tocxref" href="#accessibility-apis"><bdi class="secno">4.1.2.3 </bdi>Accessibility APIs</a></li></ol></li></ol></li><li class="tocline"><a class="tocxref" href="#meeting-user-needs-table"><bdi class="secno">4.2 </bdi>Meeting User Needs Table</a></li></ol></li><li class="tocline"><a class="tocxref" href="#framework-for-accessible-specification-of-technologies"><bdi class="secno">5. </bdi>Framework for Accessible Specification of Technologies</a></li><li class="tocline"><a class="tocxref" href="#acknowledgments"><bdi class="secno">A. </bdi>Acknowledgments</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#ack_group"><bdi class="secno">A.1 </bdi>Participants active in the development of this document</a></li><li class="tocline"><a class="tocxref" href="#enabling-funders"><bdi class="secno">A.2 </bdi>Enabling funders</a></li></ol></li></ol></nav>
+		<section id="introduction"><div class="header-wrapper"><h2 id="x1-introduction"><bdi class="secno">1. </bdi>Introduction</h2><a class="self-link" href="#introduction" aria-label="Permalink for Section 1."></a></div>
+			
+			<section id="checklist"><div class="header-wrapper"><h3 id="x1-1-checklist"><bdi class="secno">1.1 </bdi>Checklist</h3><a class="self-link" href="#checklist" aria-label="Permalink for Section 1.1"></a></div>
+				
 				<p>This document is accompanied by a <a href="checklist.html">checklist</a> which is more complete and usable for groups evaluating technologies at this time.</p>
 			</section>
-			<section id="goals">
-				<h3 id="x1-2-goals"><bdi class="secno">1.2 </bdi>Goals<a class="self-link" aria-label="§" href="#goals"></a></h3>
+			<section id="goals"><div class="header-wrapper"><h3 id="x1-2-goals"><bdi class="secno">1.2 </bdi>Goals</h3><a class="self-link" href="#goals" aria-label="Permalink for Section 1.2"></a></div>
+				
                 <p>Numerous guidelines exist for creating and supporting content that is accessible to people with disabilities, on and off the Web. When these guidelines are supported in the entire web ecosystem, content creators can author accessible content, and expect the accessibility features to be made available by user agents, including assistive technologies when needed. Authoring tools support creation of accessible content, and accessibility features survive transmission to different systems or conversion of content to different formats.</p>
                 <p>Nearly all of these accessibility features depend on support in some form from the technology in which content is encoded, transmitted, and sometimes transformed. But there is not yet a set of well-documented guidance for such technologies. Instead, requirements are inferred from authoring and user agent guidelines. This makes it complicated for technology creators to ensure they have met the full set of needs. Review from accessibility specialists is limited by bandwidth and expertise, so does not fully address that problem. As a result, varying technologies provide various levels of support with varying levels of compatibility with other technologies. These issues at the core layers of Web technology impact the progress that can be made from support of higher-level guidelines.</p>
                 <p>Framework for Accessible Specification of Technologies aims to fill this gap. It is intended to be a single, well-considered set of guidelines addressing specifically the features technologies need to provide to support accessible. These guidelines relate to the requirements of other guidelines but should not be confused with them. The goal of FAST is to provide a single source of guidelines for Web technology accessibility. They relate to other guidelines and documentation to provide additional information and rationale for the requirement, but are intended to be a self-sufficient set of guidelines that technology creators can follow.</p>
 			</section>
-			<section id="audience">
-				<h3 id="x1-3-audience"><bdi class="secno">1.3 </bdi>Audience<a class="self-link" aria-label="§" href="#audience"></a></h3>
+			<section id="audience"><div class="header-wrapper"><h3 id="x1-3-audience"><bdi class="secno">1.3 </bdi>Audience</h3><a class="self-link" href="#audience" aria-label="Permalink for Section 1.3"></a></div>
+				
                 <p>The primary audience of FAST is creators of Web technologies. Most of the guidelines relate to content and presentation technologies like HTML, CSS, SVG, PDF, audio/video formats, etc. Some guidelines also address data formats, interchange formats, transmission protocols, etc., usually aimed at ensuring these technologies preserve the accessibility features of content impacted by these technologies. Because of this broad set of relevant technologies, all Web technology creators are considered part of the audience for FAST.</p>
                 <p>Secondary audience include creators of higher level accessibility guidelines and other advocates for web accessibility features. Because FAST has a strong grounding in user needs, researchers and advocates who identify the accessibility requirements of web users with disabilities are also an important audience.</p>
 			</section>
-				<section id="scope">
-					<h3 id="x1-4-scope"><bdi class="secno">1.4 </bdi>Scope<a class="self-link" aria-label="§" href="#scope"></a></h3>
+				<section id="scope"><div class="header-wrapper"><h3 id="x1-4-scope"><bdi class="secno">1.4 </bdi>Scope</h3><a class="self-link" href="#scope" aria-label="Permalink for Section 1.4"></a></div>
+					
 					<p>Framework for Accessible Specification of Technologies is a product of the World Wide Web Consortium and as such targets only the accessibility requirements of web technologies. Many of the user needs are the same for web use and non-web use, so FAST will necessarily overlap and hopefully be compatible with similar guidelines addressing non-web space. Nonetheless, FAST is not designed to be used for non-web technologies and there could be key differences. Furthermore, there are user needs that exist outside the web that do not impact the web, and those needs are completely unaddressed by FAST.</p>
                     <p>In spite of these caveats about the scope of FAST, this scope will evolve as the Web does. More and more technologies are becoming part of the Web, and bringing user needs to the Web along with them. For instance, strictly hardware accessibility issues may be non-web requirements, but the Web of Things brings many of these issues closer to the Web than in the past. FAST will need to reflect this evolution, and future versions may be required to address user needs that are new to the Web.</p>
 				</section>
-			<section id="approach">
-				<h3 id="x1-5-approach"><bdi class="secno">1.5 </bdi>Approach<a class="self-link" aria-label="§" href="#approach"></a></h3>
-                <p>The goal of FAST is to help ensure that web technologies meet the needs of users with disabilities. To do this, the work involves three stages:</p>
-                <ul>
-                    <li>Inventory user needs;</li>
-                    <li>Identify ways to meet needs;</li>
-                    <li>Develop technology guidelines.</li>
-                </ul>
-                <section id="inventory-user-needs">
-                    <h4 id="x1-5-1-inventory-user-needs"><bdi class="secno">1.5.1 </bdi>Inventory user needs<a class="self-link" aria-label="§" href="#inventory-user-needs"></a></h4>
-                    <p>The first step in the development of these guidelines is to inventory known user needs. Many user needs affecting web content accessibility are well known and documented in multiple places. These needs are collected and related to each other in order to arrive at a single set of known needs. Sources examined in the development of these guidelines include:</p>
-                    <ul>
-                        <li><a href="http://www.jtc1access.org/documents/swga_339_DTR_29138-1_User_Needs_Summary.zip">JTC 1 User Needs</a>;
-                        </li>
-                    	<li><a href="https://www.iso.org/standard/70913.html">ISO/IEC 30071-1 Information technology — Development of user interface accessibility — Part 1: A code of practice for creating accessible ICT products and services</a></li>
-                        <li><a href="https://www.w3.org/TR/WCAG20/">WCAG 2.0</a>;</li>
-                        <li><a href="https://www.w3.org/TR/UAAG20/">UAAG 2.0</a>;</li>
-                        <li><a href="https://www.w3.org/TR/ATAG20/">ATAG 2.0</a>;</li>
-                        <li><a href="https://www.w3.org/WAI/GL/mobile-a11y-tf/wiki/Main_Page">Mobile gap analysis</a>;</li>
-                        <li><a href="https://www.w3.org/WAI/PF/cognitive-a11y-tf/wiki/Main_Page">Cognitive gap analyses</a>;</li>
-                        <li><a href="https://www.w3.org/TR/media-accessibility-reqs/">Media Accessibility User Requirements</a>;</li>
-                        <li> Sources from other advocacy organizations.</li>
-                    </ul>
-                    <div class="note" role="note" id="issue-container-generatedID"><div role="heading" class="note-title marker" id="h-note" aria-level="5"><span>Note</span></div><p class="">Note the goal of this exercise is not to supplant other good work in this field. The aim is to assemble disparate sources if knowledge about user needs in one place, to facilitate analysis. This work is likely to spin off from the core work of developing FAST. If another organization creates a sufficiently rich collection of documented user needs it will be possible to use that resource rather than reinvent the work in <abbr title="World Wide Web Consortium">W3C</abbr>.</p></div>
-                </section>
-                <section id="identify-ways-to-meet-needs">
-                    <h4 id="x1-5-2-identify-ways-to-meet-needs"><bdi class="secno">1.5.2 </bdi>Identify ways to meet needs<a class="self-link" aria-label="§" href="#identify-ways-to-meet-needs"></a></h4>
-                    <p>The second stage in development of the guidelines is to identify ways these needs can be met. There are three high-level ways user needs can be met:</p>
-                    <ul>
-                        <li>technology features;</li>
-                        <li>author implementation;</li>
-                        <li>user agent support.</li>
-                    </ul>
-				<p>These are not mutually exclusive categories. A given user need could be met by more than one of these categories, but the ability of a given category to meet a user need implies the need for guidelines targeting that category. In policy setting and evaluation there may be a preference hierarchy for how best to meet needs, e.g., user agent support of standard features is preferred, but author technical override is needed if user agent support is lacking. </p>
-                    <p>Some needs can be met with present technology only via one of these routes. Other needs can be met by more than one route, and for content to be accessible it is only required that one of the available routes be implemented. Many needs, however, require more than one route to be implemented together for the need to be met. The most common example is that a technology provides a feature, the author uses that feature in the content, and the user agent makes the result available to the user.</p>
-                    <p>All of these ways of meeting user needs are identfied, along with their relationships to each other. Once these approaches are identified, the result is separate lists of requirements for content technologies, authors, and user agents. The relationship among the routes may play a role in prioritization of guidelines, since needs that can only be met by one route may be more important to meet by that route, than needs that could be met by other means as well.</p>
-                </section>
-                <section id="develop-technology-guidelines">
-                    <h4 id="x1-5-3-develop-technology-guidelines"><bdi class="secno">1.5.3 </bdi>Develop technology guidelines<a class="self-link" aria-label="§" href="#develop-technology-guidelines"></a></h4>
-				    <p>From the above analyses, it should also be easy to see where content technology features are required to make it possible to meet user needs. For example: </p><ul>
+			<section id="approach"><div class="header-wrapper"><h3 id="x1-5-approach"><bdi class="secno">1.5 </bdi>Approach</h3><a class="self-link" href="#approach" aria-label="Permalink for Section 1.5"></a></div>
+				
+				<p>The goal of FAST is to help ensure that web technologies meet the needs of users with disabilities. To do this, the work involves three stages:</p>
+				<ul>
+					<li>Inventory functional and user needs;</li>
+					<li>Identify ways to meet needs;</li>
+					<li>Develop technology guidelines.</li>
+				</ul>
+				<section id="inventory-functional-and-user-needs"><div class="header-wrapper"><h4 id="x1-5-1-inventory-functional-and-user-needs"><bdi class="secno">1.5.1 </bdi>Inventory functional and user needs</h4><a class="self-link" href="#inventory-functional-and-user-needs" aria-label="Permalink for Section 1.5.1"></a></div>
+					
+					<p>The first step in the development of these guidelines is to inventory known functional and user needs. Many user needs affecting web content accessibility are well known and documented in multiple places. These needs are collected and related to each other in order to arrive at a single set of known needs. Sources examined in the development of these guidelines include:</p>
+					<ul>
+						<li><a href="http://www.jtc1access.org/documents/swga_339_DTR_29138-1_User_Needs_Summary.zip">JTC 1 User Needs</a>; </li>
+						<li><a href="https://www.iso.org/standard/70913.html">ISO/IEC 30071-1 Information technology — Development of user interface accessibility — Part 1: A code of practice for creating accessible ICT products and services</a></li>
+						<li><a href="https://www.w3.org/TR/WCAG20/">WCAG 2.0</a>;</li>
+						<li><a href="https://www.w3.org/TR/UAAG20/">UAAG 2.0</a>;</li>
+						<li><a href="https://www.w3.org/TR/ATAG20/">ATAG 2.0</a>;</li>
+						<li><a href="https://www.w3.org/WAI/GL/mobile-a11y-tf/wiki/Main_Page">Mobile gap analysis</a>;</li>
+						<li><a href="https://www.w3.org/WAI/PF/cognitive-a11y-tf/wiki/Main_Page">Cognitive gap analyses</a>;</li>
+						<li><a href="https://www.w3.org/TR/media-accessibility-reqs/">Media Accessibility User Requirements</a>;</li>
+						<li> Sources from other advocacy organizations.</li>
+					</ul>
+					<div class="note" role="note" id="issue-container-generatedID"><div role="heading" class="note-title marker" id="h-note" aria-level="5"><span>Note</span></div><p class="">Note the goal of this exercise is not to supplant other good work in this field. The aim is to assemble disparate sources if knowledge about user needs in one place, to facilitate analysis. This work is likely to spin off from the core work of developing FAST. If another organization creates a sufficiently rich collection of documented user needs it will be possible to use that resource rather than reinvent the work in <abbr title="World Wide Web Consortium">W3C</abbr>.</p></div>
+					<p>In the course of exploring how to apply user needs to accessibility guidance, we have identified two intersecting categories of needs: <a href="#functional-needs" data-matched-text="[[[#functional-needs]]]" class="sec-ref"><bdi class="secno">1.5.2 </bdi>Functional needs</a> and <a href="#user-needs" data-matched-text="[[[#user-needs]]]" class="sec-ref"><bdi class="secno">1.5.3 </bdi>User needs</a>.</p>
+				</section>
+				<section id="functional-needs"><div class="header-wrapper"><h4 id="x1-5-2-functional-needs"><bdi class="secno">1.5.2 </bdi>Functional needs</h4><a class="self-link" href="#functional-needs" aria-label="Permalink for Section 1.5.2"></a></div>
+					
+					<p>A <dfn data-plurals="functional needs" id="dfn-functional-need" tabindex="0" aria-haspopup="dialog" data-dfn-type="dfn">functional need</dfn> is a statement that describes a specific gap in one’s <a data-link-type="dfn" href="#dfn-ability" class="internalDFN" id="ref-for-dfn-ability-1">ability</a>, or a specific mismatch between ability and the designed environment or context. An <dfn data-lt="intersectional need|intersectional functional need" id="dfn-intersectional-need" tabindex="0" aria-haspopup="dialog" class="respec-offending-element" title="Found definition for &quot;intersectional functional need&quot;, but nothing links to it. This is usually a spec bug!" data-dfn-type="dfn">intersectional functional need</dfn> results from an individual having more than one functional need simultaneously in a given context.</p>
+					<p>A <dfn data-lt="ability|functional ability" id="dfn-ability" tabindex="0" aria-haspopup="dialog" data-dfn-type="dfn">functional ability</dfn> is a notional measure of a person’s abilities that may need technological support or augmentation to be able to complete a particular task.</p>
+					<div class="note" role="note" id="issue-container-generatedID-0"><div role="heading" class="note-title marker" id="h-note-0" aria-level="5"><span>Note</span></div><p class="">The intent is to express the need in a contextual model, as opposed to a lack of ability in a medical model. This is similar to the ICF (International Classification of Functioning – a biopsychosocial model), “outcomes of interactions between health conditions (diseases, disorders and injuries) and contextual factors”, focusing on the interactions.&nbsp;</p></div>
+				</section>
+				<section id="user-needs"><div class="header-wrapper"><h4 id="x1-5-3-user-needs"><bdi class="secno">1.5.3 </bdi>User needs</h4><a class="self-link" href="#user-needs" aria-label="Permalink for Section 1.5.3"></a></div>
+					
+					<p>A <dfn id="dfn-user-need" tabindex="0" aria-haspopup="dialog" data-dfn-type="dfn">user need</dfn> is a high level accessibility characteristic of content and/or a user interface that is necessary for users to complete an objective.</p>
+					<p>In this model, user needs are not accessibility specific. User needs are generic requirements of content for its features to be usable by humans. </p>
+				</section>
+			</section>
+			<section id="matrix-of-functional-and-user-needs"><div class="header-wrapper"><h3 id="x1-6-matrix-of-functional-and-user-needs"><bdi class="secno">1.6 </bdi>Matrix of functional and user needs</h3><a class="self-link" href="#matrix-of-functional-and-user-needs" aria-label="Permalink for Section 1.6"></a></div>
+				
+				<p>In order for people to access content, for every <a data-link-type="dfn" href="#dfn-user-need" class="internalDFN" id="ref-for-dfn-user-need-1">user need</a> inherent in the content, there must be a way to meet an individual’s <a data-link-type="dfn" href="#dfn-functional-need" class="internalDFN" id="ref-for-dfn-functional-need-1">functional needs</a>. User needs and functional needs intersect into a matrix of potential affordances required for content. These requirements comprise the set of <dfn data-plurals="expected outcome" id="dfn-expected-outcomes" tabindex="0" aria-haspopup="dialog" data-dfn-type="dfn">expected outcomes</dfn> that should be addressed in this and other web accessibility guidance.</p>
+				<div class="note" id="issue-container-generatedID-1"><div role="heading" class="ednote-title marker" id="h-ednote" aria-level="4"><span>Editor's note</span></div><p class="">Todo: put in snapshot of matrix or something.</p></div>
+				<section id="identify-ways-to-meet-needs"><div class="header-wrapper"><h4 id="x1-6-1-identify-ways-to-meet-needs"><bdi class="secno">1.6.1 </bdi>Identify ways to meet needs</h4><a class="self-link" href="#identify-ways-to-meet-needs" aria-label="Permalink for Section 1.6.1"></a></div>
+					
+					<p>The second stage in development of the guidelines is to identify ways these needs can be met. There are three high-level ways user needs can be met:</p>
+					<ul>
+						<li>technology features;</li>
+						<li>author implementation;</li>
+						<li>user agent support.</li>
+					</ul>
+					<p>These are not mutually exclusive categories. A given user need could be met by more than one of these categories, but the ability of a given category to meet a user need implies the need for guidelines targeting that category. In policy setting and evaluation there may be a preference hierarchy for how best to meet needs, e.g., user agent support of standard features is preferred, but author technical override is needed if user agent support is lacking. </p>
+					<p>Some needs can be met with present technology only via one of these routes. Other needs can be met by more than one route, and for content to be accessible it is only required that one of the available routes be implemented. Many needs, however, require more than one route to be implemented together for the need to be met. The most common example is that a technology provides a feature, the author uses that feature in the content, and the user agent makes the result available to the user.</p>
+					<p>All of these ways of meeting user needs are identfied, along with their relationships to each other. Once these approaches are identified, the result is separate lists of requirements for content technologies, authors, and user agents. The relationship among the routes may play a role in prioritization of guidelines, since needs that can only be met by one route may be more important to meet by that route, than needs that could be met by other means as well.</p>
+				</section>
+				<section id="develop-technology-guidelines"><div class="header-wrapper"><h4 id="x1-6-2-develop-technology-guidelines"><bdi class="secno">1.6.2 </bdi>Develop technology guidelines</h4><a class="self-link" href="#develop-technology-guidelines" aria-label="Permalink for Section 1.6.2"></a></div>
+					
+					<p>From the above analyses, it should also be easy to see where content technology features are required to make it possible to meet user needs. For example: </p>
+					<ul>
 						<li> If the author must implement something, the technology must provide a feature for the author to implement. </li>
 						<li> If the user need is met by design, the technology must provide suitably rich design capabilities. </li>
 						<li> If the user need is met by user agents, the technology must provide a sufficiently rich definition of the object for user agents to implement. </li>
 					</ul>
-                    <p>Not all technologies will address all ways of meeting user needs. For instance, CSS is primarily design-oriented, and HTML is somewhat semantics-oriented. The technology requirements may need conformance profiles or some other way of guiding technology developers seeking to follow them. It may not be easy to state in a general prescriptive way whether a given technology should, for instance, provide a richer design capability to meet a user need or should instead rely on better semantics for assistive technology-oriented content alternatives. A good structure of the technology requirements should help make it clear that <i>some</i> method of meeting a given user need is important. Horizontal review may continue to be important in guiding technology developers through the possibilities. </p>
-                    <p>The set of approaches to meeting user needs that affects technology features becomes the base information for the Framework for Accessible Specification of Technologies. (The other two routes, while important to the analysis, are not directly relevant to FAST but may inform other work.) These approaches are prioritized, organized, and translated into guidelines-type language to become the Framework for Accessible Specification of Technologies.</p>
-                    <p>With the above analyses done, it should be easy to see how current guidelines address which user needs. In turn it should be easy to see where current guidelines to not meet user needs, that in theory should be able to be met by activities within the remit of that set of guidelines. This should be important input into WAI 3.0 / WAI 2020 planning.</p>
-                </section>
+					<p>Not all technologies will address all ways of meeting user needs. For instance, CSS is primarily design-oriented, and HTML is somewhat semantics-oriented. The technology requirements may need conformance profiles or some other way of guiding technology developers seeking to follow them. It may not be easy to state in a general prescriptive way whether a given technology should, for instance, provide a richer design capability to meet a user need or should instead rely on better semantics for assistive technology-oriented content alternatives. A good structure of the technology requirements should help make it clear that <i>some</i> method of meeting a given user need is important. Horizontal review may continue to be important in guiding technology developers through the possibilities. </p>
+					<p>The set of approaches to meeting user needs that affects technology features becomes the base information for the Framework for Accessible Specification of Technologies. (The other two routes, while important to the analysis, are not directly relevant to FAST but may inform other work.) These approaches are prioritized, organized, and translated into guidelines-type language to become the Framework for Accessible Specification of Technologies.</p>
+					<p>With the above analyses done, it should be easy to see how current guidelines address which user needs. In turn it should be easy to see where current guidelines to not meet user needs, that in theory should be able to be met by activities within the remit of that set of guidelines. This should be important input into WAI 3.0 / WAI 2020 planning.</p>
+				</section>
 			</section>
-			<section id="explanation-of-user-needs">
-				<h3 id="x1-6-explanation-of-user-needs"><bdi class="secno">1.6 </bdi>Explanation of User Needs<a class="self-link" aria-label="§" href="#explanation-of-user-needs"></a></h3>
+			<section id="explanation-of-user-needs"><div class="header-wrapper"><h3 id="x1-7-explanation-of-user-needs"><bdi class="secno">1.7 </bdi>Explanation of User Needs</h3><a class="self-link" href="#explanation-of-user-needs" aria-label="Permalink for Section 1.7"></a></div>
+				
 				
 				<p>Identify user needs that we plan to provide guidance on meeting. These should describe the needs of humans as they currently exist (i.e., without significant evolution or cyborgization from early 21st century norms), and therefore is as era-independent as possible with current knowledge. The focus is on the needs of people with disabilities, but because that is sometimes a relative / contextual condition, a significant proportion of mainstream needs will also be identified. </p>
 				<p>At least two levels of needs may be identified. The first is truly generic needs, requirements users have to access and use content such as perceive and understand it, and should be stable over time. The second layer is needs specific to technologies of the day, such as ability to understand and operate controls. This layer may be understood as an implementation of the generic needs, so may not be classed as user needs in the end. Regardless of its classification, it will be an important component of understanding the space. This level of needs evolves as technology and design patterns do, so needs to be maintainable separately from the generic needs. </p>
-                <section id="evolution-of-user-needs">
-                    <h4 id="x1-6-1-evolution-of-user-needs"><bdi class="secno">1.6.1 </bdi>Evolution of user needs<a class="self-link" aria-label="§" href="#evolution-of-user-needs"></a></h4>
+                <section id="evolution-of-user-needs"><div class="header-wrapper"><h4 id="x1-7-1-evolution-of-user-needs"><bdi class="secno">1.7.1 </bdi>Evolution of user needs</h4><a class="self-link" href="#evolution-of-user-needs" aria-label="Permalink for Section 1.7.1"></a></div>
+                    
                     <p>Where user needs are suspected but known, related work may expand the inventory through research when feasible. Therefore the set of documented user needs will evolve over time. A given set of guidelines including FAST, however, can only address needs that were known at the time of development of the guidelines.</p>
                 </section>
-				<section id="assumptions">
-					<h4 id="x1-6-2-assumptions"><bdi class="secno">1.6.2 </bdi>Assumptions <a class="self-link" aria-label="§" href="#assumptions"></a></h4>
+				<section id="assumptions"><div class="header-wrapper"><h4 id="x1-7-2-assumptions"><bdi class="secno">1.7.2 </bdi>Assumptions </h4><a class="self-link" href="#assumptions" aria-label="Permalink for Section 1.7.2"></a></div>
+					
 					<ul>
 						<li> User is accessing Web content on hardware / OS / AT combination that supports their needs. This may not always be true for shared device / public kiosk situations, but that issue is out of scope. </li>
 					</ul>
 				</section>
-				<section id="applicability-of-needs">
-					<h4 id="x1-6-3-applicability-of-needs"><bdi class="secno">1.6.3 </bdi>Applicability of Needs <a class="self-link" aria-label="§" href="#applicability-of-needs"></a></h4>
+				<section id="applicability-of-needs"><div class="header-wrapper"><h4 id="x1-7-3-applicability-of-needs"><bdi class="secno">1.7.3 </bdi>Applicability of Needs </h4><a class="self-link" href="#applicability-of-needs" aria-label="Permalink for Section 1.7.3"></a></div>
+					
 					<ul>
 						<li> Content </li>
 						<li> Controls (buttons, fields, etc.) </li>
@@ -216,243 +326,578 @@
 				</section>
 			</section>
 		</section>
-		<section id="collected-user-needs">
-			<h2 id="x2-collected-user-needs"><bdi class="secno">2. </bdi>Collected User Needs<a class="self-link" aria-label="§" href="#collected-user-needs"></a></h2>
-			<p>This is a <b>draft</b> user needs collection. It may or may not be prove desirable to prioritize needs in order to yield manageable sets. These needs will be cross-referenced to authoritative sources that also express the same requirement. </p>
-			<p>In the list below, there may be overlap between user needs, and known ways to meet user needs. These will need to be teased out over the course of the project.</p>
-			<ul>
-				<li> Content perceivable in form other than produced by author <ul>
-						<li> Alternate content can be provided <ul>
-								<li> Text alternatives </li>
-								<li> Visual alternative</li>
-								<li> Auditory alternative</li>
-								<li> Tactile alternative</li>
-							</ul>
-						</li>
-						<li> Content encoded in manner that permits machine transformation </li>
-						<li> Different alternate content for different signals</li>
-						<li> Alternate content findable <ul>
-								<li> In same time and location as control </li>
-							</ul>
-						</li>
-					</ul>
-				</li>
-				<li> Enable direct perception of output for people with wide range of perception disabilities <ul>
-						<li> Visual presentation perceivable across a range of vision impairments<ul>
-								<li> Luminosity contrast sufficient </li>
-								<li> Hue contrast sufficient for certain color perception disorders  </li>
-								<li> Pointers and cursors can be perceived  <ul>
-										<li> Resize </li>
-										<li> Recolor </li>
-										<li> Reshape </li>
-									</ul>
-								</li>
-							</ul>
-						</li>
-					</ul>
-				</li>
-				<li> On-request location indicator <ul>
-						<li> Auditory content perceivable  for audio cues., 5.8 Sufficient quality (e.g. volume, direction, clarity, frequency) for audio feedback.) <ul>
-								<li> Volume </li>
-								<li> Direction </li>
-								<li> Clarity </li>
-								<li> Frequency  </li>
-							</ul>
-						</li>
-						<li> Tactile indications perceivable (not web? But probably will be) <ul>
-								<li> Distinct enough to accommodate reduced sensitivity </li>
-							</ul>
-						</li>
-					</ul>
-				</li>
-				<li> Adjustability of output <ul>
-						<li> Visual presentation can be adjusted to meet needs of user  <ul>
-								<li> Text can be resized <ul>
-										<li> Content format allows resize </li>
-										<li> Author provides resize feature </li>
-									</ul>
-								</li>
-								<li> Resize of text does not break presentation <ul>
-										<li> Layout resizes with text (zoom) </li>
-										<li> Layout self-adjusts to text resizes (reflow) (not fixed units) </li>
-									</ul>
-								</li>
-								<li> Color scheme can be changed  <ul>
-										<li> Content format defines color style scheme that user or user agent can override </li>
-										<li> Author provides color switch options </li>
-									</ul>
-								</li>
-								<li> Luminosity contrast can be changed <ul>
-										<li> User agent exaggerates luminosity differences </li>
-										<li> Author provides color switch options </li>
-									</ul>
-								</li>
-								<li> Typeface, font weight, font style can be changed </li>
-								<li> Line / word / letter spacing can be changed </li>
-								<li> Margins can be changed </li>
-								<li> Line length can be changed </li>
-								<li> Justification can be changed </li>
-							</ul>
-						</li>
-						<li> Auditory content can be adjusted to meet needs of user <ul>
-								<li> User can adjust volume level  </li>
-								<li> Contrast between foreground and background audio is sufficient </li>
-								<li> Unnecessary background audio can be muted separately from the foreground audio </li>
-							</ul>
-						</li>
-						<li> User can control time-based media <ul>
-								<li> User can pause, stop, replay media  </li>
-							</ul>
-						</li>
-						<li> Send output to alternate device, for better accessibility or to manage security / privacy in public space to manage overhearing / looking over shoulder of large print  </li>
-					</ul>
-				</li>
-				<li> User can navigate content effectively <ul>
-						<li> Useful navigation order  [also relates to efficient usage] </li>
-						<li> Structured audio  </li>
-						<li> Navigation supports different thinking styles  </li>
-					</ul>
-				</li>
-				<li> Meaning conveyed by style perceivable to users  that is presented through color to be also presented in another way that does not rely on color.) <ul>
-						<li> Author provides multiple redundant style cues </li>
-						<li> Meaning supported by programmatically determined semantics </li>
-					</ul>
-				</li>
-				<li> Input is device independent <ul>
-						<li> Input does not require pointing device  </li>
-						<li> Support keyboard input  with only visual feedback.) </li>
-						<li> Allow speech input  </li>
-						<li> Input does not require speech input  </li>
-					</ul>
-				</li>
-				<li> Enable input for users with wide range of abilities <ul>
-						<li> Do not require simultaneous actions  </li>
-						<li> Do not require precision in movement  </li>
-						<li> Allow input with different parameters for speed, acceleration, etc.  </li>
-					</ul>
-				</li>
-				<li> User can manage distractions <ul>
-						<li> Autoplay of any moving content can be prevented </li>
-						<li> Blinking or movement can be easily stopped </li>
-						<li> Layout helps user find important content </li>
-						<li> Cursor blinking can be turned off </li>
-					</ul>
-				</li>
-				<li> User can avoid personal risk <ul>
-						<li> Photosensitive seizures <ul>
-								<li> Flash can be prevented  </li>
-								<li> Content with flash can be reliably warned in advance and avoided </li>
-								<li> Unexpected flash can be immediately stopped </li>
-							</ul>
-						</li>
-						<li> Audiosensitive seizures <ul>
-								<li> @@ triggering condition can be prevented  </li>
-								<li> Content with @@ triggering condition can be reliably warned in advance and avoided </li>
-								<li> Unexpected @@ triggering condition can be immediately stopped </li>
-							</ul>
-						</li>
-					</ul>
-				</li>
-				<li> Important alerts can reach the user quickly <ul>
-						<li> Multi-frequency audio  </li>
-						<li> Vibration ) </li>
-					</ul>
-				</li>
-				<li> Users can discover content on the page  <ul>
-						<li> Headings identify regions of content </li>
-						<li> Regions of content are programmatically determined </li>
-						<li> User can skip to main content </li>
-						<li> Controls and their functions are programmatically determined </li>
-						<li> Controls have contrast with their surroundings  </li>
-						<li> Location of controls is predictable  </li>
-					</ul>
-				</li>
-				<li> Support users with instructions (@@overlaps with understand, avoid confusion) <ul>
-						<li> Instructions for accessible interaction  </li>
-					</ul>
-				</li>
-				<li> Users can understand content, navigation, and available interactions <ul>
-						<li> Description of layout available  (WCAG @@ Table Summary) <ul>
-								<li> Description does not depend on specific sensory characteristics  </li>
-							</ul>
-						</li>
-						<li> Simple wording in instructions  </li>
-						<li> Use standard icon / design / description conventions .) </li>
-						<li> Don’t require hierarchical thinking  </li>
-						<li> Clear instructions for interaction  </li>
-					</ul>
-				</li>
-				<li> Users are not confused <ul>
-						<li> Style does not imply perceived affordance of non-actionable features </li>
-						<li> Not confused with non-indicating tactile objects </li>
-						<li> Predictability / consistency of design <ul>
-								<li> Objects don’t change their function  </li>
-							</ul>
-						</li>
-						<li> Minimize reliance on user short-term memory  </li>
-						<li> Provide guidance for multi-step processes  </li>
-						<li> Simplified interface available </li>
-					</ul>
-				</li>
-				<li> Do not require specific physical characteristics (non-web? Handedness, having hands, etc.) <ul>
-						<li> Alternative biometric identification  </li>
-					</ul>
-				</li>
-				<li> Avoid errors <ul>
-						<li> Avoid accidental activation of controls <ul>
-								<li> Due to tremors etc.  </li>
-								<li>Due to overly small and proximate controls</li>
-								<li>Due to design confusion</li>
-							</ul>
-						</li>
-					</ul>
-				</li>
-				<li> Recover from errors <ul>
-						<li> Notification when error detected  </li>
-						<li> Instructions on error recovery  </li>
-						<li> Ability to correct error </li>
-						<li> Ability to redo task </li>
-					</ul>
-				</li>
-				<li> Complete time-sensitive tasks <ul>
-						<li> Ability to complete task in allotted time <ul>
-								<li> Support ability to plan task execution strategy  </li>
-								<li> Avoid distractions (see separate topic)  </li>
-							</ul>
-						</li>
-						<li> Ability to extend time <ul>
-								<li> More time to read  </li>
-								<li> More time to complete task  </li>
-							</ul>
-						</li>
-					</ul>
-				</li>
-				<li> Support efficient usage <ul>
-						<li> Change characteristics (speed, voice, pitch, accent) of audio alternatives </li>
-						<li> Provide accessibility preferences that take effect immediately  </li>
-						<li> Persistent preferences across sessions  </li>
-						<li> Clear accessibility feature settings  </li>
-					</ul>
-				</li>
-				<li> Don’t override accessibility features  <ul>
-						<li> Preferences, e.g., typeface, color, size, layout, volume, contrast…)  </li>
-						<li> Preferences return to default state when switching users  [not web?] </li>
-					</ul>
-				</li>
-			</ul>
+		<section id="functional-needs-0"><div class="header-wrapper"><h2 id="x2-functional-needs"><bdi class="secno">2. </bdi>Functional Needs</h2><a class="self-link" href="#functional-needs-0" aria-label="Permalink for Section 2."></a></div>
+			
+			<section id="safety"><div class="header-wrapper"><h3 id="x2-1-safety"><bdi class="secno">2.1 </bdi>Safety</h3><a class="self-link" href="#safety" aria-label="Permalink for Section 2.1"></a></div>
+				
+				<section id="use-without-physical-harm-or-risk-to-self-or-others-within-a-physical-environment"><div class="header-wrapper"><h4 id="x2-1-1-use-without-physical-harm-or-risk-to-self-or-others-within-a-physical-environment"><bdi class="secno">2.1.1 </bdi>Use without physical harm or risk (to self or others within a physical environment)</h4><a class="self-link" href="#use-without-physical-harm-or-risk-to-self-or-others-within-a-physical-environment" aria-label="Permalink for Section 2.1.1"></a></div>
+					
+				</section>
+			</section>
+			<section id="sensory"><div class="header-wrapper"><h3 id="x2-2-sensory"><bdi class="secno">2.2 </bdi>Sensory</h3><a class="self-link" href="#sensory" aria-label="Permalink for Section 2.2"></a></div>
+				
+				<section id="vision-and-visual"><div class="header-wrapper"><h4 id="x2-2-1-vision-and-visual"><bdi class="secno">2.2.1 </bdi>Vision and Visual</h4><a class="self-link" href="#vision-and-visual" aria-label="Permalink for Section 2.2.1"></a></div>
+					
+					<section id="use-without-vision"><div class="header-wrapper"><h5 id="x2-2-1-1-use-without-vision"><bdi class="secno">2.2.1.1 </bdi>Use without vision </h5><a class="self-link" href="#use-without-vision" aria-label="Permalink for Section 2.2.1.1"></a></div>
+						
+						<section id="use-as-blind-born-without-vision"><div class="header-wrapper"><h6 id="x2-2-1-1-1-use-as-blind-born-without-vision"><bdi class="secno">2.2.1.1.1 </bdi>Use as blind (born without vision)</h6><a class="self-link" href="#use-as-blind-born-without-vision" aria-label="Permalink for Section 2.2.1.1.1"></a></div>
+							
+						</section>
+						<section id="use-with-blindness-acquired-blindness-during-lifetime"><div class="header-wrapper"><h6 id="x2-2-1-1-2-use-with-blindness-acquired-blindness-during-lifetime"><bdi class="secno">2.2.1.1.2 </bdi>Use with blindness (acquired blindness during lifetime)</h6><a class="self-link" href="#use-with-blindness-acquired-blindness-during-lifetime" aria-label="Permalink for Section 2.2.1.1.2"></a></div>
+							
+						</section>
+					</section>
+					<section id="use-with-limited-vision"><div class="header-wrapper"><h5 id="x2-2-1-2-use-with-limited-vision"><bdi class="secno">2.2.1.2 </bdi>Use with limited vision </h5><a class="self-link" href="#use-with-limited-vision" aria-label="Permalink for Section 2.2.1.2"></a></div>
+						
+						<section id="use-with-limited-central-vision"><div class="header-wrapper"><h6 id="x2-2-1-2-1-use-with-limited-central-vision"><bdi class="secno">2.2.1.2.1 </bdi>Use with limited central vision</h6><a class="self-link" href="#use-with-limited-central-vision" aria-label="Permalink for Section 2.2.1.2.1"></a></div>
+							
+						</section>
+						<section id="use-with-limited-peripheral-vision"><div class="header-wrapper"><h6 id="x2-2-1-2-2-use-with-limited-peripheral-vision"><bdi class="secno">2.2.1.2.2 </bdi>Use with limited peripheral vision</h6><a class="self-link" href="#use-with-limited-peripheral-vision" aria-label="Permalink for Section 2.2.1.2.2"></a></div>
+							
+						</section>
+						<section id="use-with-limited-interocular-acuity-or-monocular-input"><div class="header-wrapper"><h6 id="x2-2-1-2-3-use-with-limited-interocular-acuity-or-monocular-input"><bdi class="secno">2.2.1.2.3 </bdi>Use with limited interocular acuity or monocular input</h6><a class="self-link" href="#use-with-limited-interocular-acuity-or-monocular-input" aria-label="Permalink for Section 2.2.1.2.3"></a></div>
+							
+						</section>
+					</section>
+					<section id="use-without-color-perception"><div class="header-wrapper"><h5 id="x2-2-1-3-use-without-color-perception"><bdi class="secno">2.2.1.3 </bdi>Use without color perception</h5><a class="self-link" href="#use-without-color-perception" aria-label="Permalink for Section 2.2.1.3"></a></div>
+						
+					</section>
+					<section id="use-with-limited-color-perception"><div class="header-wrapper"><h5 id="x2-2-1-4-use-with-limited-color-perception"><bdi class="secno">2.2.1.4 </bdi>Use with limited color perception</h5><a class="self-link" href="#use-with-limited-color-perception" aria-label="Permalink for Section 2.2.1.4"></a></div>
+						
+					</section>
+					<section id="use-with-limited-depth-perception"><div class="header-wrapper"><h5 id="x2-2-1-5-use-with-limited-depth-perception"><bdi class="secno">2.2.1.5 </bdi>Use with limited depth perception</h5><a class="self-link" href="#use-with-limited-depth-perception" aria-label="Permalink for Section 2.2.1.5"></a></div>
+						
+					</section>
+					<section id="use-with-limited-orientation-or-spatial-tracking"><div class="header-wrapper"><h5 id="x2-2-1-6-use-with-limited-orientation-or-spatial-tracking"><bdi class="secno">2.2.1.6 </bdi>Use with limited orientation or spatial tracking</h5><a class="self-link" href="#use-with-limited-orientation-or-spatial-tracking" aria-label="Permalink for Section 2.2.1.6"></a></div>
+						
+					</section>
+					<section id="use-with-photosensitivity-too-much-or-too-little"><div class="header-wrapper"><h5 id="x2-2-1-7-use-with-photosensitivity-too-much-or-too-little"><bdi class="secno">2.2.1.7 </bdi>Use with photosensitivity (too much or too little)</h5><a class="self-link" href="#use-with-photosensitivity-too-much-or-too-little" aria-label="Permalink for Section 2.2.1.7"></a></div>
+						
+					</section>
+				</section>
+				<section id="hearing-and-auditory"><div class="header-wrapper"><h4 id="x2-2-2-hearing-and-auditory"><bdi class="secno">2.2.2 </bdi>Hearing and Auditory</h4><a class="self-link" href="#hearing-and-auditory" aria-label="Permalink for Section 2.2.2"></a></div>
+					
+					<section id="use-without-hearing"><div class="header-wrapper"><h5 id="x2-2-2-1-use-without-hearing"><bdi class="secno">2.2.2.1 </bdi>Use without hearing </h5><a class="self-link" href="#use-without-hearing" aria-label="Permalink for Section 2.2.2.1"></a></div>
+						
+						<section id="use-as-deaf-born-with-congenital-deafness-and-or-to-a-deaf-family"><div class="header-wrapper"><h6 id="x2-2-2-1-1-use-as-deaf-born-with-congenital-deafness-and-or-to-a-deaf-family"><bdi class="secno">2.2.2.1.1 </bdi>Use as Deaf (born with congenital deafness and/or to a deaf family)</h6><a class="self-link" href="#use-as-deaf-born-with-congenital-deafness-and-or-to-a-deaf-family" aria-label="Permalink for Section 2.2.2.1.1"></a></div>
+							
+						</section>
+						<section id="use-as-deaf-acquired-deafness-during-lifetime-after-a-language-was-learned"><div class="header-wrapper"><h6 id="x2-2-2-1-2-use-as-deaf-acquired-deafness-during-lifetime-after-a-language-was-learned"><bdi class="secno">2.2.2.1.2 </bdi>Use as deaf (acquired deafness during lifetime after a language was learned)</h6><a class="self-link" href="#use-as-deaf-acquired-deafness-during-lifetime-after-a-language-was-learned" aria-label="Permalink for Section 2.2.2.1.2"></a></div>
+							
+						</section>
+					</section>
+					<section id="use-with-limited-hearing"><div class="header-wrapper"><h5 id="x2-2-2-2-use-with-limited-hearing"><bdi class="secno">2.2.2.2 </bdi>Use with limited hearing</h5><a class="self-link" href="#use-with-limited-hearing" aria-label="Permalink for Section 2.2.2.2"></a></div>
+						
+					</section>
+					<section id="use-with-limited-auditory-processing-speech"><div class="header-wrapper"><h5 id="x2-2-2-3-use-with-limited-auditory-processing-speech"><bdi class="secno">2.2.2.3 </bdi>Use with limited auditory processing (speech)</h5><a class="self-link" href="#use-with-limited-auditory-processing-speech" aria-label="Permalink for Section 2.2.2.3"></a></div>
+						
+					</section>
+					<section id="use-with-sensorineural-hearing-loss-limited-frequency-range-related-to-age-or-presbycusis-gradual-loss-over-time"><div class="header-wrapper"><h5 id="x2-2-2-4-use-with-sensorineural-hearing-loss-limited-frequency-range-related-to-age-or-presbycusis-gradual-loss-over-time"><bdi class="secno">2.2.2.4 </bdi>Use with sensorineural hearing loss (limited frequency range) related to age or Presbycusis (gradual loss over time)</h5><a class="self-link" href="#use-with-sensorineural-hearing-loss-limited-frequency-range-related-to-age-or-presbycusis-gradual-loss-over-time" aria-label="Permalink for Section 2.2.2.4"></a></div>
+						
+					</section>
+				</section>
+				<section id="sensory-intersections"><div class="header-wrapper"><h4 id="x2-2-3-sensory-intersections"><bdi class="secno">2.2.3 </bdi>Sensory Intersections</h4><a class="self-link" href="#sensory-intersections" aria-label="Permalink for Section 2.2.3"></a></div>
+					
+					<section id="use-without-vision-and-hearing"><div class="header-wrapper"><h5 id="x2-2-3-1-use-without-vision-and-hearing"><bdi class="secno">2.2.3.1 </bdi>Use without vision and hearing </h5><a class="self-link" href="#use-without-vision-and-hearing" aria-label="Permalink for Section 2.2.3.1"></a></div>
+						
+						<section id="use-without-vision-from-birth-then-without-hearing-as-acquired"><div class="header-wrapper"><h6 id="x2-2-3-1-1-use-without-vision-from-birth-then-without-hearing-as-acquired"><bdi class="secno">2.2.3.1.1 </bdi>Use without vision from birth then without hearing as acquired</h6><a class="self-link" href="#use-without-vision-from-birth-then-without-hearing-as-acquired" aria-label="Permalink for Section 2.2.3.1.1"></a></div>&nbsp;</section>
+						<section id="use-without-hearing-from-birth-then-without-vision-as-acquired"><div class="header-wrapper"><h6 id="x2-2-3-1-2-use-without-hearing-from-birth-then-without-vision-as-acquired"><bdi class="secno">2.2.3.1.2 </bdi>Use without hearing from birth then without vision as acquired</h6><a class="self-link" href="#use-without-hearing-from-birth-then-without-vision-as-acquired" aria-label="Permalink for Section 2.2.3.1.2"></a></div>&nbsp;</section>
+					</section>
+					<section id="use-with-vestibular-issues"><div class="header-wrapper"><h5 id="x2-2-3-2-use-with-vestibular-issues"><bdi class="secno">2.2.3.2 </bdi>Use with vestibular issues</h5><a class="self-link" href="#use-with-vestibular-issues" aria-label="Permalink for Section 2.2.3.2"></a></div>
+						
+					</section>
+					<section id="use-without-spatial-auditory-awareness-or-perception-needs-diegetic-sound"><div class="header-wrapper"><h5 id="x2-2-3-3-use-without-spatial-auditory-awareness-or-perception-needs-diegetic-sound"><bdi class="secno">2.2.3.3 </bdi>Use without spatial auditory awareness or perception (needs diegetic sound)</h5><a class="self-link" href="#use-without-spatial-auditory-awareness-or-perception-needs-diegetic-sound" aria-label="Permalink for Section 2.2.3.3"></a></div>
+						
+					</section>
+				</section>
+			</section>
+			<section id="physical"><div class="header-wrapper"><h3 id="x2-3-physical"><bdi class="secno">2.3 </bdi>Physical</h3><a class="self-link" href="#physical" aria-label="Permalink for Section 2.3"></a></div>
+				
+				<section id="mobility"><div class="header-wrapper"><h4 id="x2-3-1-mobility"><bdi class="secno">2.3.1 </bdi>Mobility</h4><a class="self-link" href="#mobility" aria-label="Permalink for Section 2.3.1"></a></div>
+					
+					<section id="use-without-mobility"><div class="header-wrapper"><h5 id="x2-3-1-1-use-without-mobility"><bdi class="secno">2.3.1.1 </bdi>Use without mobility</h5><a class="self-link" href="#use-without-mobility" aria-label="Permalink for Section 2.3.1.1"></a></div>
+						
+					</section>
+					<section id="use-with-limited-mobility"><div class="header-wrapper"><h5 id="x2-3-1-2-use-with-limited-mobility"><bdi class="secno">2.3.1.2 </bdi>Use with limited mobility </h5><a class="self-link" href="#use-with-limited-mobility" aria-label="Permalink for Section 2.3.1.2"></a></div>
+						
+						<section id="use-with-limited-ambulation"><div class="header-wrapper"><h6 id="x2-3-1-2-1-use-with-limited-ambulation"><bdi class="secno">2.3.1.2.1 </bdi>Use with limited ambulation</h6><a class="self-link" href="#use-with-limited-ambulation" aria-label="Permalink for Section 2.3.1.2.1"></a></div>
+							
+						</section>
+						<section id="use-with-temporary-or-partial-paralysis"><div class="header-wrapper"><h6 id="x2-3-1-2-2-use-with-temporary-or-partial-paralysis"><bdi class="secno">2.3.1.2.2 </bdi>Use with temporary or partial paralysis</h6><a class="self-link" href="#use-with-temporary-or-partial-paralysis" aria-label="Permalink for Section 2.3.1.2.2"></a></div>
+							
+						</section>
+					</section>
+					<section id="use-with-limited-reach-or-range"><div class="header-wrapper"><h5 id="x2-3-1-3-use-with-limited-reach-or-range"><bdi class="secno">2.3.1.3 </bdi>Use with limited reach or range</h5><a class="self-link" href="#use-with-limited-reach-or-range" aria-label="Permalink for Section 2.3.1.3"></a></div>
+						
+					</section>
+				</section>
+				<section id="motor"><div class="header-wrapper"><h4 id="x2-3-2-motor"><bdi class="secno">2.3.2 </bdi>Motor</h4><a class="self-link" href="#motor" aria-label="Permalink for Section 2.3.2"></a></div>
+					
+					<section id="use-without-hands"><div class="header-wrapper"><h5 id="x2-3-2-1-use-without-hands"><bdi class="secno">2.3.2.1 </bdi>Use without hands</h5><a class="self-link" href="#use-without-hands" aria-label="Permalink for Section 2.3.2.1"></a></div>
+						
+					</section>
+					<section id="use-without-multiple-touchpoint-gesture"><div class="header-wrapper"><h5 id="x2-3-2-2-use-without-multiple-touchpoint-gesture"><bdi class="secno">2.3.2.2 </bdi>Use without multiple touchpoint gesture</h5><a class="self-link" href="#use-without-multiple-touchpoint-gesture" aria-label="Permalink for Section 2.3.2.2"></a></div>
+						
+					</section>
+					<section id="use-with-limited-strength"><div class="header-wrapper"><h5 id="x2-3-2-3-use-with-limited-strength"><bdi class="secno">2.3.2.3 </bdi>Use with limited strength</h5><a class="self-link" href="#use-with-limited-strength" aria-label="Permalink for Section 2.3.2.3"></a></div>
+						
+					</section>
+					<section id="use-without-fine-point-control"><div class="header-wrapper"><h5 id="x2-3-2-4-use-without-fine-point-control"><bdi class="secno">2.3.2.4 </bdi>Use without fine point control</h5><a class="self-link" href="#use-without-fine-point-control" aria-label="Permalink for Section 2.3.2.4"></a></div>
+						
+					</section>
+					<section id="use-without-physical-tracking-speed"><div class="header-wrapper"><h5 id="x2-3-2-5-use-without-physical-tracking-speed"><bdi class="secno">2.3.2.5 </bdi>Use without physical tracking speed</h5><a class="self-link" href="#use-without-physical-tracking-speed" aria-label="Permalink for Section 2.3.2.5"></a></div>
+						
+					</section>
+					<section id="use-with-tremors"><div class="header-wrapper"><h5 id="x2-3-2-6-use-with-tremors"><bdi class="secno">2.3.2.6 </bdi>Use with tremors</h5><a class="self-link" href="#use-with-tremors" aria-label="Permalink for Section 2.3.2.6"></a></div>
+						
+					</section>
+				</section>
+				<section id="physical-and-sensory-intersections"><div class="header-wrapper"><h4 id="x2-3-3-physical-and-sensory-intersections"><bdi class="secno">2.3.3 </bdi>Physical and Sensory Intersections</h4><a class="self-link" href="#physical-and-sensory-intersections" aria-label="Permalink for Section 2.3.3"></a></div>
+					
+					<section id="use-with-limited-kinaesthetic-perception-orientation-position-weight-distribution-movement"><div class="header-wrapper"><h5 id="x2-3-3-1-use-with-limited-kinaesthetic-perception-orientation-position-weight-distribution-movement"><bdi class="secno">2.3.3.1 </bdi>Use with limited kinaesthetic perception (orientation, position, weight distribution, movement)</h5><a class="self-link" href="#use-with-limited-kinaesthetic-perception-orientation-position-weight-distribution-movement" aria-label="Permalink for Section 2.3.3.1"></a></div>
+						
+					</section>
+					<section id="use-with-limited-tactile-perception-sensory-processing-or-touch-pressure-sensitivity"><div class="header-wrapper"><h5 id="x2-3-3-2-use-with-limited-tactile-perception-sensory-processing-or-touch-pressure-sensitivity"><bdi class="secno">2.3.3.2 </bdi>Use with limited tactile perception, sensory processing, or touch pressure sensitivity</h5><a class="self-link" href="#use-with-limited-tactile-perception-sensory-processing-or-touch-pressure-sensitivity" aria-label="Permalink for Section 2.3.3.2"></a></div>
+						
+					</section>
+					<section id="use-with-chronic-pain-impacting-input-or-interaction-modality-speed-and-or-frequency"><div class="header-wrapper"><h5 id="x2-3-3-3-use-with-chronic-pain-impacting-input-or-interaction-modality-speed-and-or-frequency"><bdi class="secno">2.3.3.3 </bdi>Use with chronic pain impacting input or interaction modality, speed and/or frequency</h5><a class="self-link" href="#use-with-chronic-pain-impacting-input-or-interaction-modality-speed-and-or-frequency" aria-label="Permalink for Section 2.3.3.3"></a></div>
+						
+					</section>
+					<section id="use-without-vision-and-a-motor-disability"><div class="header-wrapper"><h5 id="x2-3-3-4-use-without-vision-and-a-motor-disability"><bdi class="secno">2.3.3.4 </bdi>Use without vision and a motor disability</h5><a class="self-link" href="#use-without-vision-and-a-motor-disability" aria-label="Permalink for Section 2.3.3.4"></a></div>
+						
+					</section>
+					<section id="use-without-hearing-and-a-motor-disability"><div class="header-wrapper"><h5 id="x2-3-3-5-use-without-hearing-and-a-motor-disability"><bdi class="secno">2.3.3.5 </bdi>Use without hearing and a motor disability</h5><a class="self-link" href="#use-without-hearing-and-a-motor-disability" aria-label="Permalink for Section 2.3.3.5"></a></div>
+						
+					</section>
+				</section>
+				<section id="speech"><div class="header-wrapper"><h4 id="x2-3-4-speech"><bdi class="secno">2.3.4 </bdi>Speech</h4><a class="self-link" href="#speech" aria-label="Permalink for Section 2.3.4"></a></div>
+					
+					<section id="use-without-vocalization"><div class="header-wrapper"><h5 id="x2-3-4-1-use-without-vocalization"><bdi class="secno">2.3.4.1 </bdi>Use without vocalization</h5><a class="self-link" href="#use-without-vocalization" aria-label="Permalink for Section 2.3.4.1"></a></div>
+						
+					</section>
+					<section id="use-with-limited-vocalization-or-volume"><div class="header-wrapper"><h5 id="x2-3-4-2-use-with-limited-vocalization-or-volume"><bdi class="secno">2.3.4.2 </bdi>Use with limited vocalization or volume</h5><a class="self-link" href="#use-with-limited-vocalization-or-volume" aria-label="Permalink for Section 2.3.4.2"></a></div>
+						
+					</section>
+				</section>
+			</section>
+			<section id="cognitive"><div class="header-wrapper"><h3 id="x2-4-cognitive"><bdi class="secno">2.4 </bdi>Cognitive</h3><a class="self-link" href="#cognitive" aria-label="Permalink for Section 2.4"></a></div>
+				
+				<section id="attention"><div class="header-wrapper"><h4 id="x2-4-1-attention"><bdi class="secno">2.4.1 </bdi>Attention</h4><a class="self-link" href="#attention" aria-label="Permalink for Section 2.4.1"></a></div>
+					
+					<section id="use-with-limited-ability-to-focus-attention"><div class="header-wrapper"><h5 id="x2-4-1-1-use-with-limited-ability-to-focus-attention"><bdi class="secno">2.4.1.1 </bdi>Use with limited ability to focus attention</h5><a class="self-link" href="#use-with-limited-ability-to-focus-attention" aria-label="Permalink for Section 2.4.1.1"></a></div>&nbsp;</section>
+					<section id="use-with-limited-ability-to-direct-attention"><div class="header-wrapper"><h5 id="x2-4-1-2-use-with-limited-ability-to-direct-attention"><bdi class="secno">2.4.1.2 </bdi>Use with limited ability to direct attention</h5><a class="self-link" href="#use-with-limited-ability-to-direct-attention" aria-label="Permalink for Section 2.4.1.2"></a></div>
+						
+					</section>
+					<section id="use-with-limited-ability-to-shift-attention"><div class="header-wrapper"><h5 id="x2-4-1-3-use-with-limited-ability-to-shift-attention"><bdi class="secno">2.4.1.3 </bdi>Use with limited ability to shift attention</h5><a class="self-link" href="#use-with-limited-ability-to-shift-attention" aria-label="Permalink for Section 2.4.1.3"></a></div>&nbsp;</section>
+				</section>
+				<section id="language-and-communication"><div class="header-wrapper"><h4 id="x2-4-2-language-and-communication"><bdi class="secno">2.4.2 </bdi>Language and Communication</h4><a class="self-link" href="#language-and-communication" aria-label="Permalink for Section 2.4.2"></a></div>
+					
+					<section id="use-with-limited-ability-to-comprehend-spoken-language"><div class="header-wrapper"><h5 id="x2-4-2-1-use-with-limited-ability-to-comprehend-spoken-language"><bdi class="secno">2.4.2.1 </bdi>Use with limited ability to comprehend spoken language&nbsp;</h5><a class="self-link" href="#use-with-limited-ability-to-comprehend-spoken-language" aria-label="Permalink for Section 2.4.2.1"></a></div>
+						
+					</section>
+					<section id="use-without-ability-to-read"><div class="header-wrapper"><h5 id="x2-4-2-2-use-without-ability-to-read"><bdi class="secno">2.4.2.2 </bdi>Use without ability to read&nbsp;</h5><a class="self-link" href="#use-without-ability-to-read" aria-label="Permalink for Section 2.4.2.2"></a></div>
+						
+					</section>
+					<section id="use-with-limited-ability-to-recognize-written-language"><div class="header-wrapper"><h5 id="x2-4-2-3-use-with-limited-ability-to-recognize-written-language"><bdi class="secno">2.4.2.3 </bdi>Use with limited ability to recognize written language</h5><a class="self-link" href="#use-with-limited-ability-to-recognize-written-language" aria-label="Permalink for Section 2.4.2.3"></a></div>
+						
+					</section>
+					<section id="use-with-limited-ability-to-comprehend-written-language"><div class="header-wrapper"><h5 id="x2-4-2-4-use-with-limited-ability-to-comprehend-written-language"><bdi class="secno">2.4.2.4 </bdi>Use with limited ability to comprehend written language&nbsp;</h5><a class="self-link" href="#use-with-limited-ability-to-comprehend-written-language" aria-label="Permalink for Section 2.4.2.4"></a></div>
+						
+					</section>
+					<section id="use-without-ability-to-write"><div class="header-wrapper"><h5 id="x2-4-2-5-use-without-ability-to-write"><bdi class="secno">2.4.2.5 </bdi>Use without ability to write&nbsp;</h5><a class="self-link" href="#use-without-ability-to-write" aria-label="Permalink for Section 2.4.2.5"></a></div>
+						
+					</section>
+					<section id="use-with-limited-ability-to-correctly-write-or-type-words-and-use-punctuation"><div class="header-wrapper"><h5 id="x2-4-2-6-use-with-limited-ability-to-correctly-write-or-type-words-and-use-punctuation"><bdi class="secno">2.4.2.6 </bdi>Use with limited ability to correctly write (or type) words and use punctuation</h5><a class="self-link" href="#use-with-limited-ability-to-correctly-write-or-type-words-and-use-punctuation" aria-label="Permalink for Section 2.4.2.6"></a></div>
+						
+					</section>
+					<section id="use-without-understanding-symbols"><div class="header-wrapper"><h5 id="x2-4-2-7-use-without-understanding-symbols"><bdi class="secno">2.4.2.7 </bdi>Use without understanding symbols</h5><a class="self-link" href="#use-without-understanding-symbols" aria-label="Permalink for Section 2.4.2.7"></a></div>
+						
+					</section>
+					<section id="use-without-understanding-metaphors-idioms-euphemisms-or-specific-dialect-of-culture-or-location"><div class="header-wrapper"><h5 id="x2-4-2-8-use-without-understanding-metaphors-idioms-euphemisms-or-specific-dialect-of-culture-or-location"><bdi class="secno">2.4.2.8 </bdi>Use without understanding metaphors, idioms, euphemisms, or specific dialect of culture or location</h5><a class="self-link" href="#use-without-understanding-metaphors-idioms-euphemisms-or-specific-dialect-of-culture-or-location" aria-label="Permalink for Section 2.4.2.8"></a></div>
+						
+					</section>
+				</section>
+				<section id="learning"><div class="header-wrapper"><h4 id="x2-4-3-learning"><bdi class="secno">2.4.3 </bdi>Learning</h4><a class="self-link" href="#learning" aria-label="Permalink for Section 2.4.3"></a></div>
+					
+					<section id="use-with-limited-understanding-of-math-and-numeric-concepts"><div class="header-wrapper"><h5 id="x2-4-3-1-use-with-limited-understanding-of-math-and-numeric-concepts"><bdi class="secno">2.4.3.1 </bdi>Use with limited understanding of math and numeric concepts</h5><a class="self-link" href="#use-with-limited-understanding-of-math-and-numeric-concepts" aria-label="Permalink for Section 2.4.3.1"></a></div>
+						
+					</section>
+					<section id="use-with-limited-compositional-skill-simultaneous-thinking-and-input"><div class="header-wrapper"><h5 id="x2-4-3-2-use-with-limited-compositional-skill-simultaneous-thinking-and-input"><bdi class="secno">2.4.3.2 </bdi>Use with limited compositional skill (simultaneous thinking and input)</h5><a class="self-link" href="#use-with-limited-compositional-skill-simultaneous-thinking-and-input" aria-label="Permalink for Section 2.4.3.2"></a></div>
+						
+					</section>
+					<section id="use-with-limited-coordination-skill-motoric-skills-visual-spatial-organizational-memory-and-social"><div class="header-wrapper"><h5 id="x2-4-3-3-use-with-limited-coordination-skill-motoric-skills-visual-spatial-organizational-memory-and-social"><bdi class="secno">2.4.3.3 </bdi>Use with limited coordination skill (motoric skills, visual-spatial organizational memory, and social)</h5><a class="self-link" href="#use-with-limited-coordination-skill-motoric-skills-visual-spatial-organizational-memory-and-social" aria-label="Permalink for Section 2.4.3.3"></a></div>
+						
+					</section>
+				</section>
+				<section id="memory"><div class="header-wrapper"><h4 id="x2-4-4-memory"><bdi class="secno">2.4.4 </bdi>Memory</h4><a class="self-link" href="#memory" aria-label="Permalink for Section 2.4.4"></a></div>
+					
+					<section id="use-with-limited-short-term-or-working-memory"><div class="header-wrapper"><h5 id="x2-4-4-1-use-with-limited-short-term-or-working-memory"><bdi class="secno">2.4.4.1 </bdi>Use with limited short-term or working memory&nbsp;</h5><a class="self-link" href="#use-with-limited-short-term-or-working-memory" aria-label="Permalink for Section 2.4.4.1"></a></div>
+						
+					</section>
+					<section id="use-with-limited-medium-or-long-term-memory"><div class="header-wrapper"><h5 id="x2-4-4-2-use-with-limited-medium-or-long-term-memory"><bdi class="secno">2.4.4.2 </bdi>Use with limited medium or long-term memory</h5><a class="self-link" href="#use-with-limited-medium-or-long-term-memory" aria-label="Permalink for Section 2.4.4.2"></a></div>
+						
+					</section>
+					<section id="use-with-limited-sensory-memory"><div class="header-wrapper"><h5 id="x2-4-4-3-use-with-limited-sensory-memory"><bdi class="secno">2.4.4.3 </bdi>Use with limited sensory memory </h5><a class="self-link" href="#use-with-limited-sensory-memory" aria-label="Permalink for Section 2.4.4.3"></a></div>
+						
+						<section id="visual"><div class="header-wrapper"><h6 id="x2-4-4-3-1-visual"><bdi class="secno">2.4.4.3.1 </bdi>Visual</h6><a class="self-link" href="#visual" aria-label="Permalink for Section 2.4.4.3.1"></a></div>
+							
+						</section>
+						<section id="visual-spatial"><div class="header-wrapper"><h6 id="x2-4-4-3-2-visual-spatial"><bdi class="secno">2.4.4.3.2 </bdi>Visual-spatial</h6><a class="self-link" href="#visual-spatial" aria-label="Permalink for Section 2.4.4.3.2"></a></div>
+							
+						</section>
+						<section id="auditory"><div class="header-wrapper"><h6 id="x2-4-4-3-3-auditory"><bdi class="secno">2.4.4.3.3 </bdi>Auditory</h6><a class="self-link" href="#auditory" aria-label="Permalink for Section 2.4.4.3.3"></a></div>
+							
+						</section>
+					</section>
+				</section>
+				<section id="executive"><div class="header-wrapper"><h4 id="x2-4-5-executive"><bdi class="secno">2.4.5 </bdi>Executive</h4><a class="self-link" href="#executive" aria-label="Permalink for Section 2.4.5"></a></div>
+					
+					<section id="use-with-limited-planning-organization-sequencing-and-execution-ability"><div class="header-wrapper"><h5 id="x2-4-5-1-use-with-limited-planning-organization-sequencing-and-execution-ability"><bdi class="secno">2.4.5.1 </bdi>Use with limited planning, organization, sequencing, and execution ability</h5><a class="self-link" href="#use-with-limited-planning-organization-sequencing-and-execution-ability" aria-label="Permalink for Section 2.4.5.1"></a></div>
+						
+					</section>
+					<section id="use-with-limited-emotional-control-and-self-monitoring"><div class="header-wrapper"><h5 id="x2-4-5-2-use-with-limited-emotional-control-and-self-monitoring"><bdi class="secno">2.4.5.2 </bdi>Use with limited emotional control and self monitoring</h5><a class="self-link" href="#use-with-limited-emotional-control-and-self-monitoring" aria-label="Permalink for Section 2.4.5.2"></a></div>
+						
+					</section>
+					<section id="use-with-limited-judgment"><div class="header-wrapper"><h5 id="x2-4-5-3-use-with-limited-judgment"><bdi class="secno">2.4.5.3 </bdi>Use with limited judgment</h5><a class="self-link" href="#use-with-limited-judgment" aria-label="Permalink for Section 2.4.5.3"></a></div>
+						
+					</section>
+				</section>
+				<section id="mental-health"><div class="header-wrapper"><h4 id="x2-4-6-mental-health"><bdi class="secno">2.4.6 </bdi>Mental Health</h4><a class="self-link" href="#mental-health" aria-label="Permalink for Section 2.4.6"></a></div>
+					
+					<section id="use-with-debilitating-sensitivity-to-negative-emotional-stimuli"><div class="header-wrapper"><h5 id="x2-4-6-1-use-with-debilitating-sensitivity-to-negative-emotional-stimuli"><bdi class="secno">2.4.6.1 </bdi>Use with debilitating sensitivity to negative emotional stimuli</h5><a class="self-link" href="#use-with-debilitating-sensitivity-to-negative-emotional-stimuli" aria-label="Permalink for Section 2.4.6.1"></a></div>
+						
+					</section>
+				</section>
+				<section id="cognitive-and-sensory-intersections"><div class="header-wrapper"><h4 id="x2-4-7-cognitive-and-sensory-intersections"><bdi class="secno">2.4.7 </bdi>Cognitive and Sensory Intersections</h4><a class="self-link" href="#cognitive-and-sensory-intersections" aria-label="Permalink for Section 2.4.7"></a></div>
+					
+					<section id="use-with-interocular-transfer-of-visual-memory-retrieval-based-on-limited-acuity-in-a-single-eye"><div class="header-wrapper"><h5 id="x2-4-7-1-use-with-interocular-transfer-of-visual-memory-retrieval-based-on-limited-acuity-in-a-single-eye"><bdi class="secno">2.4.7.1 </bdi>Use with interocular transfer of visual memory (retrieval based on limited acuity in a single eye)</h5><a class="self-link" href="#use-with-interocular-transfer-of-visual-memory-retrieval-based-on-limited-acuity-in-a-single-eye" aria-label="Permalink for Section 2.4.7.1"></a></div>
+						
+					</section>
+					<section id="use-with-limited-phonological-or-phonemic-awareness"><div class="header-wrapper"><h5 id="x2-4-7-2-use-with-limited-phonological-or-phonemic-awareness"><bdi class="secno">2.4.7.2 </bdi>Use with limited phonological or phonemic awareness</h5><a class="self-link" href="#use-with-limited-phonological-or-phonemic-awareness" aria-label="Permalink for Section 2.4.7.2"></a></div>
+						
+					</section>
+				</section>
+			</section>
+			<section id="independence"><div class="header-wrapper"><h3 id="x2-5-independence"><bdi class="secno">2.5 </bdi>Independence</h3><a class="self-link" href="#independence" aria-label="Permalink for Section 2.5"></a></div>
+				
+				<section id="independence-0"><div class="header-wrapper"><h4 id="x2-5-1-independence"><bdi class="secno">2.5.1 </bdi>Independence</h4><a class="self-link" href="#independence-0" aria-label="Permalink for Section 2.5.1"></a></div>
+					
+					<section id="use-without-autonomy-or-agency"><div class="header-wrapper"><h5 id="x2-5-1-1-use-without-autonomy-or-agency"><bdi class="secno">2.5.1.1 </bdi>Use without autonomy or agency</h5><a class="self-link" href="#use-without-autonomy-or-agency" aria-label="Permalink for Section 2.5.1.1"></a></div>
+						
+					</section>
+					<section id="use-without-privacy"><div class="header-wrapper"><h5 id="x2-5-1-2-use-without-privacy"><bdi class="secno">2.5.1.2 </bdi>Use without privacy</h5><a class="self-link" href="#use-without-privacy" aria-label="Permalink for Section 2.5.1.2"></a></div>
+						
+					</section>
+					<div class="note" role="note" id="issue-container-generatedID-2"><div role="heading" class="note-title marker" id="h-note-1" aria-level="5"><span>Note</span></div><p class="">The purpose of identifying independence as a functional need is for individuals where independence cannot be achieved. Example: a person who has suffered a stroke, is conscious and aware but otherwise incapable of interacting with technology may need to log into a system or record a decision or authorize an agent to record a decision in their presence. In this case, they lack autonomy and privacy, but a method could be provided to verify the individual consent and the agent authority.</p></div>
+				</section>
+			</section>
 		</section>
-		<section id="meeting-user-needs">
-			<h2 id="x3-meeting-user-needs"><bdi class="secno">3. </bdi>Meeting User Needs<a class="self-link" aria-label="§" href="#meeting-user-needs"></a></h2>
-            <div class="note" role="note" id="issue-container-generatedID-0"><div role="heading" class="note-title marker" id="h-note-0" aria-level="3"><span>Note</span></div><p class="">This is a preliminary draft to document how user needs are met in various ways. </p></div>
-            <p>For each user need, ways to meet it are proposed for: </p>
+		<section id="user-needs-0"><div class="header-wrapper"><h2 id="x3-user-needs"><bdi class="secno">3. </bdi>User Needs</h2><a class="self-link" href="#user-needs-0" aria-label="Permalink for Section 3."></a></div>
+			
+			<section id="perceivable"><div class="header-wrapper"><h3 id="x3-1-perceivable"><bdi class="secno">3.1 </bdi>Perceivable</h3><a class="self-link" href="#perceivable" aria-label="Permalink for Section 3.1"></a></div>
+				
+				<section id="provide-consistent-content"><div class="header-wrapper"><h4 id="x3-1-1-provide-consistent-content"><bdi class="secno">3.1.1 </bdi>Provide consistent content&nbsp;</h4><a class="self-link" href="#provide-consistent-content" aria-label="Permalink for Section 3.1.1"></a></div>
+					
+					<p>(static / fixed)</p>
+					<section id="users-can-perceive"><div class="header-wrapper"><h5 id="x3-1-1-1-users-can-perceive"><bdi class="secno">3.1.1.1 </bdi>Users can perceive </h5><a class="self-link" href="#users-can-perceive" aria-label="Permalink for Section 3.1.1.1"></a></div>
+						
+						<section id="content"><div class="header-wrapper"><h6 id="x3-1-1-1-1-content"><bdi class="secno">3.1.1.1.1 </bdi>Content&nbsp;</h6><a class="self-link" href="#content" aria-label="Permalink for Section 3.1.1.1.1"></a></div>
+							
+						</section>
+						<section id="controls"><div class="header-wrapper"><h6 id="x3-1-1-1-2-controls"><bdi class="secno">3.1.1.1.2 </bdi>Controls</h6><a class="self-link" href="#controls" aria-label="Permalink for Section 3.1.1.1.2"></a></div>
+							
+							<p>(roles, states and properties)</p>
+						</section>
+						<section id="structure"><div class="header-wrapper"><h6 id="x3-1-1-1-3-structure"><bdi class="secno">3.1.1.1.3 </bdi>Structure</h6><a class="self-link" href="#structure" aria-label="Permalink for Section 3.1.1.1.3"></a></div>
+							
+						</section>
+						<section id="purpose"><div class="header-wrapper"><h6 id="x3-1-1-1-4-purpose"><bdi class="secno">3.1.1.1.4 </bdi>Purpose</h6><a class="self-link" href="#purpose" aria-label="Permalink for Section 3.1.1.1.4"></a></div>
+							
+						</section>
+						<section id="input-values"><div class="header-wrapper"><h6 id="x3-1-1-1-5-input-values"><bdi class="secno">3.1.1.1.5 </bdi>Input Values</h6><a class="self-link" href="#input-values" aria-label="Permalink for Section 3.1.1.1.5"></a></div>
+							
+						</section>
+					</section>
+				</section>
+				<section id="reveal-changed-content"><div class="header-wrapper"><h4 id="x3-1-2-reveal-changed-content"><bdi class="secno">3.1.2 </bdi>Reveal changed content</h4><a class="self-link" href="#reveal-changed-content" aria-label="Permalink for Section 3.1.2"></a></div>
+					
+					<section id="users-can-perceive-changes-to"><div class="header-wrapper"><h5 id="x3-1-2-1-users-can-perceive-changes-to"><bdi class="secno">3.1.2.1 </bdi>Users can perceive changes to </h5><a class="self-link" href="#users-can-perceive-changes-to" aria-label="Permalink for Section 3.1.2.1"></a></div>
+						
+						<section id="content-0"><div class="header-wrapper"><h6 id="x3-1-2-1-1-content"><bdi class="secno">3.1.2.1.1 </bdi>Content</h6><a class="self-link" href="#content-0" aria-label="Permalink for Section 3.1.2.1.1"></a></div>
+							
+						</section>
+						<section id="controls-0"><div class="header-wrapper"><h6 id="x3-1-2-1-2-controls"><bdi class="secno">3.1.2.1.2 </bdi>Controls</h6><a class="self-link" href="#controls-0" aria-label="Permalink for Section 3.1.2.1.2"></a></div>
+							
+							<p>(roles, states and properties)</p>
+						</section>
+						<section id="purpose-0"><div class="header-wrapper"><h6 id="x3-1-2-1-3-purpose"><bdi class="secno">3.1.2.1.3 </bdi>Purpose</h6><a class="self-link" href="#purpose-0" aria-label="Permalink for Section 3.1.2.1.3"></a></div>
+							
+						</section>
+						<section id="input-values-0"><div class="header-wrapper"><h6 id="x3-1-2-1-4-input-values"><bdi class="secno">3.1.2.1.4 </bdi>Input Values</h6><a class="self-link" href="#input-values-0" aria-label="Permalink for Section 3.1.2.1.4"></a></div>
+							
+						</section>
+					</section>
+				</section>
+			</section>
+			<section id="operable"><div class="header-wrapper"><h3 id="x3-2-operable"><bdi class="secno">3.2 </bdi>Operable</h3><a class="self-link" href="#operable" aria-label="Permalink for Section 3.2"></a></div>
+				
+				<section id="provide-consistent-interactions"><div class="header-wrapper"><h4 id="x3-2-1-provide-consistent-interactions"><bdi class="secno">3.2.1 </bdi>Provide consistent interactions</h4><a class="self-link" href="#provide-consistent-interactions" aria-label="Permalink for Section 3.2.1"></a></div>
+					
+					<section id="users-can-operate"><div class="header-wrapper"><h5 id="x3-2-1-1-users-can-operate"><bdi class="secno">3.2.1.1 </bdi>Users can operate </h5><a class="self-link" href="#users-can-operate" aria-label="Permalink for Section 3.2.1.1"></a></div>
+						
+						<section id="content-1"><div class="header-wrapper"><h6 id="x3-2-1-1-1-content"><bdi class="secno">3.2.1.1.1 </bdi>Content</h6><a class="self-link" href="#content-1" aria-label="Permalink for Section 3.2.1.1.1"></a></div>
+							
+						</section>
+						<section id="controls-1"><div class="header-wrapper"><h6 id="x3-2-1-1-2-controls"><bdi class="secno">3.2.1.1.2 </bdi>Controls</h6><a class="self-link" href="#controls-1" aria-label="Permalink for Section 3.2.1.1.2"></a></div>
+							
+							<p>(roles, states and properties)</p>
+						</section>
+						<section id="navigation"><div class="header-wrapper"><h6 id="x3-2-1-1-3-navigation"><bdi class="secno">3.2.1.1.3 </bdi>Navigation</h6><a class="self-link" href="#navigation" aria-label="Permalink for Section 3.2.1.1.3"></a></div>
+							
+						</section>
+					</section>
+					<section id="users-can-navigate"><div class="header-wrapper"><h5 id="x3-2-1-2-users-can-navigate"><bdi class="secno">3.2.1.2 </bdi>Users can navigate </h5><a class="self-link" href="#users-can-navigate" aria-label="Permalink for Section 3.2.1.2"></a></div>
+						
+						<section id="structure-0"><div class="header-wrapper"><h6 id="x3-2-1-2-1-structure"><bdi class="secno">3.2.1.2.1 </bdi>Structure</h6><a class="self-link" href="#structure-0" aria-label="Permalink for Section 3.2.1.2.1"></a></div>
+							
+							<p>(document and application)</p>
+						</section>
+					</section>
+				</section>
+				<section id="allow-adjustable-content"><div class="header-wrapper"><h4 id="x3-2-2-allow-adjustable-content"><bdi class="secno">3.2.2 </bdi>Allow adjustable content</h4><a class="self-link" href="#allow-adjustable-content" aria-label="Permalink for Section 3.2.2"></a></div>
+					
+					<section id="users-can-adjust"><div class="header-wrapper"><h5 id="x3-2-2-1-users-can-adjust"><bdi class="secno">3.2.2.1 </bdi>Users can adjust </h5><a class="self-link" href="#users-can-adjust" aria-label="Permalink for Section 3.2.2.1"></a></div>
+						
+						<section id="duration-requirements"><div class="header-wrapper"><h6 id="x3-2-2-1-1-duration-requirements"><bdi class="secno">3.2.2.1.1 </bdi>Duration requirements</h6><a class="self-link" href="#duration-requirements" aria-label="Permalink for Section 3.2.2.1.1"></a></div>
+							
+						</section>
+						<section id="content-orientation"><div class="header-wrapper"><h6 id="x3-2-2-1-2-content-orientation"><bdi class="secno">3.2.2.1.2 </bdi>Content orientation</h6><a class="self-link" href="#content-orientation" aria-label="Permalink for Section 3.2.2.1.2"></a></div>
+							
+						</section>
+						<section id="orientation-in-space"><div class="header-wrapper"><h6 id="x3-2-2-1-3-orientation-in-space"><bdi class="secno">3.2.2.1.3 </bdi>Orientation in space</h6><a class="self-link" href="#orientation-in-space" aria-label="Permalink for Section 3.2.2.1.3"></a></div>
+							
+						</section>
+					</section>
+				</section>
+			</section>
+			<section id="understandable"><div class="header-wrapper"><h3 id="x3-3-understandable"><bdi class="secno">3.3 </bdi>Understandable</h3><a class="self-link" href="#understandable" aria-label="Permalink for Section 3.3"></a></div>
+				
+				<section id="make-appearance-understandable"><div class="header-wrapper"><h4 id="x3-3-1-make-appearance-understandable"><bdi class="secno">3.3.1 </bdi>Make appearance understandable</h4><a class="self-link" href="#make-appearance-understandable" aria-label="Permalink for Section 3.3.1"></a></div>
+					
+					<section id="users-can-understand"><div class="header-wrapper"><h5 id="x3-3-1-1-users-can-understand"><bdi class="secno">3.3.1.1 </bdi>Users can understand </h5><a class="self-link" href="#users-can-understand" aria-label="Permalink for Section 3.3.1.1"></a></div>
+						
+						<section id="content-2"><div class="header-wrapper"><h6 id="x3-3-1-1-1-content"><bdi class="secno">3.3.1.1.1 </bdi>Content</h6><a class="self-link" href="#content-2" aria-label="Permalink for Section 3.3.1.1.1"></a></div>
+							
+						</section>
+						<section id="controls-2"><div class="header-wrapper"><h6 id="x3-3-1-1-2-controls"><bdi class="secno">3.3.1.1.2 </bdi>Controls</h6><a class="self-link" href="#controls-2" aria-label="Permalink for Section 3.3.1.1.2"></a></div>
+							
+						</section>
+						<section id="structure-1"><div class="header-wrapper"><h6 id="x3-3-1-1-3-structure"><bdi class="secno">3.3.1.1.3 </bdi>Structure</h6><a class="self-link" href="#structure-1" aria-label="Permalink for Section 3.3.1.1.3"></a></div>
+							
+						</section>
+						<section id="navigation-0"><div class="header-wrapper"><h6 id="x3-3-1-1-4-navigation"><bdi class="secno">3.3.1.1.4 </bdi>Navigation</h6><a class="self-link" href="#navigation-0" aria-label="Permalink for Section 3.3.1.1.4"></a></div>
+							
+						</section>
+						<section id="changed-content"><div class="header-wrapper"><h6 id="x3-3-1-1-5-changed-content"><bdi class="secno">3.3.1.1.5 </bdi>Changed content</h6><a class="self-link" href="#changed-content" aria-label="Permalink for Section 3.3.1.1.5"></a></div>
+							
+						</section>
+						<section id="purpose-1"><div class="header-wrapper"><h6 id="x3-3-1-1-6-purpose"><bdi class="secno">3.3.1.1.6 </bdi>Purpose</h6><a class="self-link" href="#purpose-1" aria-label="Permalink for Section 3.3.1.1.6"></a></div>
+							
+						</section>
+						<section id="relationships"><div class="header-wrapper"><h6 id="x3-3-1-1-7-relationships"><bdi class="secno">3.3.1.1.7 </bdi>Relationships</h6><a class="self-link" href="#relationships" aria-label="Permalink for Section 3.3.1.1.7"></a></div>
+							
+						</section>
+					</section>
+				</section>
+				<section id="provide-help-and-instructions"><div class="header-wrapper"><h4 id="x3-3-2-provide-help-and-instructions"><bdi class="secno">3.3.2 </bdi>Provide help and instructions</h4><a class="self-link" href="#provide-help-and-instructions" aria-label="Permalink for Section 3.3.2"></a></div>
+					
+					<section id="users-get-instructions-for"><div class="header-wrapper"><h5 id="x3-3-2-1-users-get-instructions-for"><bdi class="secno">3.3.2.1 </bdi>Users get instructions for </h5><a class="self-link" href="#users-get-instructions-for" aria-label="Permalink for Section 3.3.2.1"></a></div>
+						
+						<section id="content-3"><div class="header-wrapper"><h6 id="x3-3-2-1-1-content"><bdi class="secno">3.3.2.1.1 </bdi>Content</h6><a class="self-link" href="#content-3" aria-label="Permalink for Section 3.3.2.1.1"></a></div>
+							
+						</section>
+						<section id="interaction"><div class="header-wrapper"><h6 id="x3-3-2-1-2-interaction"><bdi class="secno">3.3.2.1.2 </bdi>Interaction</h6><a class="self-link" href="#interaction" aria-label="Permalink for Section 3.3.2.1.2"></a></div>
+							
+						</section>
+						<section id="support-for-modalities"><div class="header-wrapper"><h6 id="x3-3-2-1-3-support-for-modalities"><bdi class="secno">3.3.2.1.3 </bdi>Support for modalities</h6><a class="self-link" href="#support-for-modalities" aria-label="Permalink for Section 3.3.2.1.3"></a></div>
+							
+						</section>
+						<section id="personalization-options"><div class="header-wrapper"><h6 id="x3-3-2-1-4-personalization-options"><bdi class="secno">3.3.2.1.4 </bdi>Personalization options</h6><a class="self-link" href="#personalization-options" aria-label="Permalink for Section 3.3.2.1.4"></a></div>
+							
+						</section>
+						<section id="processes"><div class="header-wrapper"><h6 id="x3-3-2-1-5-processes"><bdi class="secno">3.3.2.1.5 </bdi>Processes</h6><a class="self-link" href="#processes" aria-label="Permalink for Section 3.3.2.1.5"></a></div>
+							
+						</section>
+					</section>
+					<section id="users-get-help-through"><div class="header-wrapper"><h5 id="x3-3-2-2-users-get-help-through"><bdi class="secno">3.3.2.2 </bdi>Users get help through </h5><a class="self-link" href="#users-get-help-through" aria-label="Permalink for Section 3.3.2.2"></a></div>
+						
+						<section id="moderated-form-input"><div class="header-wrapper"><h6 id="x3-3-2-2-1-moderated-form-input"><bdi class="secno">3.3.2.2.1 </bdi>Moderated (form) input</h6><a class="self-link" href="#moderated-form-input" aria-label="Permalink for Section 3.3.2.2.1"></a></div>
+							
+						</section>
+						<section id="alert-awareness"><div class="header-wrapper"><h6 id="x3-3-2-2-2-alert-awareness"><bdi class="secno">3.3.2.2.2 </bdi>Alert awareness</h6><a class="self-link" href="#alert-awareness" aria-label="Permalink for Section 3.3.2.2.2"></a></div>
+							
+						</section>
+					</section>
+				</section>
+				<section id="make-position-and-orientation-clear"><div class="header-wrapper"><h4 id="x3-3-3-make-position-and-orientation-clear"><bdi class="secno">3.3.3 </bdi>Make position and orientation clear</h4><a class="self-link" href="#make-position-and-orientation-clear" aria-label="Permalink for Section 3.3.3"></a></div>
+					
+					<section id="users-can-identify-their-position-in"><div class="header-wrapper"><h5 id="x3-3-3-1-users-can-identify-their-position-in"><bdi class="secno">3.3.3.1 </bdi>Users can identify their position in </h5><a class="self-link" href="#users-can-identify-their-position-in" aria-label="Permalink for Section 3.3.3.1"></a></div>
+						
+						<section id="content-4"><div class="header-wrapper"><h6 id="x3-3-3-1-1-content"><bdi class="secno">3.3.3.1.1 </bdi>Content</h6><a class="self-link" href="#content-4" aria-label="Permalink for Section 3.3.3.1.1"></a></div>
+							
+						</section>
+						<section id="context"><div class="header-wrapper"><h6 id="x3-3-3-1-2-context"><bdi class="secno">3.3.3.1.2 </bdi>Context</h6><a class="self-link" href="#context" aria-label="Permalink for Section 3.3.3.1.2"></a></div>
+							
+						</section>
+						<section id="a-process"><div class="header-wrapper"><h6 id="x3-3-3-1-3-a-process"><bdi class="secno">3.3.3.1.3 </bdi>A process</h6><a class="self-link" href="#a-process" aria-label="Permalink for Section 3.3.3.1.3"></a></div>
+							
+						</section>
+						<section id="a-space"><div class="header-wrapper"><h6 id="x3-3-3-1-4-a-space"><bdi class="secno">3.3.3.1.4 </bdi>A space</h6><a class="self-link" href="#a-space" aria-label="Permalink for Section 3.3.3.1.4"></a></div>
+							
+						</section>
+					</section>
+					<section id="users-can-orientate-themselves-in"><div class="header-wrapper"><h5 id="x3-3-3-2-users-can-orientate-themselves-in"><bdi class="secno">3.3.3.2 </bdi>Users can orientate themselves in </h5><a class="self-link" href="#users-can-orientate-themselves-in" aria-label="Permalink for Section 3.3.3.2"></a></div>
+						
+						<section id="immersive-environments"><div class="header-wrapper"><h6 id="x3-3-3-2-1-immersive-environments"><bdi class="secno">3.3.3.2.1 </bdi>Immersive environments</h6><a class="self-link" href="#immersive-environments" aria-label="Permalink for Section 3.3.3.2.1"></a></div>
+							
+						</section>
+						<section id="augmented-environments"><div class="header-wrapper"><h6 id="x3-3-3-2-2-augmented-environments"><bdi class="secno">3.3.3.2.2 </bdi>Augmented environments</h6><a class="self-link" href="#augmented-environments" aria-label="Permalink for Section 3.3.3.2.2"></a></div>
+							
+						</section>
+					</section>
+				</section>
+				<section id="make-discoverable"><div class="header-wrapper"><h4 id="x3-3-4-make-discoverable"><bdi class="secno">3.3.4 </bdi>Make discoverable</h4><a class="self-link" href="#make-discoverable" aria-label="Permalink for Section 3.3.4"></a></div>
+					
+					<section id="users-can-discover"><div class="header-wrapper"><h5 id="x3-3-4-1-users-can-discover"><bdi class="secno">3.3.4.1 </bdi>Users can discover </h5><a class="self-link" href="#users-can-discover" aria-label="Permalink for Section 3.3.4.1"></a></div>
+						
+						<section id="content-5"><div class="header-wrapper"><h6 id="x3-3-4-1-1-content"><bdi class="secno">3.3.4.1.1 </bdi>Content</h6><a class="self-link" href="#content-5" aria-label="Permalink for Section 3.3.4.1.1"></a></div>
+							
+						</section>
+						<section id="context-0"><div class="header-wrapper"><h6 id="x3-3-4-1-2-context"><bdi class="secno">3.3.4.1.2 </bdi>Context</h6><a class="self-link" href="#context-0" aria-label="Permalink for Section 3.3.4.1.2"></a></div>
+							
+						</section>
+						<section id="customization-options"><div class="header-wrapper"><h6 id="x3-3-4-1-3-customization-options"><bdi class="secno">3.3.4.1.3 </bdi>Customization options</h6><a class="self-link" href="#customization-options" aria-label="Permalink for Section 3.3.4.1.3"></a></div>
+							
+						</section>
+					</section>
+				</section>
+			</section>
+			<section id="personalization"><div class="header-wrapper"><h3 id="x3-4-personalization"><bdi class="secno">3.4 </bdi>Personalization</h3><a class="self-link" href="#personalization" aria-label="Permalink for Section 3.4"></a></div>
+				
+				<section id="customization"><div class="header-wrapper"><h4 id="x3-4-1-customization"><bdi class="secno">3.4.1 </bdi>Customization</h4><a class="self-link" href="#customization" aria-label="Permalink for Section 3.4.1"></a></div>
+					
+					<section id="users-can-customize-or-request"><div class="header-wrapper"><h5 id="x3-4-1-1-users-can-customize-or-request"><bdi class="secno">3.4.1.1 </bdi>Users can customize or request</h5><a class="self-link" href="#users-can-customize-or-request" aria-label="Permalink for Section 3.4.1.1"></a></div>
+						
+						<section id="content-6"><div class="header-wrapper"><h6 id="x3-4-1-1-1-content"><bdi class="secno">3.4.1.1.1 </bdi>Content</h6><a class="self-link" href="#content-6" aria-label="Permalink for Section 3.4.1.1.1"></a></div>
+							
+						</section>
+						<section id="context-1"><div class="header-wrapper"><h6 id="x3-4-1-1-2-context"><bdi class="secno">3.4.1.1.2 </bdi>Context</h6><a class="self-link" href="#context-1" aria-label="Permalink for Section 3.4.1.1.2"></a></div>
+							
+						</section>
+						<section id="functionality-settings"><div class="header-wrapper"><h6 id="x3-4-1-1-3-functionality-settings"><bdi class="secno">3.4.1.1.3 </bdi>Functionality / settings</h6><a class="self-link" href="#functionality-settings" aria-label="Permalink for Section 3.4.1.1.3"></a></div>
+							
+						</section>
+					</section>
+					<section id="users-get-customized-via-platform"><div class="header-wrapper"><h5 id="x3-4-1-2-users-get-customized-via-platform"><bdi class="secno">3.4.1.2 </bdi>Users get customized (via platform) </h5><a class="self-link" href="#users-get-customized-via-platform" aria-label="Permalink for Section 3.4.1.2"></a></div>
+						
+						<section id="content-7"><div class="header-wrapper"><h6 id="x3-4-1-2-1-content"><bdi class="secno">3.4.1.2.1 </bdi>Content</h6><a class="self-link" href="#content-7" aria-label="Permalink for Section 3.4.1.2.1"></a></div>
+							
+						</section>
+						<section id="context-2"><div class="header-wrapper"><h6 id="x3-4-1-2-2-context"><bdi class="secno">3.4.1.2.2 </bdi>Context</h6><a class="self-link" href="#context-2" aria-label="Permalink for Section 3.4.1.2.2"></a></div>
+							
+						</section>
+						<section id="functionality"><div class="header-wrapper"><h6 id="x3-4-1-2-3-functionality"><bdi class="secno">3.4.1.2.3 </bdi>Functionality</h6><a class="self-link" href="#functionality" aria-label="Permalink for Section 3.4.1.2.3"></a></div>
+							
+						</section>
+					</section>
+					<section id="users-can-control"><div class="header-wrapper"><h5 id="x3-4-1-3-users-can-control"><bdi class="secno">3.4.1.3 </bdi>Users can control </h5><a class="self-link" href="#users-can-control" aria-label="Permalink for Section 3.4.1.3"></a></div>
+						
+						<section id="time-sensitive-content"><div class="header-wrapper"><h6 id="x3-4-1-3-1-time-sensitive-content"><bdi class="secno">3.4.1.3.1 </bdi>Time-sensitive content</h6><a class="self-link" href="#time-sensitive-content" aria-label="Permalink for Section 3.4.1.3.1"></a></div>
+							
+						</section>
+						<section id="time-sensitive-tasks"><div class="header-wrapper"><h6 id="x3-4-1-3-2-time-sensitive-tasks"><bdi class="secno">3.4.1.3.2 </bdi>Time-sensitive tasks</h6><a class="self-link" href="#time-sensitive-tasks" aria-label="Permalink for Section 3.4.1.3.2"></a></div>
+							
+						</section>
+						<section id="time-based-media"><div class="header-wrapper"><h6 id="x3-4-1-3-3-time-based-media"><bdi class="secno">3.4.1.3.3 </bdi>Time-based media</h6><a class="self-link" href="#time-based-media" aria-label="Permalink for Section 3.4.1.3.3"></a></div>
+							
+							<p>(including dynamic values, EQ, volume)</p>
+						</section>
+					</section>
+				</section>
+				<section id="preferences"><div class="header-wrapper"><h4 id="x3-4-2-preferences"><bdi class="secno">3.4.2 </bdi>Preferences</h4><a class="self-link" href="#preferences" aria-label="Permalink for Section 3.4.2"></a></div>
+					
+					<section id="users-personalization-preferences"><div class="header-wrapper"><h5 id="x3-4-2-1-users-personalization-preferences"><bdi class="secno">3.4.2.1 </bdi>Users personalization preferences </h5><a class="self-link" href="#users-personalization-preferences" aria-label="Permalink for Section 3.4.2.1"></a></div>
+						
+						<section id="are-allowed"><div class="header-wrapper"><h6 id="x3-4-2-1-1-are-allowed"><bdi class="secno">3.4.2.1.1 </bdi>Are allowed</h6><a class="self-link" href="#are-allowed" aria-label="Permalink for Section 3.4.2.1.1"></a></div>
+							
+						</section>
+						<section id="are-honored-by-content-authors"><div class="header-wrapper"><h6 id="x3-4-2-1-2-are-honored-by-content-authors"><bdi class="secno">3.4.2.1.2 </bdi>Are honored by content authors</h6><a class="self-link" href="#are-honored-by-content-authors" aria-label="Permalink for Section 3.4.2.1.2"></a></div>
+							
+						</section>
+						<section id="are-not-compromised-by-security"><div class="header-wrapper"><h6 id="x3-4-2-1-3-are-not-compromised-by-security"><bdi class="secno">3.4.2.1.3 </bdi>Are not compromised by security</h6><a class="self-link" href="#are-not-compromised-by-security" aria-label="Permalink for Section 3.4.2.1.3"></a></div>
+							
+						</section>
+						<section id="do-not-compromise-privacy"><div class="header-wrapper"><h6 id="x3-4-2-1-4-do-not-compromise-privacy"><bdi class="secno">3.4.2.1.4 </bdi>Do not compromise privacy</h6><a class="self-link" href="#do-not-compromise-privacy" aria-label="Permalink for Section 3.4.2.1.4"></a></div>
+							
+						</section>
+					</section>
+					<section id="users-can-device-independently"><div class="header-wrapper"><h5 id="x3-4-2-2-users-can-device-independently"><bdi class="secno">3.4.2.2 </bdi>Users can, device independently </h5><a class="self-link" href="#users-can-device-independently" aria-label="Permalink for Section 3.4.2.2"></a></div>
+						
+						<section id="interact"><div class="header-wrapper"><h6 id="x3-4-2-2-1-interact"><bdi class="secno">3.4.2.2.1 </bdi>Interact</h6><a class="self-link" href="#interact" aria-label="Permalink for Section 3.4.2.2.1"></a></div>
+							
+						</section>
+						<section id="input-data"><div class="header-wrapper"><h6 id="x3-4-2-2-2-input-data"><bdi class="secno">3.4.2.2.2 </bdi>Input data</h6><a class="self-link" href="#input-data" aria-label="Permalink for Section 3.4.2.2.2"></a></div>
+							
+						</section>
+						<section id="route-and-control-output"><div class="header-wrapper"><h6 id="x3-4-2-2-3-route-and-control-output"><bdi class="secno">3.4.2.2.3 </bdi>Route and control output</h6><a class="self-link" href="#route-and-control-output" aria-label="Permalink for Section 3.4.2.2.3"></a></div>
+							
+						</section>
+					</section>
+				</section>
+			</section>
+			<section id="deceptive-patterns"><div class="header-wrapper"><h3 id="x3-5-deceptive-patterns"><bdi class="secno">3.5 </bdi>Deceptive Patterns</h3><a class="self-link" href="#deceptive-patterns" aria-label="Permalink for Section 3.5"></a></div>
+				
+				<section id="distractions-and-interruptions"><div class="header-wrapper"><h4 id="x3-5-1-distractions-and-interruptions"><bdi class="secno">3.5.1 </bdi>Distractions and Interruptions</h4><a class="self-link" href="#distractions-and-interruptions" aria-label="Permalink for Section 3.5.1"></a></div>
+					
+					<section id="users-attention-can-be"><div class="header-wrapper"><h5 id="x3-5-1-1-users-attention-can-be"><bdi class="secno">3.5.1.1 </bdi>Users attention can be </h5><a class="self-link" href="#users-attention-can-be" aria-label="Permalink for Section 3.5.1.1"></a></div>
+						
+						<section id="focussed"><div class="header-wrapper"><h6 id="x3-5-1-1-1-focussed"><bdi class="secno">3.5.1.1.1 </bdi>Focussed</h6><a class="self-link" href="#focussed" aria-label="Permalink for Section 3.5.1.1.1"></a></div>
+							
+						</section>
+						<section id="directed"><div class="header-wrapper"><h6 id="x3-5-1-1-2-directed"><bdi class="secno">3.5.1.1.2 </bdi>Directed</h6><a class="self-link" href="#directed" aria-label="Permalink for Section 3.5.1.1.2"></a></div>
+							
+						</section>
+						<section id="shifted"><div class="header-wrapper"><h6 id="x3-5-1-1-3-shifted"><bdi class="secno">3.5.1.1.3 </bdi>Shifted</h6><a class="self-link" href="#shifted" aria-label="Permalink for Section 3.5.1.1.3"></a></div>
+							
+						</section>
+					</section>
+				</section>
+				<section id="no-harm"><div class="header-wrapper"><h4 id="x3-5-2-no-harm"><bdi class="secno">3.5.2 </bdi>No Harm</h4><a class="self-link" href="#no-harm" aria-label="Permalink for Section 3.5.2"></a></div>
+					
+					<section id="users-are-not-harmed"><div class="header-wrapper"><h5 id="x3-5-2-1-users-are-not-harmed"><bdi class="secno">3.5.2.1 </bdi>Users are not harmed </h5><a class="self-link" href="#users-are-not-harmed" aria-label="Permalink for Section 3.5.2.1"></a></div>
+						
+						<section id="neurologically"><div class="header-wrapper"><h6 id="x3-5-2-1-1-neurologically"><bdi class="secno">3.5.2.1.1 </bdi>Neurologically</h6><a class="self-link" href="#neurologically" aria-label="Permalink for Section 3.5.2.1.1"></a></div>
+							
+						</section>
+						<section id="emotionally"><div class="header-wrapper"><h6 id="x3-5-2-1-2-emotionally"><bdi class="secno">3.5.2.1.2 </bdi>Emotionally</h6><a class="self-link" href="#emotionally" aria-label="Permalink for Section 3.5.2.1.2"></a></div>
+							
+						</section>
+					</section>
+				</section>
+			</section>
+		</section>
+		<section id="meeting-user-needs"><div class="header-wrapper"><h2 id="x4-meeting-user-needs"><bdi class="secno">4. </bdi>Meeting User Needs</h2><a class="self-link" href="#meeting-user-needs" aria-label="Permalink for Section 4."></a></div>
+			
+            <div class="note" role="note" id="issue-container-generatedID-3"><div role="heading" class="note-title marker" id="h-note-2" aria-level="3"><span>Note</span></div><p class="">This is a preliminary draft to document how user needs are met in various ways. </p></div>
+            <p>For each <a data-link-type="dfn" href="#dfn-expected-outcomes" class="internalDFN" id="ref-for-dfn-expected-outcomes-1">expected outcome</a>, ways to meet it are proposed for: </p>
 			<ul>
 				<li> Technologies </li>
 				<li> Content Authors </li>
 				<li> User Agents </li>
 			</ul>
 			<p>Other categories may be included later. Many user needs can be met in more than one way. The mechanism to meet user needs in one of the above areas may require support from one or more of the other areas. </p>
-			<section id="ways-to-meet-user-needs">
-				<h3 id="x3-1-ways-to-meet-user-needs"><bdi class="secno">3.1 </bdi>Ways to Meet User Needs<a class="self-link" aria-label="§" href="#ways-to-meet-user-needs"></a></h3>
+			<section id="ways-to-meet-user-needs"><div class="header-wrapper"><h3 id="x4-1-ways-to-meet-user-needs"><bdi class="secno">4.1 </bdi>Ways to Meet User Needs</h3><a class="self-link" href="#ways-to-meet-user-needs" aria-label="Permalink for Section 4.1"></a></div>
+				
 				<p>User needs need to be analyzed for how they can be met. The following ways of meeting needs are currently understood: </p>
 				<ul>
 					<li> Author design </li>
@@ -461,25 +906,25 @@
 					<li> User agent support of author-implemented accessibility features </li>
 					<li> Assistive technology support (including accessibility API mediation) </li>
 				</ul>
-				<section id="author-implementation">
-					<h4 id="x3-1-1-author-implementation"><bdi class="secno">3.1.1 </bdi>Author Implementation<a class="self-link" aria-label="§" href="#author-implementation"></a></h4>
+				<section id="author-implementation"><div class="header-wrapper"><h4 id="x4-1-1-author-implementation"><bdi class="secno">4.1.1 </bdi>Author Implementation</h4><a class="self-link" href="#author-implementation" aria-label="Permalink for Section 4.1.1"></a></div>
+					
 				</section>
-				<section id="user-agent-features">
-					<h4 id="x3-1-2-user-agent-features"><bdi class="secno">3.1.2 </bdi>User Agent Features<a class="self-link" aria-label="§" href="#user-agent-features"></a></h4>
-					<section id="accessibility-support-in-mainstream-user-agents">
-						<h5 id="x3-1-2-1-accessibility-support-in-mainstream-user-agents"><bdi class="secno">3.1.2.1 </bdi>Accessibility Support in Mainstream User Agents<a class="self-link" aria-label="§" href="#accessibility-support-in-mainstream-user-agents"></a></h5>
+				<section id="user-agent-features"><div class="header-wrapper"><h4 id="x4-1-2-user-agent-features"><bdi class="secno">4.1.2 </bdi>User Agent Features</h4><a class="self-link" href="#user-agent-features" aria-label="Permalink for Section 4.1.2"></a></div>
+					
+					<section id="accessibility-support-in-mainstream-user-agents"><div class="header-wrapper"><h5 id="x4-1-2-1-accessibility-support-in-mainstream-user-agents"><bdi class="secno">4.1.2.1 </bdi>Accessibility Support in Mainstream User Agents</h5><a class="self-link" href="#accessibility-support-in-mainstream-user-agents" aria-label="Permalink for Section 4.1.2.1"></a></div>
+						
 					</section>
-					<section id="assistive-technology">
-						<h5 id="x3-1-2-2-assistive-technology"><bdi class="secno">3.1.2.2 </bdi>Assistive Technology<a class="self-link" aria-label="§" href="#assistive-technology"></a></h5>
+					<section id="assistive-technology"><div class="header-wrapper"><h5 id="x4-1-2-2-assistive-technology"><bdi class="secno">4.1.2.2 </bdi>Assistive Technology</h5><a class="self-link" href="#assistive-technology" aria-label="Permalink for Section 4.1.2.2"></a></div>
+						
 					</section>
-					<section id="accessibility-apis">
-						<h5 id="x3-1-2-3-accessibility-apis"><bdi class="secno">3.1.2.3 </bdi>Accessibility APIs<a class="self-link" aria-label="§" href="#accessibility-apis"></a></h5>
+					<section id="accessibility-apis"><div class="header-wrapper"><h5 id="x4-1-2-3-accessibility-apis"><bdi class="secno">4.1.2.3 </bdi>Accessibility APIs</h5><a class="self-link" href="#accessibility-apis" aria-label="Permalink for Section 4.1.2.3"></a></div>
+						
 					</section>
 				</section>
 			</section>
-            <section id="meeting-user-needs-table">
-                <h3 id="x3-2-meeting-user-needs-table"><bdi class="secno">3.2 </bdi>Meeting User Needs Table<a class="self-link" aria-label="§" href="#meeting-user-needs-table"></a></h3>
-                <div class="note" role="note" id="issue-container-generatedID-1"><div role="heading" class="note-title marker" id="h-note-1" aria-level="4"><span>Note</span></div><p class="">This version of the resource is primarily to show the structure, not yet a comprehensive documentation of how user needs can be met. </p></div>
+            <section id="meeting-user-needs-table"><div class="header-wrapper"><h3 id="x4-2-meeting-user-needs-table"><bdi class="secno">4.2 </bdi>Meeting User Needs Table</h3><a class="self-link" href="#meeting-user-needs-table" aria-label="Permalink for Section 4.2"></a></div>
+                
+                <div class="note" role="note" id="issue-container-generatedID-4"><div role="heading" class="note-title marker" id="h-note-3" aria-level="4"><span>Note</span></div><p class="">This version of the resource is primarily to show the structure, not yet a comprehensive documentation of how user needs can be met. </p></div>
                 <p>The table below shows how two of the user needs identified above might be met by technology features, author implementation, and user agent support. Each row of the table shows a related set of approaches, in which the approach in column depends on successful implementation of the approaches in the other columns for that row. For instance, many author features depend on support from the technology as well as exposure from the user agents. Some approaches to meeting user needs do not require support from others, which is reflected by rows with blank columns. For instance, it is possible for a user agent to meet certain needs with no particular support provided by the technology or author. This layout is preliminary and a more expressive layout is sought.</p>
                 <table class="simple">
                     <thead>
@@ -537,217 +982,311 @@
                 </table>
             </section>
 		</section>
-		<section id="framework-for-accessible-specification-of-technologies">
-			<h2 id="x4-framework-for-accessible-specification-of-technologies"><bdi class="secno">4. </bdi>Framework for Accessible Specification of Technologies<a class="self-link" aria-label="§" href="#framework-for-accessible-specification-of-technologies"></a></h2>
-			<div class="note" role="note" id="issue-container-generatedID-2"><div role="heading" class="note-title marker" id="h-note-2" aria-level="3"><span>Note</span></div><p class="">The content below is merely initial draft content intended to show how guidelines aimed at web technology developers might look. It has not yet been related to the user needs and ways of meeting them outlined above. It serves as initial brainstorming to help demonstrate viability of this set of guidelines.</p></div>
-			<section id="alternative-content">
-				<h3 id="x4-1-alternative-content"><bdi class="secno">4.1 </bdi>Alternative Content<a class="self-link" aria-label="§" href="#alternative-content"></a></h3>
-				<ul>
-					<li> Provide a way to explicitly mark content as not needing alternative content because it does not perform an important role. </li>
-					<li> Provide a way to explicitly indicate when author declined to provide alternative content. </li>
-					<li> Provide a way to explicitly indicate that authoring tool is unable to generate or obtain alternative content. </li>
-					<li> Provide a way to explicitly associate alternative content with the primary content. </li>
-					<li> Allow multiple types and instances of alternative content to be associated with primary content. </li>
-				</ul>
-				<section id="text-alternatives">
-					<h4 id="x4-1-1-text-alternatives"><bdi class="secno">4.1.1 </bdi>Text Alternatives<a class="self-link" aria-label="§" href="#text-alternatives"></a></h4>
-					<ul>
-						<li> Provide a way to define short text alternatives / labels for non-text content. </li>
-						<li> Provide a way to define long text alternatives for non-text content. </li>
-						<li> Allow text alternatives to be semantically "rich" e.g., with page structure, text style, hyperlinks, etc. </li>
-					</ul>
-				</section>
-				<section id="rich-alternatives">
-					<h4 id="x4-1-2-rich-alternatives"><bdi class="secno">4.1.2 </bdi>Rich Alternatives<a class="self-link" aria-label="§" href="#rich-alternatives"></a></h4>
-					<ul>
-						<li> Provide a way to define non-text alternatives for text content. </li>
-						<li> Provide a way to define non-text alternatives for non-text content . </li>
-					</ul>
-				</section>
-			</section>
-			<section id="color">
-				<h3 id="x4-2-color"><bdi class="secno">4.2 </bdi>Color<a class="self-link" aria-label="§" href="#color"></a></h3>
-				<ul>
-					<li> Allow users to override colors of text and user interface components. </li>
-					<li> Provide a feature for authors to define semantically available "color classes" that users can easily map to custom colors, and give preference to this vs. coloring objects individually. </li>
-					<li> Provide a feature for users to choose color schemata that work for them. </li>
-					<li> Ensure that the foreground and background color of an object can be reported to the user via AT. </li>
-					<li> Provide ways to set foreground and background colors separately for all objects. </li>
-					<li> Define compositing rules for foreground and background colors well. </li>
-					<li> @@similar for patterns, gradients, etc. </li>
-				</ul>
-			</section>
-			<section id="device-independence">
-				<h3 id="x4-3-device-independence"><bdi class="secno">4.3 </bdi>Device Independence<a class="self-link" aria-label="§" href="#device-independence"></a></h3>
-				<ul>
-					<li> Define a conformance model sufficiently robust that implementations of all types can process content without variations due to different handling of conformance violations. </li>
-				</ul>
-				<section id="universal-meaning-support">
-					<h4 id="x4-3-1-universal-meaning-support"><bdi class="secno">4.3.1 </bdi>Universal meaning support<a class="self-link" aria-label="§" href="#universal-meaning-support"></a></h4>
-					<ul>
-						<li> Provide declarative mechanisms (that have accessibility semantics pre-defined in the spec) to implement technology features whenever possible. </li>
-						<li> Define unambiguous ways to express relationships between units of content, such as object nesting, ID referencing, etc. </li>
-						<li> Prefer structural semantics to presentational semantics. </li>
-						<li> When providing presentational semantics, define ways they can be easily mapped to structural semantics, e.g., to support restyling or meaningful exposure to AAPIs. </li>
-						<li> Minimize the need for alternative content by supporting a comprehensive set of authoring use cases. (e.g., don't make authors resort to text in images to get the style they want) </li>
-					</ul>
-				</section>
-				<section id="compatibility-with-aapis">
-					<h4 id="x4-3-2-compatibility-with-aapis"><bdi class="secno">4.3.2 </bdi>Compatibility with AAPIs<a class="self-link" aria-label="§" href="#compatibility-with-aapis"></a></h4>
-					<ul>
-						<li> For every user interface object type, define the "type" of object as a role to AAPIs. </li>
-						<li> For every user interface object type, define how authors provide or user agent determines the "accessible name" for AAPIs. </li>
-						<li> For user interface objects that can have states, properties, or values, define how authors can set these and how these are exposed to AAPIs. </li>
-						<li> When providing imperative mechanisms to implement technology features (e.g., scripts), provide a way for authors to expose accessibility information to AAPIs. </li>
-						<li> Provide a way to title Web pages and sections of content. </li>
-						<li> Provide a way to clearly indicate the target of a hyperlink and function of a control. </li>
-						<li> Provide a way to indicate content language, for the page as a whole and for blocks of content. </li>
-						<li> Provide a way for authors to support understanding of abbreviations / acronyms / initialisms, idioms, jargon, etc. </li>
-						<li> Provide a mechanism to support correct machine pronunciation of ambiguously spelled terms (e.g., in the phrase "I am content with this content" there are different correct pronunciations of the lexeme "content"). </li>
-					</ul>
-				</section>
-				<section id="hardware-interfaces">
-					<h4 id="x4-3-3-hardware-interfaces"><bdi class="secno">4.3.3 </bdi>Hardware Interfaces<a class="self-link" aria-label="§" href="#hardware-interfaces"></a></h4>
-					<ul>
-						<li> Abstract hardware interfaces so various device types can simulate each others' functions. </li>
-						<li> Always provide a keyboard interface to interact with content. </li>
-					</ul>
-				</section>
-			</section>
-			<section id="user-customization">
-				<h3 id="x4-4-user-customization"><bdi class="secno">4.4 </bdi>User Customization<a class="self-link" aria-label="§" href="#user-customization"></a></h3>
-				<ul>
-					<li> Provide ways for display of content to be resized without loss of effective layout. </li>
-					<li> Define adaptive layout mechanisms that optimize for different display conditions (screen size, font size, lighting, noise, etc.) well. </li>
-					<li> Separate layout semantics from content so users or tools can easily create alternate layouts. </li>
-					<li> Provide ways for users to easily select font preferences (size, weight, family, specific typeface, etc.). </li>
-					<li> Provide mechanisms for users to easily apply custom display requirements that preserve presentation of meaning without knowledge the idiosyncratic implementation of content. </li>
-				</ul>
-			</section>
-			<section id="user-control">
-				<h3 id="x4-5-user-control"><bdi class="secno">4.5 </bdi>User Control<a class="self-link" aria-label="§" href="#user-control"></a></h3>
-				<section id="blinking-flashing">
-					<h4 id="x4-5-1-blinking-flashing"><bdi class="secno">4.5.1 </bdi>Blinking / Flashing<a class="self-link" aria-label="§" href="#blinking-flashing"></a></h4>
-					<ul>
-						<li> Define a mechanism to warn users of flashing content. </li>
-						<li> Define a mechanism to identify potentially flashing content to user agents so they can suppress it on user preference. </li>
-						<li> Define declarative mechanisms for features that could cause blinking or flashing so their parameters can be more easily controlled by user agents than imperative mechanisms. </li>
-					</ul>
-				</section>
-				<section id="automatic-actions">
-					<h4 id="x4-5-2-automatic-actions"><bdi class="secno">4.5.2 </bdi>Automatic actions<a class="self-link" aria-label="§" href="#automatic-actions"></a></h4>
-					<ul>
-						<li> Provide a way for users to prevent time-based content from playing automatically, e.g., as a user agent preference that implementations must provide. </li>
-						<li> Provide a way for users to request no interruptions. Note, bona fide emergency interruptions should still be allowed. </li>
-						<li> Define that there will be not automatic action leading to a change of context when focus lands on a given element. </li>
-					</ul>
-				</section>
-				<section id="time-based-content">
-					<h4 id="x4-5-3-time-based-content"><bdi class="secno">4.5.3 </bdi>Time-based content<a class="self-link" aria-label="§" href="#time-based-content"></a></h4>
-					<ul>
-						<li> Provide a way for users to pause and stop time-based content. </li>
-						<li> Provide a way for users to start or restart time-based content. </li>
-					</ul>
-				</section>
-			</section>
-			<section id="focus">
-				<h3 id="x4-6-focus"><bdi class="secno">4.6 </bdi>Focus<a class="self-link" aria-label="§" href="#focus"></a></h3>
-				<ul>
-					<li> Any object that can respond to user interaction must be capable of receiving keyboard focus and actuating from keyboard input. </li>
-					<li> Common objects defined by the technology should be specified to be focusable by default. </li>
-					<li> Provide a means for authors to make objects focusable explicitly. </li>
-					<li> Define a complete focus movement model including cycling past the end, recovering from unexpectedly lost focus, etc. so they keyboard focus is always somewhere meaningful and findable. </li>
-					<li> Provide sensory and programmatic indication of focus location at all times. </li>
-					<li> If allowing authors to restyle focus indicators, provide a mechanism for users to override, particularly to "unhide" focus indicators. </li>
-				</ul>
-			</section>
-			<section id="audiovisual-content">
-				<h3 id="x4-7-audiovisual-content"><bdi class="secno">4.7 </bdi>Audiovisual Content<a class="self-link" aria-label="§" href="#audiovisual-content"></a></h3>
-				<ul>
-					<li> Provide a mechanism to associate synchronized text tracks with audio or visual tracks (to support captions, subtitles). </li>
-					<li> Provide support for at least two audio tracks so volume of foreground and background audio can be set separately. </li>
-				</ul>
-			</section>
-			<section id="extensibility">
-				<h3 id="x4-8-extensibility"><bdi class="secno">4.8 </bdi>Extensibility<a class="self-link" aria-label="§" href="#extensibility"></a></h3>
-				<ul>
-					<li> When providing extension mechanisms, ensure the tools exist to allow developers to provide the same level of accessibility in extensions that are possible in the root technology. This may involve exposing API methods or other properties that would otherwise not be needed. </li>
-					<li> Allow extensions to intersect so accessibility features in one extension can automatically work in others. </li>
-				</ul>
-			</section>
-			<section id="alternate-view-modalities">
-				<h3 id="x4-9-alternate-view-modalities"><bdi class="secno">4.9 </bdi>Alternate view modalities<a class="self-link" aria-label="§" href="#alternate-view-modalities"></a></h3>
-				<ul>
-					<li> Provide ways for linear (1-dimensional) presentations of content to presented in a different subjective order than graphical (2-dimensional) presentations. </li>
-					<li> Provide ways for focus order to adapt to presentation order in order to remain meaningful. </li>
-					<li> @@support for haptic and other modalities? </li>
-				</ul>
-			</section>
-			<section id="timing">
-				<h3 id="x4-10-timing"><bdi class="secno">4.10 </bdi>Timing<a class="self-link" aria-label="§" href="#timing"></a></h3>
-				<ul>
-					<li> Do not create time limitations on user interaction (e.g., actuate a default behavior if the user does not respond within a set window) unless such limitations are intrinsic to the functionality. </li>
-					<li> When creating time limitations on user interaction, provide mechanisms for users to be informed in advance of those limitations. </li>
-					<li> When creating time limitations on user interaction, provide a way for users to request additional time. </li>
-					<li> Provide an interface between content and servers so users can be informed of and request changes to time limitations of the server. </li>
-				</ul>
-			</section>
-			<section id="user-input">
-				<h3 id="x4-11-user-input"><bdi class="secno">4.11 </bdi>User input<a class="self-link" aria-label="§" href="#user-input"></a></h3>
-				<ul>
-					<li> Provide ways to indicate if user input controls must have input ("required") or not accepting input ("disabled"). </li>
-					<li> Provide a way to associate information about input validation errors with the specific control(s) with input problems. </li>
-					<li> Provide a way for authors to provide context-sensitive help to users, and for users to access this via standard user agent features. </li>
-				</ul>
-			</section>
+		<section id="framework-for-accessible-specification-of-technologies"><div class="header-wrapper"><h2 id="x5-framework-for-accessible-specification-of-technologies"><bdi class="secno">5. </bdi>Framework for Accessible Specification of Technologies</h2><a class="self-link" href="#framework-for-accessible-specification-of-technologies" aria-label="Permalink for Section 5."></a></div>
+			
+			<div class="note" role="note" id="issue-container-generatedID-5"><div role="heading" class="note-title marker" id="h-note-4" aria-level="3"><span>Note</span></div><p class="">The content below is initial draft content intended to show how guidelines aimed at web technology developers might look. It has not yet been related to the user needs and ways of meeting them outlined above. It serves as initial brainstorming to help demonstrate viability of this set of guidelines.</p></div>
+			<div class="note" id="issue-container-generatedID-6"><div role="heading" class="ednote-title marker" id="h-ednote-0" aria-level="3"><span>Editor's note</span></div><p class="">This section needs to be updated to reflect the functional and user needs matrix.</p></div>
 		</section>
-            <section class="appendix" id="acknowledgments">
-			<h2 id="a-acknowledgments"><bdi class="secno">A. </bdi>Acknowledgments<a class="self-link" aria-label="§" href="#acknowledgments"></a></h2>
+            <section class="appendix" id="acknowledgments"><div class="header-wrapper"><h2 id="a-acknowledgments"><bdi class="secno">A. </bdi>Acknowledgments</h2><a class="self-link" href="#acknowledgments" aria-label="Permalink for Appendix A."></a></div>
+			
 			<p>The following people contributed to the development of this document.</p>
-			<section id="ack_group">
-				<h3 id="a-1-participants-in-the-pfwg-at-the-time-of-publication"><bdi class="secno">A.1 </bdi>Participants in the PFWG at the time of publication<a class="self-link" aria-label="§" href="#ack_group"></a></h3>
+			<section id="ack_group"><div class="header-wrapper"><h3 id="a-1-participants-active-in-the-development-of-this-document"><bdi class="secno">A.1 </bdi>Participants active in the development of this document</h3><a class="self-link" href="#ack_group" aria-label="Permalink for Appendix A.1"></a></div>
+				
 				<ol>
-					<li>David Bolter (Mozilla) </li>
-					<li>Sally Cain (Royal National Institute of Blind People)</li>
+					<li>Jake Abma (Invited Expert) </li>
+					<li>Joshue O Connor (Invited Expert)</li>
 					<li>Michael Cooper (<abbr title="World Wide Web Consortium">W3C</abbr>/<abbr title="Massachusetts Institute of Technology">MIT</abbr>)</li>
-					<li>James Craig (Apple Inc.) </li>
-					<li>Steve Faulkner (Invited Expert, The Paciello Group) </li>
-					<li>Geoff Freed (Invited Expert, NCAM)</li>
-					<li>Jon Gunderson (Invited Expert, UIUC)</li>
-					<li>Markus Gylling (DAISY Consortium)</li>
-					<li>Sean Hayes (Microsoft Corporation)</li>
-					<li>Kenny Johar (Vision Australia) </li>
-					<li>Matthew King (IBM Corporation)</li>
-					<li>Gez Lemon (International Webmasters Association / HTML Writers Guild (IWA-HWG))</li>
-					<li>Thomas Logan (HiSoftware Inc.)</li>
-					<li>William Loughborough (Invited Expert)</li>
-					<li>Shane McCarron (Invited Expert, Aptest)</li>
-					<li>Charles McCathieNevile (Opera Software)</li>
-					<li>Mary Jo Mueller (IBM Corporation)</li>
-					<li>James Nurthen (Oracle Corporation) </li>
-					<li>Joshue O'Connor (Invited Expert) </li>
-					<li>Artur Ortega (Yahoo!, Inc.)</li>
-					<li>Sarah Pulis (Media Access Australia)</li>
-					<li>Gregory Rosmaita (Invited Expert)</li>
-					<li>Janina Sajka (Invited Expert, The Linux Foundation)</li>
-					<li>Joseph Scheuhammer (Invited Expert, Inclusive Design Research Centre, OCAD University) </li>
-					<li>Stefan Schnabel (SAP AG) </li>
-					<li>Richard Schwerdtfeger (IBM Corporation)</li>
-					<li>Lisa Seeman (Invited Expert, Aqueous) </li>
-					<li>Cynthia Shelly (Microsoft Corporation) </li>
-					<li>Andi Snow-Weaver (IBM Corporation)</li>
-					<li>Gregg Vanderheiden (Invited Expert, Trace)</li>
-					<li>Léonie Watson (Invited Expert, Nomensa)</li>
-					<li>Gottfried Zimmermann (Invited Expert, Access Technologies Group)</li>
+					<li>Charles Hall (Invited Expert)</li>
+					<li>Todd Libby (Invited Expert)</li>
 				</ol>
 			</section>
-			<section id="ack_funders">
-				<h3 id="a-2-enabling-funders"><bdi class="secno">A.2 </bdi>Enabling funders<a class="self-link" aria-label="§" href="#ack_funders"></a></h3>
-				<p>This publication has been funded in part with Federal funds from the U.S. Department of Education, National Institute on Disability and Rehabilitation Research (NIDRR) under contract number ED-OSE-10-C-0067. The content of this publication does not necessarily reflect the views or policies of the U.S. Department of Education, nor does mention of trade names, commercial products, or organizations imply endorsement by the U.S. Government.</p>
-			</section>
+            	<section id="enabling-funders"><div class="header-wrapper"><h3 id="a-2-enabling-funders"><bdi class="secno">A.2 </bdi>Enabling funders</h3><a class="self-link" href="#enabling-funders" aria-label="Permalink for Appendix A.2"></a></div>
+	
+	<p>This publication has been funded in part with U.S. Federal funds from the Health and Human Services, National Institute on Disability, Independent Living, and Rehabilitation Research (NIDILRR), initially under contract number ED-OSE-10-C-0067, then under contract number HHSP23301500054C, and now under HHS75P00120P00168. The content of this publication does not necessarily reflect the views or policies of the U.S. Department of Health and Human Services or the U.S. Department of Education, nor does mention of trade names, commercial products, or organizations imply endorsement by the U.S. Government.</p>
+</section>
 		</section>
 	
 
 <p role="navigation" id="back-to-top">
     <a href="#title"><abbr title="Back to Top">↑</abbr></a>
-  </p><script src="https://www.w3.org/scripts/TR/2016/fixup.js"></script></body></html>
+  </p><div class="dfn-panel" hidden="" role="dialog" aria-modal="true" id="dfn-panel-for-dfn-functional-need" aria-label="Links in this document to definition: functional need">
+      <span class="caret"></span>
+      <div>
+        <a class="self-link" href="#dfn-functional-need" aria-label="Permalink for definition: functional need. Activate to close this dialog.">Permalink</a>
+         
+      </div>
+      <p><b>Referenced in:</b></p>
+      <ul>
+    <li>
+    <a href="#ref-for-dfn-functional-need-1" title="§ 1.6 Matrix of functional and user needs">§ 1.6 Matrix of functional and user needs</a> 
+  </li>
+  </ul>
+    </div><div class="dfn-panel" hidden="" role="dialog" aria-modal="true" id="dfn-panel-for-dfn-intersectional-need" aria-label="Links in this document to definition: intersectional functional need">
+      <span class="caret"></span>
+      <div>
+        <a class="self-link" href="#dfn-intersectional-need" aria-label="Permalink for definition: intersectional functional need. Activate to close this dialog.">Permalink</a>
+         
+      </div>
+      <p><b>Referenced in:</b></p>
+      <ul>
+      <li>Not referenced in this document.</li>
+    </ul>
+    </div><div class="dfn-panel" hidden="" role="dialog" aria-modal="true" id="dfn-panel-for-dfn-ability" aria-label="Links in this document to definition: functional ability">
+      <span class="caret"></span>
+      <div>
+        <a class="self-link" href="#dfn-ability" aria-label="Permalink for definition: functional ability. Activate to close this dialog.">Permalink</a>
+         
+      </div>
+      <p><b>Referenced in:</b></p>
+      <ul>
+    <li>
+    <a href="#ref-for-dfn-ability-1" title="§ 1.5.2 Functional needs">§ 1.5.2 Functional needs</a> 
+  </li>
+  </ul>
+    </div><div class="dfn-panel" hidden="" role="dialog" aria-modal="true" id="dfn-panel-for-dfn-user-need" aria-label="Links in this document to definition: user need">
+      <span class="caret"></span>
+      <div>
+        <a class="self-link" href="#dfn-user-need" aria-label="Permalink for definition: user need. Activate to close this dialog.">Permalink</a>
+         
+      </div>
+      <p><b>Referenced in:</b></p>
+      <ul>
+    <li>
+    <a href="#ref-for-dfn-user-need-1" title="§ 1.6 Matrix of functional and user needs">§ 1.6 Matrix of functional and user needs</a> 
+  </li>
+  </ul>
+    </div><div class="dfn-panel" hidden="" role="dialog" aria-modal="true" id="dfn-panel-for-dfn-expected-outcomes" aria-label="Links in this document to definition: expected outcomes">
+      <span class="caret"></span>
+      <div>
+        <a class="self-link" href="#dfn-expected-outcomes" aria-label="Permalink for definition: expected outcomes. Activate to close this dialog.">Permalink</a>
+         
+      </div>
+      <p><b>Referenced in:</b></p>
+      <ul>
+    <li>
+    <a href="#ref-for-dfn-expected-outcomes-1" title="§ 4. Meeting User Needs">§ 4. Meeting User Needs</a> 
+  </li>
+  </ul>
+    </div><script id="respec-dfn-panel">(() => {
+// @ts-check
+if (document.respec) {
+  document.respec.ready.then(setupPanel);
+} else {
+  setupPanel();
+}
+
+function setupPanel() {
+  const listener = panelListener();
+  document.body.addEventListener("keydown", listener);
+  document.body.addEventListener("click", listener);
+}
+
+function panelListener() {
+  /** @type {HTMLElement} */
+  let panel = null;
+  return event => {
+    const { target, type } = event;
+
+    if (!(target instanceof HTMLElement)) return;
+
+    // For keys, we only care about Enter key to activate the panel
+    // otherwise it's activated via a click.
+    if (type === "keydown" && event.key !== "Enter") return;
+
+    const action = deriveAction(event);
+
+    switch (action) {
+      case "show": {
+        hidePanel(panel);
+        /** @type {HTMLElement} */
+        const dfn = target.closest("dfn, .index-term");
+        panel = document.getElementById(`dfn-panel-for-${dfn.id}`);
+        const coords = deriveCoordinates(event);
+        displayPanel(dfn, panel, coords);
+        break;
+      }
+      case "dock": {
+        panel.style.left = null;
+        panel.style.top = null;
+        panel.classList.add("docked");
+        break;
+      }
+      case "hide": {
+        hidePanel(panel);
+        panel = null;
+        break;
+      }
+    }
+  };
+}
+
+/**
+ * @param {MouseEvent|KeyboardEvent} event
+ */
+function deriveCoordinates(event) {
+  const target = /** @type HTMLElement */ (event.target);
+
+  // We prevent synthetic AT clicks from putting
+  // the dialog in a weird place. The AT events sometimes
+  // lack coordinates, so they have clientX/Y = 0
+  const rect = target.getBoundingClientRect();
+  if (
+    event instanceof MouseEvent &&
+    event.clientX >= rect.left &&
+    event.clientY >= rect.top
+  ) {
+    // The event probably happened inside the bounding rect...
+    return { x: event.clientX, y: event.clientY };
+  }
+
+  // Offset to the middle of the element
+  const x = rect.x + rect.width / 2;
+  // Placed at the bottom of the element
+  const y = rect.y + rect.height;
+  return { x, y };
+}
+
+/**
+ * @param {Event} event
+ */
+function deriveAction(event) {
+  const target = /** @type {HTMLElement} */ (event.target);
+  const hitALink = !!target.closest("a");
+  if (target.closest("dfn:not([data-cite]), .index-term")) {
+    return hitALink ? "none" : "show";
+  }
+  if (target.closest(".dfn-panel")) {
+    if (hitALink) {
+      return target.classList.contains("self-link") ? "hide" : "dock";
+    }
+    const panel = target.closest(".dfn-panel");
+    return panel.classList.contains("docked") ? "hide" : "none";
+  }
+  if (document.querySelector(".dfn-panel:not([hidden])")) {
+    return "hide";
+  }
+  return "none";
+}
+
+/**
+ * @param {HTMLElement} dfn
+ * @param {HTMLElement} panel
+ * @param {{ x: number, y: number }} clickPosition
+ */
+function displayPanel(dfn, panel, { x, y }) {
+  panel.hidden = false;
+  // distance (px) between edge of panel and the pointing triangle (caret)
+  const MARGIN = 20;
+
+  const dfnRects = dfn.getClientRects();
+  // Find the `top` offset when the `dfn` can be spread across multiple lines
+  let closestTop = 0;
+  let minDiff = Infinity;
+  for (const rect of dfnRects) {
+    const { top, bottom } = rect;
+    const diffFromClickY = Math.abs((top + bottom) / 2 - y);
+    if (diffFromClickY < minDiff) {
+      minDiff = diffFromClickY;
+      closestTop = top;
+    }
+  }
+
+  const top = window.scrollY + closestTop + dfnRects[0].height;
+  const left = x - MARGIN;
+  panel.style.left = `${left}px`;
+  panel.style.top = `${top}px`;
+
+  // Find if the panel is flowing out of the window
+  const panelRect = panel.getBoundingClientRect();
+  const SCREEN_WIDTH = Math.min(window.innerWidth, window.screen.width);
+  if (panelRect.right > SCREEN_WIDTH) {
+    const newLeft = Math.max(MARGIN, x + MARGIN - panelRect.width);
+    const newCaretOffset = left - newLeft;
+    panel.style.left = `${newLeft}px`;
+    /** @type {HTMLElement} */
+    const caret = panel.querySelector(".caret");
+    caret.style.left = `${newCaretOffset}px`;
+  }
+
+  // As it's a dialog, we trap focus.
+  // TODO: when <dialog> becomes a implemented, we should really
+  // use that.
+  trapFocus(panel, dfn);
+}
+
+/**
+ * @param {HTMLElement} panel
+ * @param {HTMLElement} dfn
+ * @returns
+ */
+function trapFocus(panel, dfn) {
+  /** @type NodeListOf<HTMLAnchorElement> elements */
+  const anchors = panel.querySelectorAll("a[href]");
+  // No need to trap focus
+  if (!anchors.length) return;
+
+  // Move focus to first anchor element
+  const first = anchors.item(0);
+  first.focus();
+
+  const trapListener = createTrapListener(anchors, panel, dfn);
+  panel.addEventListener("keydown", trapListener);
+
+  // Hiding the panel releases the trap
+  const mo = new MutationObserver(records => {
+    const [record] = records;
+    const target = /** @type HTMLElement */ (record.target);
+    if (target.hidden) {
+      panel.removeEventListener("keydown", trapListener);
+      mo.disconnect();
+    }
+  });
+  mo.observe(panel, { attributes: true, attributeFilter: ["hidden"] });
+}
+
+/**
+ *
+ * @param {NodeListOf<HTMLAnchorElement>} anchors
+ * @param {HTMLElement} panel
+ * @param {HTMLElement} dfn
+ * @returns
+ */
+function createTrapListener(anchors, panel, dfn) {
+  const lastIndex = anchors.length - 1;
+  let currentIndex = 0;
+  return event => {
+    switch (event.key) {
+      // Hitting "Tab" traps us in a nice loop around elements.
+      case "Tab": {
+        event.preventDefault();
+        currentIndex += event.shiftKey ? -1 : +1;
+        if (currentIndex < 0) {
+          currentIndex = lastIndex;
+        } else if (currentIndex > lastIndex) {
+          currentIndex = 0;
+        }
+        anchors.item(currentIndex).focus();
+        break;
+      }
+
+      // Hitting "Enter" on an anchor releases the trap.
+      case "Enter":
+        hidePanel(panel);
+        break;
+
+      // Hitting "Escape" returns focus to dfn.
+      case "Escape":
+        hidePanel(panel);
+        dfn.focus();
+        return;
+    }
+  };
+}
+
+/** @param {HTMLElement} panel */
+function hidePanel(panel) {
+  if (!panel) return;
+  panel.hidden = true;
+  panel.classList.remove("docked");
+}
+})()</script><script src="https://www.w3.org/scripts/TR/2021/fixup.js"></script></body></html>
