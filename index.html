@@ -1,6 +1,6 @@
 <!DOCTYPE html><html lang="en-US" xmlns="http://www.w3.org/1999/xhtml"><head>
 <meta charset="utf-8">
-<meta name="generator" content="ReSpec 32.1.6">
+<meta name="generator" content="ReSpec 32.1.10">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <style>
 .issue-label{text-transform:initial}
@@ -8,6 +8,7 @@
 .warning{padding:.5em;border-left-width:.5em;border-left-style:solid}
 span.warning{padding:.1em .5em .15em}
 .issue.closed span.issue-number{text-decoration:line-through}
+.issue.closed span.issue-number::after{content:" (Closed)";font-size:smaller}
 .warning{border-color:#f11;border-width:.2em;border-style:solid;background:#fbe9e9}
 .warning-title:before{content:"⚠";font-size:1.3em;float:left;padding-right:.3em;margin-top:-.3em}
 li.task-list-item{list-style:none}
@@ -99,7 +100,7 @@ dd{margin-left:0}
 }
 </style>
 	
-<meta name="description" content="Framework for Accessible Specification of Technologies (FAST) advises creators of technical specifications how to ensure their technology meets the needs of user with disabilities. It addresses primarily web content technologies but also relates to any technology that affects web content sent to users, including client-side APIs, transmission protocols, and interchange formats. Specifications that implement these guidelines make it possible for content authors and user agents to render the content in an accessible manner to people with a wide range of abilities.">
+<meta name="description" content="Framework for Accessible Specification of Technologies (FAST) advises creators of technical specifications how to ensure that their technology meets the needs of users with disabilities. It primarily addresses web content technologies, and also relates to any technology that affects web content sent to users, including client-side APIs, transmission protocols, and interchange formats. Specifications that implement these guidelines make it possible for content authors and user agents to render the content in an accessible manner to people with a wide range of abilities.">
 <style>
 var{position:relative;cursor:pointer}
 var[data-type]::after,var[data-type]::before{position:absolute;left:50%;top:-6px;opacity:0;transition:opacity .4s;pointer-events:none}
@@ -120,15 +121,15 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
   ],
   "group": "apa",
   "tocIntroductory": true,
-  "publishISODate": "2022-05-03T00:00:00.000Z",
-  "generatedSubtitle": "W3C Editor's Draft 03 May 2022"
+  "publishISODate": "2022-07-12T00:00:00.000Z",
+  "generatedSubtitle": "W3C Editor's Draft 12 July 2022"
 }</script>
 <link rel="stylesheet" href="https://www.w3.org/StyleSheets/TR/2021/W3C-ED"></head>
 	<body class="h-entry informative"><div class="head">
     <p class="logos"><a class="logo" href="https://www.w3.org/"><img crossorigin="" alt="W3C" height="48" src="https://www.w3.org/StyleSheets/TR/2021/logos/W3C" width="72">
   </a></p>
     <h1 id="title" class="title">Framework for Accessible Specification of Technologies (FAST)</h1> 
-    <p id="w3c-state"><a href="https://www.w3.org/standards/types#ED">W3C Editor's Draft</a> <time class="dt-published" datetime="2022-05-03">03 May 2022</time></p>
+    <p id="w3c-state"><a href="https://www.w3.org/standards/types#ED">W3C Editor's Draft</a> <time class="dt-published" datetime="2022-07-12">12 July 2022</time></p>
     <details open="">
       <summary>More details about this document</summary>
       <dl>
@@ -172,7 +173,7 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
     <hr title="Separator for header">
   </div>
 		<section id="abstract" class="introductory"><h2>Abstract</h2>
-			<p>Framework for Accessible Specification of Technologies (FAST) advises creators of technical specifications how to ensure their technology meets the needs of user with disabilities. It addresses primarily web content technologies but also relates to any technology that affects web content sent to users, including client-side APIs, transmission protocols, and interchange formats. Specifications that implement these guidelines make it possible for content authors and user agents to render the content in an accessible manner to people with a wide range of abilities.</p>
+			<p>Framework for Accessible Specification of Technologies (FAST) advises creators of technical specifications how to ensure that their technology meets the needs of users with disabilities. It primarily addresses web content technologies, and also relates to any technology that affects web content sent to users, including client-side APIs, transmission protocols, and interchange formats. Specifications that implement these guidelines make it possible for content authors and user agents to render the content in an accessible manner to people with a wide range of abilities.</p>
 			<p>This document is accompanied by a <a href="checklist.html">checklist</a> which is more complete and usable for groups evaluating technologies at this time.</p>
 		</section>
 		<section id="sotd" class="introductory"><h2>Status of This Document</h2><p><em>This section describes the status of this
