@@ -54,7 +54,7 @@ button[type="submit"] {
   background: none;
 }
 
-fieldset details {
+fieldset > details {
   margin-top: 1rem;
 }
 
