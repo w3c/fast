@@ -28,16 +28,32 @@ document.addEventListener("DOMContentLoaded", () => {
   if (createBtn) {
     createBtn.addEventListener("click", (ev) => {
       ev.preventDefault && ev.preventDefault();
+      const specName = document.getElementById("spec-name");
+      const specUrl = document.getElementById("spec-url");
+      if (specName && specUrl) {
+        const isValid = specName.checkValidity() && specUrl.checkValidity();
+        if (!isValid) {
+          specName.reportValidity() && specUrl.reportValidity();
+          return;
+        }
+      }
       const markdown = buildMarkdown();
 
       navigator.clipboard
         .writeText(markdown)
         .then(() => {
-          alert("Markdown copied to clipboard!");
           const repoUrl = document.getElementById("spec-repo")?.value.trim();
+          const issueTitle = "FAST checklist";
+          if (!repoUrl || !validateGitHubRepoUrl(repoUrl)) {
+            alert(
+              "Please enter a valid GitHub repository URL in the format 'https://github.com/<org>/<repo>'."
+            );
+            return;
+          }
+          alert("Markdown copied to clipboard!");
           if (repoUrl) {
             const cleanUrl = repoUrl.replace(/\/+$/, "");
-            window.location.href = `${cleanUrl}/issues/new`;
+            window.location.href = `${cleanUrl}/issues/new?title=${encodeURIComponent(issueTitle)}`;
           }
         })
         .catch((err) => {
@@ -53,6 +69,11 @@ function cleanText(text) {
     .replace(/\s*\n\s*/g, " ")
     .replace(/\s+/g, " ")
     .trim();
+}
+
+function validateGitHubRepoUrl(repoUrl) {
+  const regex = /^https:\/\/github\.com\/([^\/]+)\/([^\/\?]+)[\/\?]?/;
+  return regex.test(repoUrl);
 }
 
 function htmlToMarkdownText(elem) {
@@ -94,7 +115,7 @@ function buildMarkdown() {
     markdown += `## ${heading}\n\n`;
     markdown += `- ${fieldYesChecked ? "[X]" : "[ ]"} ${fieldSummaryText}\n\n`;
 
-    markdown += `   <details open>\n\n`;
+    markdown += ` <details ${fieldYesChecked ? "open" : ""}>\n\n`;
 
     const table = fieldset.querySelector("table");
     if (!table) {
