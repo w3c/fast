@@ -1,0 +1,135 @@
+
+body {
+  font-family: sans-serif;
+  line-height: 1.5;
+  font-size: 1.2em;
+  max-width: 60rem;
+  width: 96vw;
+  margin: auto;
+  padding-bottom: 1rem;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 10px;
+}
+
+th,
+td {
+  padding: 0.8rem 1rem;
+  border: 1px solid #ccc;
+  vertical-align: top;
+  font-size: 1rem;
+  text-align: left;
+}
+td a,
+summary a {
+  text-decoration: underline;
+}
+
+
+fieldset {
+  border: 1px solid;
+  border-radius: 6px;
+  padding: 2rem;
+  margin-bottom: 1rem;
+}
+
+legend {
+  font-weight: bold;
+}
+
+input[type="radio"] {
+  margin-right: 0.5rem;
+}
+
+button[type="submit"] {
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  border: 1px solid currentColor;
+  margin-inline-end: 0.5em;
+  border-radius: 4px;
+  cursor: pointer;
+  background: none;
+}
+
+fieldset details {
+  margin-top: 1rem;
+}
+
+details fieldset {
+  margin-top: 0.5em;
+}
+
+input[type="text"] {
+  padding: 0.5rem;
+  border: 1px solid currentColor;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+#spec-url-desc {
+  font-size: 0.9rem;
+  margin-top: 0.25rem;
+}
+
+.grid-2c {
+  display: grid;
+  grid-template-columns: min-content auto;
+  align-items: center;
+  gap: 1.5em;
+  margin-block-end: 1em;
+}
+
+*:focus,
+input:hover,
+button:hover,
+a:hover {
+  outline: 2px solid currentColor;
+  outline-offset: 0.15em;
+}
+
+.note {
+font-size: 0.9em;
+}
+
+td details {
+  margin: 0; 
+}
+
+td summary {
+  font-weight: 600;
+  cursor: pointer;
+  margin-bottom: 0.4em; 
+}
+
+td summary::-webkit-details-marker {
+  display: initial; 
+}
+
+td details p {
+  margin: 0.6em 0 0 1.5em; 
+  padding-right: 1em;       
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+td.met-column {
+  vertical-align: top;  
+  width: 7em;            
+}
+
+td.met-column label {
+  display: block;       
+  margin-bottom: 0.4em;
+  font-weight: normal;
+}
+
+th[scope="row"] {
+  font-weight: normal;
+}
+
+th[scope="row"] summary {
+  font-weight: bold;
+}
