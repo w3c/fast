@@ -51,9 +51,10 @@ document.addEventListener("DOMContentLoaded", () => {
             return;
           }
           alert("Markdown copied to clipboard!");
+          const issueBody = `<!-- The markdown content has been copied to your clipboard. Please paste it here -->`;
           if (repoUrl) {
             const cleanUrl = repoUrl.replace(/\/+$/, "");
-            window.location.href = `${cleanUrl}/issues/new?title=${encodeURIComponent(issueTitle)}`;
+            window.location.href = `${cleanUrl}/issues/new?title=${encodeURIComponent(issueTitle)}&body= ${encodeURIComponent(issueBody)}`;
           }
         })
         .catch((err) => {
@@ -115,7 +116,7 @@ function buildMarkdown() {
     markdown += `## ${heading}\n\n`;
     markdown += `- ${fieldYesChecked ? "[X]" : "[ ]"} ${fieldSummaryText}\n\n`;
 
-    markdown += ` <details ${fieldYesChecked ? "open" : ""}>\n\n`;
+    markdown += ` <details ${fieldYesChecked ? "open" : ""}>\n\n <summary>More details: ${fieldSummaryText}  </summary>\n\n`;
 
     const table = fieldset.querySelector("table");
     if (!table) {

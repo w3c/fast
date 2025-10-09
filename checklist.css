@@ -125,6 +125,9 @@ td.met-column label {
 th[scope="row"] {
   font-weight: normal;
 }
+.note {
+font-size: 0.9em;
+}
 
 th[scope="row"] summary {
   font-weight: bold;
